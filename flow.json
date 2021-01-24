@@ -14,6 +14,13 @@
         "info": ""
     },
     {
+        "id": "29928cb0.ddef64",
+        "type": "tab",
+        "label": "Intent Beispiel",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "79d9afa4.2a85",
         "type": "subflow",
         "name": "speech to text",
@@ -25,15 +32,15 @@
                 "y": 80,
                 "wires": [
                     {
-                        "id": "c0df7363.1c449"
+                        "id": "b91276d7.64be98"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 680,
-                "y": 80,
+                "x": 960,
+                "y": 120,
                 "wires": [
                     {
                         "id": "f8c7b0b1.b8edd",
@@ -42,8 +49,8 @@
                 ]
             },
             {
-                "x": 680,
-                "y": 160,
+                "x": 960,
+                "y": 200,
                 "wires": [
                     {
                         "id": "a068987f.813c98",
@@ -52,18 +59,91 @@
                 ]
             }
         ],
-        "env": [],
+        "env": [
+            {
+                "name": "language",
+                "type": "str",
+                "value": "de"
+            },
+            {
+                "name": "timeout",
+                "type": "num",
+                "value": "2"
+            },
+            {
+                "name": "duration",
+                "type": "num",
+                "value": "0"
+            }
+        ],
         "color": "#DDAA99",
         "outputLabels": [
             "best match",
             "alternatives"
         ],
         "status": {
-            "x": 320,
-            "y": 180,
+            "x": 620,
+            "y": 220,
             "wires": [
                 {
                     "id": "7642a21c.6cc54c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "ab8c8a6d.bb5358",
+        "type": "subflow",
+        "name": "text to speech",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7a9114e4.b7aa8c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 760,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "1fcc4076.5ee39",
+                        "port": 2
+                    },
+                    {
+                        "id": "4a0da2a9.e2c17c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "engine",
+                "type": "str",
+                "value": "say"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "value": "de"
+            }
+        ],
+        "color": "#DDAA99",
+        "status": {
+            "x": 440,
+            "y": 220,
+            "wires": [
+                {
+                    "id": "220ece7.5afd932",
                     "port": 0
                 }
             ]
@@ -448,8 +528,8 @@
         "timer": "",
         "oldrc": false,
         "name": "record",
-        "x": 190,
-        "y": 80,
+        "x": 470,
+        "y": 120,
         "wires": [
             [
                 "a068987f.813c98"
@@ -462,11 +542,8 @@
         "id": "5306cfe5.3d886",
         "type": "inject",
         "z": "7bc0be6b.6417e",
-        "name": "",
+        "name": "Wakeup Button",
         "props": [
-            {
-                "p": "payload"
-            },
             {
                 "p": "topic",
                 "vt": "str"
@@ -477,9 +554,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "--timeout 3 --lang en",
-        "payloadType": "str",
-        "x": 270,
+        "x": 260,
         "y": 300,
         "wires": [
             [
@@ -497,8 +572,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 340,
-        "y": 80,
+        "x": 620,
+        "y": 120,
         "wires": [
             [
                 "f8c7b0b1.b8edd"
@@ -524,36 +599,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "db6d399d.f53d18",
-        "type": "debug",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "4a664b6b.5fe494",
-        "type": "say",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "voice": "",
-        "x": 770,
-        "y": 240,
+        "x": 800,
+        "y": 120,
         "wires": [
             []
         ]
@@ -563,15 +610,26 @@
         "type": "subflow:79d9afa4.2a85",
         "z": "7bc0be6b.6417e",
         "name": "",
-        "env": [],
-        "x": 540,
+        "env": [
+            {
+                "name": "timeout",
+                "value": "0",
+                "type": "num"
+            },
+            {
+                "name": "duration",
+                "value": "5",
+                "type": "num"
+            }
+        ],
+        "x": 500,
         "y": 300,
         "wires": [
             [
-                "4a664b6b.5fe494"
+                "6341cd0d.f76864"
             ],
             [
-                "db6d399d.f53d18"
+                "9570942e.fe1a78"
             ]
         ]
     },
@@ -583,10 +641,992 @@
         "scope": [
             "c0df7363.1c449"
         ],
-        "x": 180,
-        "y": 180,
+        "x": 480,
+        "y": 220,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "9570942e.fe1a78",
+        "type": "debug",
+        "z": "7bc0be6b.6417e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1fcc4076.5ee39",
+        "type": "exec",
+        "z": "ab8c8a6d.bb5358",
+        "command": "/Users/lutz/Projects/drl-tools/modules/text-to-speech/.venv/bin/python /Users/lutz/Projects/drl-tools/modules/text-to-speech/speak.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "speak",
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e5f1d6aa.65e168",
+        "type": "inject",
+        "z": "7bc0be6b.6417e",
+        "name": "Hallo wie geht es dir?",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hallo wie geht es dir?",
+        "payloadType": "str",
+        "x": 280,
+        "y": 540,
+        "wires": [
+            [
+                "cbfbd9d8.af8c48"
+            ]
+        ]
+    },
+    {
+        "id": "cbfbd9d8.af8c48",
+        "type": "subflow:ab8c8a6d.bb5358",
+        "z": "7bc0be6b.6417e",
+        "name": "",
+        "env": [
+            {
+                "name": "engine",
+                "value": "google",
+                "type": "str"
+            }
+        ],
+        "x": 500,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "220ece7.5afd932",
+        "type": "status",
+        "z": "ab8c8a6d.bb5358",
+        "name": "",
+        "scope": [
+            "1fcc4076.5ee39",
+            "4a0da2a9.e2c17c"
+        ],
+        "x": 210,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a0da2a9.e2c17c",
+        "type": "say",
+        "z": "ab8c8a6d.bb5358",
+        "name": "",
+        "voice": "",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a9114e4.b7aa8c",
+        "type": "switch",
+        "z": "ab8c8a6d.bb5358",
+        "name": "",
+        "property": "engine",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "google",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "say",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "2a0d725c.27289e"
+            ],
+            [
+                "4a0da2a9.e2c17c"
+            ]
+        ]
+    },
+    {
+        "id": "6341cd0d.f76864",
+        "type": "subflow:ab8c8a6d.bb5358",
+        "z": "7bc0be6b.6417e",
+        "name": "",
+        "env": [],
+        "x": 760,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a0d725c.27289e",
+        "type": "function",
+        "z": "ab8c8a6d.bb5358",
+        "name": "set language",
+        "func": "let lang = env.get(\"language\");\nmsg.payload = `\"${msg.payload}\" --lang ${lang}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "1fcc4076.5ee39"
+            ]
+        ]
+    },
+    {
+        "id": "168bec27.0902d4",
+        "type": "inject",
+        "z": "7bc0be6b.6417e",
+        "name": "Hallo wie geht es dir?",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hallo wie geht es dir?",
+        "payloadType": "str",
+        "x": 280,
+        "y": 640,
+        "wires": [
+            [
+                "bd7d2363.2e8fd"
+            ]
+        ]
+    },
+    {
+        "id": "bd7d2363.2e8fd",
+        "type": "subflow:ab8c8a6d.bb5358",
+        "z": "7bc0be6b.6417e",
+        "name": "",
+        "env": [],
+        "x": 500,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b835ed6f.4a836",
+        "type": "comment",
+        "z": "7bc0be6b.6417e",
+        "name": "google speech",
+        "info": "",
+        "x": 240,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "33fed1a0.291bee",
+        "type": "comment",
+        "z": "7bc0be6b.6417e",
+        "name": "mac say / linux festival",
+        "info": "",
+        "x": 260,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "f807b4e5.fcbb28",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Test",
+        "payloadType": "str",
+        "x": 190,
+        "y": 900,
+        "wires": [
+            [
+                "42572f47.fd982"
+            ]
+        ]
+    },
+    {
+        "id": "19cf1cef.d8cee3",
+        "type": "debug",
+        "z": "94360486.e11da8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "42572f47.fd982",
+        "type": "fuzzy-match",
+        "z": "94360486.e11da8",
+        "name": "",
+        "choices": "yes:Peter\nyes:Peter test\nno:ich glaube peter testet\nno:Aha testen",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "19cf1cef.d8cee3"
+            ]
+        ]
+    },
+    {
+        "id": "69d2de65.2bad4",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Peter",
+        "payloadType": "str",
+        "x": 160,
+        "y": 960,
+        "wires": [
+            [
+                "42572f47.fd982"
+            ]
+        ]
+    },
+    {
+        "id": "1d5cf971.7c7997",
+        "type": "inject",
+        "z": "29928cb0.ddef64",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "68fdf52d.1c99dc"
+            ]
+        ]
+    },
+    {
+        "id": "68fdf52d.1c99dc",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Hallo, willkommen im Museum.",
+        "voice": "",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "81aed966.ebadd8"
+            ]
+        ]
+    },
+    {
+        "id": "81aed966.ebadd8",
+        "type": "delay",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "6e155f41.5635b"
+            ]
+        ]
+    },
+    {
+        "id": "6e155f41.5635b",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Vermisst du das Museum ueberhaupt?",
+        "voice": "",
+        "x": 870,
+        "y": 160,
+        "wires": [
+            [
+                "d15ad5bf.e12d78"
+            ]
+        ]
+    },
+    {
+        "id": "d15ad5bf.e12d78",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "env": [],
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "e89ec1ba.979e5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b91276d7.64be98",
+        "type": "function",
+        "z": "79d9afa4.2a85",
+        "name": "set language, timeout, duration",
+        "func": "let lang = env.get(\"language\");\nlet arg2 = env.get('duration') > 0 ? \n    `--duration ${env.get('duration')}` :\n    `--timeout ${env.get('timeout')}`\nmsg.payload = `\"--lang ${lang} ${arg2}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "c0df7363.1c449"
+            ]
+        ]
+    },
+    {
+        "id": "3cfe07d8.4c92d8",
+        "type": "fuzzy-match",
+        "z": "29928cb0.ddef64",
+        "name": "recognize yes/no",
+        "choices": "yes:Ja ich vermisse es\nyes:Ja\nyes:aufjedenfall\nyes:Manchmal schon\nyes:schon\nyes:ja sehr\nno:nein\nno:vermisse es nicht\nno:finde es langweilig\nno:nee\nno:nein überhaupt nicht",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 490,
+        "y": 380,
+        "wires": [
+            [
+                "f1d6570c.30c128",
+                "7e3b514e.4d908"
+            ]
+        ]
+    },
+    {
+        "id": "98bc2bf7.6ca018",
+        "type": "switch",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "property": "answer.key",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 610,
+        "y": 540,
+        "wires": [
+            [
+                "cb462194.001c2"
+            ],
+            [
+                "493d362f.229aa8"
+            ],
+            [
+                "73827c9a.ce4794"
+            ]
+        ]
+    },
+    {
+        "id": "cb462194.001c2",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Das freut mich. Ich bin auch gerne hier.",
+        "voice": "",
+        "x": 880,
+        "y": 520,
+        "wires": [
+            [
+                "9875010.9d1e3"
+            ]
+        ]
+    },
+    {
+        "id": "493d362f.229aa8",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Du findest es also langweilig hier?",
+        "voice": "",
+        "x": 860,
+        "y": 560,
+        "wires": [
+            [
+                "fa2af600.fbf0f8"
+            ]
+        ]
+    },
+    {
+        "id": "73827c9a.ce4794",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Ich habe dich leider nicht verstanden",
+        "voice": "",
+        "x": 870,
+        "y": 600,
+        "wires": [
+            [
+                "dba86aa0.7fd678"
+            ]
+        ]
+    },
+    {
+        "id": "e89ec1ba.979e5",
+        "type": "switch",
+        "z": "29928cb0.ddef64",
+        "name": "isEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "bec2c8b0.15be08"
+            ],
+            [
+                "3cfe07d8.4c92d8"
+            ]
+        ]
+    },
+    {
+        "id": "bec2c8b0.15be08",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Du hast ja gar nichts gesagt.",
+        "voice": "",
+        "x": 840,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa2af600.fbf0f8",
+        "type": "delay",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1130,
+        "y": 560,
+        "wires": [
+            [
+                "5eae2d88.de40d4"
+            ]
+        ]
+    },
+    {
+        "id": "5eae2d88.de40d4",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "was müsste es denn hier geben damit du ins museum gehen willst?",
+        "voice": "",
+        "x": 1480,
+        "y": 560,
+        "wires": [
+            [
+                "d590080b.6ae9c8"
+            ]
+        ]
+    },
+    {
+        "id": "d590080b.6ae9c8",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 920,
+        "y": 780,
+        "wires": [
+            [
+                "fad51bc4.ebd5f8",
+                "e150954.bc7ee68"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9875010.9d1e3",
+        "type": "delay",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1130,
+        "y": 520,
+        "wires": [
+            [
+                "aa0a7f07.b72af"
+            ]
+        ]
+    },
+    {
+        "id": "aa0a7f07.b72af",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Vermisst du denn trotzdem irgendwas am Museum?",
+        "voice": "",
+        "x": 1440,
+        "y": 520,
+        "wires": [
+            [
+                "d590080b.6ae9c8"
+            ]
+        ]
+    },
+    {
+        "id": "dba86aa0.7fd678",
+        "type": "delay",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1130,
+        "y": 600,
+        "wires": [
+            [
+                "990da5ae.a2f568"
+            ]
+        ]
+    },
+    {
+        "id": "990da5ae.a2f568",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Was hältst du denn von Musrum?",
+        "voice": "",
+        "x": 1380,
+        "y": 600,
+        "wires": [
+            [
+                "d590080b.6ae9c8"
+            ]
+        ]
+    },
+    {
+        "id": "fad51bc4.ebd5f8",
+        "type": "debug",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "ccbe8e67.a7c8",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Danke fuer deine Antwort. Ich hoffe wir sprechen uns bald wieder.",
+        "voice": "",
+        "x": 1480,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e150954.bc7ee68",
+        "type": "switch",
+        "z": "29928cb0.ddef64",
+        "name": "isEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1140,
+        "y": 780,
+        "wires": [
+            [
+                "f5e6377c.9b9fc8"
+            ],
+            [
+                "ccbe8e67.a7c8"
+            ]
+        ]
+    },
+    {
+        "id": "f5e6377c.9b9fc8",
+        "type": "say",
+        "z": "29928cb0.ddef64",
+        "name": "Na, vielleicht fällt dir ja spaeter noch etwas ein.",
+        "voice": "",
+        "x": 1420,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a382a9b.e2dd78",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "listening to yes/no",
+        "info": "",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fecc3e62.d266f",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "welcome",
+        "info": "",
+        "x": 340,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "916ee524.eed348",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "response on yes/no",
+        "info": "",
+        "x": 810,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c73765d4.c77538",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "follow up question",
+        "info": "",
+        "x": 1330,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ef4c666c.3eb1a8",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "listening and transcribing response",
+        "info": "",
+        "x": 980,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "3240d69a.8af01a",
+        "type": "comment",
+        "z": "29928cb0.ddef64",
+        "name": "output",
+        "info": "",
+        "x": 1130,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "f1d6570c.30c128",
+        "type": "change",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "answer",
+                "pt": "msg",
+                "to": "results[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "results",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "98bc2bf7.6ca018"
+            ]
+        ]
+    },
+    {
+        "id": "7e3b514e.4d908",
+        "type": "debug",
+        "z": "29928cb0.ddef64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ce857d5b.31bc4",
+        "type": "msg-router",
+        "z": "94360486.e11da8",
+        "routerType": "random",
+        "topicDependent": false,
+        "counterReset": false,
+        "msgKeyField": "payload",
+        "undefinedHash": false,
+        "outputsInfo": [
+            {
+                "active": true,
+                "clone": false,
+                "delay": "0",
+                "weight": "0"
+            },
+            {
+                "active": true,
+                "clone": false,
+                "delay": "0",
+                "weight": "0"
+            }
+        ],
+        "name": "",
+        "delaying": "unrelated",
+        "msgControl": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 680,
+        "wires": [
+            [
+                "525c7330.cfc8bc"
+            ],
+            [
+                "2debff11.0a79c"
+            ]
+        ]
+    },
+    {
+        "id": "3de6e899.554558",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "ce857d5b.31bc4"
+            ]
+        ]
+    },
+    {
+        "id": "525c7330.cfc8bc",
+        "type": "debug",
+        "z": "94360486.e11da8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2debff11.0a79c",
+        "type": "debug",
+        "z": "94360486.e11da8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 720,
+        "wires": []
     }
 ]
