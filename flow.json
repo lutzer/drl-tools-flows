@@ -7,9 +7,9 @@
         "info": ""
     },
     {
-        "id": "7bc0be6b.6417e",
+        "id": "c07a1be8.659658",
         "type": "tab",
-        "label": "Main",
+        "label": "Test2",
         "disabled": false,
         "info": ""
     },
@@ -39,8 +39,8 @@
         ],
         "out": [
             {
-                "x": 1200,
-                "y": 120,
+                "x": 1340,
+                "y": 60,
                 "wires": [
                     {
                         "id": "f8c7b0b1.b8edd",
@@ -49,8 +49,8 @@
                 ]
             },
             {
-                "x": 1200,
-                "y": 60,
+                "x": 1340,
+                "y": 120,
                 "wires": [
                     {
                         "id": "a068987f.813c98",
@@ -97,11 +97,19 @@
         ],
         "icon": "font-awesome/fa-microphone",
         "status": {
-            "x": 860,
-            "y": 380,
+            "x": 1340,
+            "y": 280,
             "wires": [
                 {
-                    "id": "7642a21c.6cc54c",
+                    "id": "72f194da.35b22c",
+                    "port": 0
+                },
+                {
+                    "id": "c28f3676.360ea8",
+                    "port": 0
+                },
+                {
+                    "id": "b1725466.c00e58",
                     "port": 0
                 }
             ]
@@ -187,7 +195,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 119,
+        "y": 99,
         "w": 1132,
         "h": 222
     },
@@ -298,6 +306,11 @@
         "h": 262
     },
     {
+        "id": "2badfbb6.d78804",
+        "type": "soundfile-directory",
+        "directory": "/Users/lutz/Projects/drl-tools/modules/speech-to-text/test"
+    },
+    {
         "id": "eb1e38c5.555ec8",
         "type": "say",
         "z": "94360486.e11da8",
@@ -395,130 +408,6 @@
         ]
     },
     {
-        "id": "27b9b027.c7e45",
-        "type": "delay",
-        "z": "94360486.e11da8",
-        "name": "delay",
-        "pauseType": "delayv",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 510,
-        "y": 480,
-        "wires": [
-            [
-                "947d5e27.b35ad"
-            ]
-        ]
-    },
-    {
-        "id": "dc01008f.6c0f7",
-        "type": "function",
-        "z": "94360486.e11da8",
-        "name": "randomize",
-        "func": "msg.delay =  2000 + Math.random() * 5000\nmsg.payload = Math.random() * 10\nmsg.topic = undefined\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 350,
-        "y": 480,
-        "wires": [
-            [
-                "27b9b027.c7e45"
-            ]
-        ]
-    },
-    {
-        "id": "e7a4c31a.f6238",
-        "type": "switch",
-        "z": "94360486.e11da8",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "3",
-                "vt": "str"
-            },
-            {
-                "t": "lt",
-                "v": "6",
-                "vt": "str"
-            },
-            {
-                "t": "lt",
-                "v": "10",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 810,
-        "y": 480,
-        "wires": [
-            [
-                "3a3f3c9c.12a844"
-            ],
-            [
-                "9a4c3f52.166"
-            ],
-            [
-                "a1634d66.69099"
-            ]
-        ]
-    },
-    {
-        "id": "3a3f3c9c.12a844",
-        "type": "say",
-        "z": "94360486.e11da8",
-        "name": "Kann ich dir einen lustigen Witz erzaehlen?",
-        "voice": "",
-        "x": 1110,
-        "y": 440,
-        "wires": [
-            [
-                "1ffa795e.b92317"
-            ]
-        ]
-    },
-    {
-        "id": "9a4c3f52.166",
-        "type": "say",
-        "z": "94360486.e11da8",
-        "name": "Ich wuenschte Herbert wuerde mehr reden",
-        "voice": "",
-        "x": 1110,
-        "y": 480,
-        "wires": [
-            [
-                "1ffa795e.b92317"
-            ]
-        ]
-    },
-    {
-        "id": "a1634d66.69099",
-        "type": "say",
-        "z": "94360486.e11da8",
-        "name": "Mir ist voll langweilig",
-        "voice": "",
-        "x": 1040,
-        "y": 520,
-        "wires": [
-            [
-                "1ffa795e.b92317"
-            ]
-        ]
-    },
-    {
         "id": "1ffa795e.b92317",
         "type": "link out",
         "z": "94360486.e11da8",
@@ -529,72 +418,6 @@
         "x": 1375,
         "y": 520,
         "wires": []
-    },
-    {
-        "id": "5297f838.cbc3b8",
-        "type": "link in",
-        "z": "94360486.e11da8",
-        "name": "",
-        "links": [
-            "1ffa795e.b92317"
-        ],
-        "x": 195,
-        "y": 420,
-        "wires": [
-            [
-                "dc01008f.6c0f7"
-            ]
-        ]
-    },
-    {
-        "id": "947d5e27.b35ad",
-        "type": "gate",
-        "z": "94360486.e11da8",
-        "name": "",
-        "controlTopic": "control",
-        "defaultState": "open",
-        "openCmd": "open",
-        "closeCmd": "close",
-        "toggleCmd": "toggle",
-        "defaultCmd": "default",
-        "statusCmd": "status",
-        "persist": false,
-        "x": 650,
-        "y": 480,
-        "wires": [
-            [
-                "e7a4c31a.f6238"
-            ]
-        ]
-    },
-    {
-        "id": "13a402fa.d4257d",
-        "type": "inject",
-        "z": "94360486.e11da8",
-        "name": "on/off",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "control",
-        "payload": "toggle",
-        "payloadType": "str",
-        "x": 490,
-        "y": 580,
-        "wires": [
-            [
-                "947d5e27.b35ad"
-            ]
-        ]
     },
     {
         "id": "cc9e0937.4b1308",
@@ -669,7 +492,7 @@
         "id": "c0df7363.1c449",
         "type": "exec",
         "z": "79d9afa4.2a85",
-        "command": "/Users/lutz/Projects/drl-tools/modules/speech-to-text/.venv/bin/python /Users/lutz/Projects/drl-tools/modules/speech-to-text/record.py",
+        "command": "stt_record",
         "addpay": true,
         "append": "",
         "useSpawn": "true",
@@ -682,31 +505,11 @@
             [
                 "a068987f.813c98"
             ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "5306cfe5.3d886",
-        "type": "inject",
-        "z": "7bc0be6b.6417e",
-        "name": "Wakeup Button",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 260,
-        "y": 300,
-        "wires": [
             [
-                "79a6f3c5.e0b56c"
+                "b1725466.c00e58"
+            ],
+            [
+                "230ebf7e.956d1"
             ]
         ]
     },
@@ -725,7 +528,7 @@
         "wires": [
             [
                 "f8c7b0b1.b8edd",
-                "230ebf7e.956d1"
+                "c28f3676.360ea8"
             ]
         ]
     },
@@ -748,70 +551,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 120,
+        "x": 1080,
+        "y": 60,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "79a6f3c5.e0b56c",
-        "type": "subflow:79d9afa4.2a85",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "env": [
-            {
-                "name": "timeout",
-                "value": "0",
-                "type": "num"
-            },
-            {
-                "name": "duration",
-                "value": "5",
-                "type": "num"
-            }
-        ],
-        "x": 500,
-        "y": 300,
-        "wires": [
-            [
-                "6341cd0d.f76864"
-            ],
-            [
-                "9570942e.fe1a78"
-            ]
-        ]
-    },
-    {
-        "id": "7642a21c.6cc54c",
-        "type": "status",
-        "z": "79d9afa4.2a85",
-        "name": "",
-        "scope": [
-            "c0df7363.1c449"
-        ],
-        "x": 480,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9570942e.fe1a78",
-        "type": "debug",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "1fcc4076.5ee39",
@@ -829,53 +573,6 @@
         "wires": [
             [],
             [],
-            []
-        ]
-    },
-    {
-        "id": "e5f1d6aa.65e168",
-        "type": "inject",
-        "z": "7bc0be6b.6417e",
-        "name": "Hallo wie geht es dir?",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "Hallo wie geht es dir?",
-        "payloadType": "str",
-        "x": 280,
-        "y": 540,
-        "wires": [
-            [
-                "cbfbd9d8.af8c48"
-            ]
-        ]
-    },
-    {
-        "id": "cbfbd9d8.af8c48",
-        "type": "subflow:ab8c8a6d.bb5358",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "env": [
-            {
-                "name": "engine",
-                "value": "google",
-                "type": "str"
-            }
-        ],
-        "x": 500,
-        "y": 540,
-        "wires": [
             []
         ]
     },
@@ -940,18 +637,6 @@
         ]
     },
     {
-        "id": "6341cd0d.f76864",
-        "type": "subflow:ab8c8a6d.bb5358",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "env": [],
-        "x": 760,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "2a0d725c.27289e",
         "type": "function",
         "z": "ab8c8a6d.bb5358",
@@ -968,67 +653,6 @@
                 "1fcc4076.5ee39"
             ]
         ]
-    },
-    {
-        "id": "168bec27.0902d4",
-        "type": "inject",
-        "z": "7bc0be6b.6417e",
-        "name": "Hallo wie geht es dir?",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "Hallo wie geht es dir?",
-        "payloadType": "str",
-        "x": 280,
-        "y": 640,
-        "wires": [
-            [
-                "bd7d2363.2e8fd"
-            ]
-        ]
-    },
-    {
-        "id": "bd7d2363.2e8fd",
-        "type": "subflow:ab8c8a6d.bb5358",
-        "z": "7bc0be6b.6417e",
-        "name": "",
-        "env": [],
-        "x": 500,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b835ed6f.4a836",
-        "type": "comment",
-        "z": "7bc0be6b.6417e",
-        "name": "google speech",
-        "info": "",
-        "x": 240,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "33fed1a0.291bee",
-        "type": "comment",
-        "z": "7bc0be6b.6417e",
-        "name": "mac say / linux festival",
-        "info": "",
-        "x": 260,
-        "y": 600,
-        "wires": []
     },
     {
         "id": "f807b4e5.fcbb28",
@@ -1154,7 +778,7 @@
         "name": "Hallo, willkommen im Museum.",
         "voice": "",
         "x": 710,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "81aed966.ebadd8"
@@ -1178,7 +802,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1020,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "6e155f41.5635b"
@@ -1193,7 +817,7 @@
         "name": "Vermisst du das Museum ueberhaupt?",
         "voice": "",
         "x": 1270,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "d15ad5bf.e12d78"
@@ -1614,7 +1238,7 @@
         "name": "welcome",
         "info": "",
         "x": 400,
-        "y": 160,
+        "y": 140,
         "wires": []
     },
     {
@@ -1659,105 +1283,6 @@
         "info": "",
         "x": 650,
         "y": 1060,
-        "wires": []
-    },
-    {
-        "id": "ce857d5b.31bc4",
-        "type": "msg-router",
-        "z": "94360486.e11da8",
-        "routerType": "random",
-        "topicDependent": false,
-        "counterReset": false,
-        "msgKeyField": "payload",
-        "undefinedHash": false,
-        "outputsInfo": [
-            {
-                "active": true,
-                "clone": false,
-                "delay": "0",
-                "weight": "0"
-            },
-            {
-                "active": true,
-                "clone": false,
-                "delay": "0",
-                "weight": "0"
-            }
-        ],
-        "name": "",
-        "delaying": "unrelated",
-        "msgControl": false,
-        "outputs": 2,
-        "x": 380,
-        "y": 680,
-        "wires": [
-            [
-                "525c7330.cfc8bc"
-            ],
-            [
-                "2debff11.0a79c"
-            ]
-        ]
-    },
-    {
-        "id": "3de6e899.554558",
-        "type": "inject",
-        "z": "94360486.e11da8",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 680,
-        "wires": [
-            [
-                "ce857d5b.31bc4"
-            ]
-        ]
-    },
-    {
-        "id": "525c7330.cfc8bc",
-        "type": "debug",
-        "z": "94360486.e11da8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "2debff11.0a79c",
-        "type": "debug",
-        "z": "94360486.e11da8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 590,
-        "y": 720,
         "wires": []
     },
     {
@@ -1914,7 +1439,7 @@
         "name": "",
         "outputs": 3,
         "x": 420,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "68fdf52d.1c99dc"
@@ -1935,7 +1460,7 @@
         "name": "Hallo, schön, dass du da bist",
         "voice": "",
         "x": 700,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "81aed966.ebadd8"
@@ -1950,7 +1475,7 @@
         "name": "Herzlich willkommen bei uns im Museum",
         "voice": "",
         "x": 740,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "81aed966.ebadd8"
@@ -1977,9 +1502,11 @@
         "to": "",
         "reg": false,
         "x": 460,
-        "y": 180,
+        "y": 320,
         "wires": [
-            []
+            [
+                "72f194da.35b22c"
+            ]
         ]
     },
     {
@@ -2027,8 +1554,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 180,
+        "x": 940,
+        "y": 380,
         "wires": [
             []
         ]
@@ -2042,7 +1569,9 @@
         "x": 470,
         "y": 360,
         "wires": [
-            [],
+            [
+                "1d420538.4b478b"
+            ],
             []
         ]
     },
@@ -2149,6 +1678,640 @@
         "wires": [
             [
                 "98bc2bf7.6ca018"
+            ]
+        ]
+    },
+    {
+        "id": "27b9b027.c7e45",
+        "type": "delay",
+        "z": "94360486.e11da8",
+        "name": "delay",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "947d5e27.b35ad"
+            ]
+        ]
+    },
+    {
+        "id": "dc01008f.6c0f7",
+        "type": "function",
+        "z": "94360486.e11da8",
+        "name": "randomize",
+        "func": "msg.delay =  2000 + Math.random() * 5000\nmsg.payload = Math.random() * 10\nmsg.topic = undefined\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 350,
+        "y": 480,
+        "wires": [
+            [
+                "27b9b027.c7e45"
+            ]
+        ]
+    },
+    {
+        "id": "e7a4c31a.f6238",
+        "type": "switch",
+        "z": "94360486.e11da8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "lt",
+                "v": "6",
+                "vt": "str"
+            },
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 810,
+        "y": 480,
+        "wires": [
+            [
+                "3a3f3c9c.12a844"
+            ],
+            [
+                "9a4c3f52.166"
+            ],
+            [
+                "a1634d66.69099"
+            ]
+        ]
+    },
+    {
+        "id": "3a3f3c9c.12a844",
+        "type": "say",
+        "z": "94360486.e11da8",
+        "name": "Kann ich dir einen lustigen Witz erzaehlen?",
+        "voice": "",
+        "x": 1110,
+        "y": 440,
+        "wires": [
+            [
+                "1ffa795e.b92317"
+            ]
+        ]
+    },
+    {
+        "id": "9a4c3f52.166",
+        "type": "say",
+        "z": "94360486.e11da8",
+        "name": "Ich wuenschte Herbert wuerde mehr reden",
+        "voice": "",
+        "x": 1110,
+        "y": 480,
+        "wires": [
+            [
+                "1ffa795e.b92317"
+            ]
+        ]
+    },
+    {
+        "id": "a1634d66.69099",
+        "type": "say",
+        "z": "94360486.e11da8",
+        "name": "Mir ist voll langweilig",
+        "voice": "",
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            [
+                "1ffa795e.b92317"
+            ]
+        ]
+    },
+    {
+        "id": "5297f838.cbc3b8",
+        "type": "link in",
+        "z": "94360486.e11da8",
+        "name": "",
+        "links": [
+            "1ffa795e.b92317"
+        ],
+        "x": 195,
+        "y": 420,
+        "wires": [
+            [
+                "dc01008f.6c0f7"
+            ]
+        ]
+    },
+    {
+        "id": "13a402fa.d4257d",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "on/off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "control",
+        "payload": "toggle",
+        "payloadType": "str",
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "947d5e27.b35ad"
+            ]
+        ]
+    },
+    {
+        "id": "947d5e27.b35ad",
+        "type": "gate",
+        "z": "94360486.e11da8",
+        "name": "",
+        "controlTopic": "control",
+        "defaultState": "open",
+        "openCmd": "open",
+        "closeCmd": "close",
+        "toggleCmd": "toggle",
+        "defaultCmd": "default",
+        "statusCmd": "status",
+        "persist": false,
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "e7a4c31a.f6238"
+            ]
+        ]
+    },
+    {
+        "id": "72f194da.35b22c",
+        "type": "change",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"text\" : \"recording\", \"fill\" : \"green\", \"shape\" : \"dot\"}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "fill",
+                "pt": "msg",
+                "to": "blue",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c28f3676.360ea8",
+        "type": "change",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f91ec4b1.a88f28",
+        "type": "inject",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "c28f3676.360ea8"
+            ]
+        ]
+    },
+    {
+        "id": "dd9c7f2e.6ab36",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "91656406.08cdf8"
+            ]
+        ]
+    },
+    {
+        "id": "1d420538.4b478b",
+        "type": "debug",
+        "z": "94360486.e11da8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b1725466.c00e58",
+        "type": "change",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"text\" : \"error\", \"fill\" : \"red\", \"shape\" : \"dot\"}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "fill",
+                "pt": "msg",
+                "to": "blue",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e838e9c.154ff18",
+        "type": "function",
+        "z": "94360486.e11da8",
+        "name": "",
+        "func": "console.log(RED.settings)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 390,
+        "y": 700,
+        "wires": [
+            [
+                "a8d4c1a0.737b1"
+            ]
+        ]
+    },
+    {
+        "id": "3e557506.36874a",
+        "type": "inject",
+        "z": "94360486.e11da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 700,
+        "wires": [
+            [
+                "e838e9c.154ff18"
+            ]
+        ]
+    },
+    {
+        "id": "a8d4c1a0.737b1",
+        "type": "debug",
+        "z": "94360486.e11da8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "790c91f7.4e21e",
+        "type": "debug",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d38ad459.f5ac28",
+        "type": "play-soundfile",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "directory": "2badfbb6.d78804",
+        "file": "test-en.wav",
+        "allow_multiple": false,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "790c91f7.4e21e"
+            ]
+        ]
+    },
+    {
+        "id": "33ac8fa2.56ca4",
+        "type": "inject",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "d38ad459.f5ac28",
+                "3711b916.665f26"
+            ]
+        ]
+    },
+    {
+        "id": "3711b916.665f26",
+        "type": "play-soundfile",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "directory": "2badfbb6.d78804",
+        "file": "test-de.wav",
+        "allow_multiple": true,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "790c91f7.4e21e"
+            ]
+        ]
+    },
+    {
+        "id": "5504dc97.6a4e04",
+        "type": "inject",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "stop",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "d38ad459.f5ac28",
+                "3711b916.665f26"
+            ]
+        ]
+    },
+    {
+        "id": "3d0f4fdf.d2074",
+        "type": "exec",
+        "z": "c07a1be8.659658",
+        "command": "stt_record --timeout 2",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "record",
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "52e13835.252ff8"
+            ],
+            [
+                "52e13835.252ff8"
+            ],
+            [
+                "52e13835.252ff8"
+            ]
+        ]
+    },
+    {
+        "id": "80486cec.23fb1",
+        "type": "inject",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "3d0f4fdf.d2074"
+            ]
+        ]
+    },
+    {
+        "id": "52e13835.252ff8",
+        "type": "debug",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b515cb24.e1da58",
+        "type": "change",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "recording",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5d6f789.294058",
+        "type": "inject",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "b515cb24.e1da58"
             ]
         ]
     }
