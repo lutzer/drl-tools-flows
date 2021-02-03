@@ -28,8 +28,8 @@
         "category": "tools",
         "in": [
             {
-                "x": 60,
-                "y": 120,
+                "x": 20,
+                "y": 220,
                 "wires": [
                     {
                         "id": "ec9075e3.0481e8"
@@ -39,8 +39,8 @@
         ],
         "out": [
             {
-                "x": 1340,
-                "y": 60,
+                "x": 1300,
+                "y": 160,
                 "wires": [
                     {
                         "id": "f8c7b0b1.b8edd",
@@ -49,8 +49,8 @@
                 ]
             },
             {
-                "x": 1340,
-                "y": 120,
+                "x": 1300,
+                "y": 220,
                 "wires": [
                     {
                         "id": "a068987f.813c98",
@@ -88,6 +88,11 @@
                 "ui": {
                     "type": "spinner"
                 }
+            },
+            {
+                "name": "play_beep",
+                "type": "bool",
+                "value": "true"
             }
         ],
         "color": "#FFAAAA",
@@ -97,8 +102,8 @@
         ],
         "icon": "font-awesome/fa-microphone",
         "status": {
-            "x": 1340,
-            "y": 280,
+            "x": 1300,
+            "y": 380,
             "wires": [
                 {
                     "id": "72f194da.35b22c",
@@ -306,7 +311,12 @@
         "h": 262
     },
     {
-        "id": "2badfbb6.d78804",
+        "id": "c531aa1.9af8558",
+        "type": "soundfile-directory",
+        "directory": "sounds"
+    },
+    {
+        "id": "f0c6baff.ba8948",
         "type": "soundfile-directory",
         "directory": "/Users/lutz/Projects/drl-tools/modules/speech-to-text/test"
     },
@@ -499,8 +509,8 @@
         "timer": "",
         "oldrc": false,
         "name": "record",
-        "x": 710,
-        "y": 120,
+        "x": 670,
+        "y": 220,
         "wires": [
             [
                 "a068987f.813c98"
@@ -509,7 +519,8 @@
                 "b1725466.c00e58"
             ],
             [
-                "230ebf7e.956d1"
+                "230ebf7e.956d1",
+                "f7d85c88.15f84"
             ]
         ]
     },
@@ -523,8 +534,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 860,
-        "y": 120,
+        "x": 840,
+        "y": 220,
         "wires": [
             [
                 "f8c7b0b1.b8edd",
@@ -551,8 +562,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 60,
+        "x": 1040,
+        "y": 160,
         "wires": [
             []
         ]
@@ -697,26 +708,6 @@
         "wires": []
     },
     {
-        "id": "42572f47.fd982",
-        "type": "fuzzy-match",
-        "z": "94360486.e11da8",
-        "name": "",
-        "choices": "yes:Peter\nyes:Peter test\nno:ich glaube peter testet\nno:Aha testen",
-        "scorer": "WRatio",
-        "limit": "0",
-        "cutoff": "0",
-        "x": 370,
-        "y": 940,
-        "wires": [
-            [
-                "19cf1cef.d8cee3"
-            ],
-            [
-                "4f7c10f1.f6a3c"
-            ]
-        ]
-    },
-    {
         "id": "69d2de65.2bad4",
         "type": "inject",
         "z": "94360486.e11da8",
@@ -850,31 +841,12 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 490,
-        "y": 120,
+        "x": 450,
+        "y": 220,
         "wires": [
             [
                 "c0df7363.1c449"
             ]
-        ]
-    },
-    {
-        "id": "3cfe07d8.4c92d8",
-        "type": "fuzzy-match",
-        "z": "29928cb0.ddef64",
-        "g": "a8081aca.df57b8",
-        "name": "recognize yes/no",
-        "choices": "yes:Ja * vermisse es\nyes:Ja\nyes:aufjedenfall\nyes:Manchmal schon\nyes:schon\nyes:ja sehr\nno:nein\nno:* vermisse es nicht\nno:* langweilig\nno:nee\nno:nein überhaupt nicht",
-        "scorer": "WRatio",
-        "limit": "0",
-        "cutoff": "50",
-        "x": 850,
-        "y": 500,
-        "wires": [
-            [
-                "4341ba2b.f38f84"
-            ],
-            []
         ]
     },
     {
@@ -1501,8 +1473,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 320,
+        "x": 420,
+        "y": 420,
         "wires": [
             [
                 "72f194da.35b22c"
@@ -1526,12 +1498,13 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 210,
-        "y": 120,
+        "x": 170,
+        "y": 220,
         "wires": [
             [
                 "5cc4d2eb.79c9bc",
-                "b91276d7.64be98"
+                "b91276d7.64be98",
+                "f7d85c88.15f84"
             ]
         ]
     },
@@ -1554,8 +1527,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
-        "y": 380,
+        "x": 900,
+        "y": 480,
         "wires": [
             []
         ]
@@ -1883,13 +1856,6 @@
                 "pt": "msg",
                 "to": "{ \"text\" : \"recording\", \"fill\" : \"green\", \"shape\" : \"dot\"}",
                 "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "fill",
-                "pt": "msg",
-                "to": "blue",
-                "tot": "str"
             }
         ],
         "action": "",
@@ -1897,8 +1863,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 320,
+        "x": 1040,
+        "y": 420,
         "wires": [
             []
         ]
@@ -1922,8 +1888,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 240,
+        "x": 1040,
+        "y": 340,
         "wires": [
             []
         ]
@@ -1949,8 +1915,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 240,
+        "x": 90,
+        "y": 340,
         "wires": [
             [
                 "c28f3676.360ea8"
@@ -2014,13 +1980,6 @@
                 "pt": "msg",
                 "to": "{ \"text\" : \"error\", \"fill\" : \"red\", \"shape\" : \"dot\"}",
                 "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "fill",
-                "pt": "msg",
-                "to": "blue",
-                "tot": "str"
             }
         ],
         "action": "",
@@ -2028,8 +1987,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 280,
+        "x": 1040,
+        "y": 380,
         "wires": [
             []
         ]
@@ -2115,22 +2074,6 @@
         "wires": []
     },
     {
-        "id": "d38ad459.f5ac28",
-        "type": "play-soundfile",
-        "z": "c07a1be8.659658",
-        "name": "",
-        "directory": "2badfbb6.d78804",
-        "file": "test-en.wav",
-        "allow_multiple": false,
-        "x": 390,
-        "y": 280,
-        "wires": [
-            [
-                "790c91f7.4e21e"
-            ]
-        ]
-    },
-    {
         "id": "33ac8fa2.56ca4",
         "type": "inject",
         "z": "c07a1be8.659658",
@@ -2145,24 +2088,7 @@
         "y": 340,
         "wires": [
             [
-                "d38ad459.f5ac28",
-                "3711b916.665f26"
-            ]
-        ]
-    },
-    {
-        "id": "3711b916.665f26",
-        "type": "play-soundfile",
-        "z": "c07a1be8.659658",
-        "name": "",
-        "directory": "2badfbb6.d78804",
-        "file": "test-de.wav",
-        "allow_multiple": true,
-        "x": 390,
-        "y": 340,
-        "wires": [
-            [
-                "790c91f7.4e21e"
+                "d38ad459.f5ac28"
             ]
         ]
     },
@@ -2186,8 +2112,7 @@
         "y": 280,
         "wires": [
             [
-                "d38ad459.f5ac28",
-                "3711b916.665f26"
+                "d38ad459.f5ac28"
             ]
         ]
     },
@@ -2257,37 +2182,12 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 120,
+        "x": 550,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "b515cb24.e1da58",
-        "type": "change",
-        "z": "c07a1be8.659658",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "recording",
-                "pt": "global",
-                "to": "false",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 370,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c5d6f789.294058",
+        "id": "256f0ec7.e7c3b2",
         "type": "inject",
         "z": "c07a1be8.659658",
         "name": "",
@@ -2307,12 +2207,121 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
+        "x": 340,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "541c13f2.39182c",
+        "type": "debug",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "42572f47.fd982",
+        "type": "fuzzy-match",
+        "z": "94360486.e11da8",
+        "name": "",
+        "choices": "yes:Peter\nyes:Peter test\nno:ich glaube peter testet\nno:Aha testen",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "19cf1cef.d8cee3"
+            ],
+            [
+                "4f7c10f1.f6a3c"
+            ]
+        ]
+    },
+    {
+        "id": "3cfe07d8.4c92d8",
+        "type": "fuzzy-match",
+        "z": "29928cb0.ddef64",
+        "g": "a8081aca.df57b8",
+        "name": "recognize yes/no",
+        "choices": "yes:Ja * vermisse es\nyes:Ja\nyes:aufjedenfall\nyes:Manchmal schon\nyes:schon\nyes:ja sehr\nno:nein\nno:* vermisse es nicht\nno:* langweilig\nno:nee\nno:nein überhaupt nicht",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "50",
+        "x": 850,
         "y": 500,
         "wires": [
             [
-                "b515cb24.e1da58"
+                "4341ba2b.f38f84"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d38ad459.f5ac28",
+        "type": "play-soundfile",
+        "z": "c07a1be8.659658",
+        "name": "",
+        "directory": "f0c6baff.ba8948",
+        "file": "test-de.wav",
+        "allow_multiple": false,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "790c91f7.4e21e"
             ]
+        ]
+    },
+    {
+        "id": "f7d85c88.15f84",
+        "type": "switch",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "property": "play_beep",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 80,
+        "wires": [
+            [
+                "d2c2ccf7.555df"
+            ]
+        ]
+    },
+    {
+        "id": "d2c2ccf7.555df",
+        "type": "play-soundfile",
+        "z": "79d9afa4.2a85",
+        "name": "",
+        "directory": "c531aa1.9af8558",
+        "file": "beep.wav",
+        "allow_multiple": false,
+        "x": 1020,
+        "y": 80,
+        "wires": [
+            []
         ]
     }
 ]
