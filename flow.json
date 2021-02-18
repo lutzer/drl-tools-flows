@@ -14,6 +14,13 @@
         "info": ""
     },
     {
+        "id": "4a06756c.fb29bc",
+        "type": "tab",
+        "label": "Futurium",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "5fecfc4e.735094",
         "type": "tab",
         "label": "Test",
@@ -224,9 +231,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -250,9 +255,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -278,9 +281,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -303,9 +304,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -330,9 +329,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -343,6 +340,11 @@
         "id": "f0c6baff.ba8948",
         "type": "soundfile-directory",
         "directory": "/Users/lutz/Desktop/kiezgeschichten-dialog/rebecca"
+    },
+    {
+        "id": "113bba6b.b1a796",
+        "type": "soundfile-directory",
+        "directory": "/Users/lutz/test"
     },
     {
         "id": "c0df7363.1c449",
@@ -547,8 +549,6 @@
         "g": "98284da6.430f8",
         "name": "Hallo, willkommen im Museum.",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 710,
         "y": 200,
         "wires": [
@@ -588,8 +588,6 @@
         "g": "98284da6.430f8",
         "name": "Vermisst du das Museum ueberhaupt?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 1270,
         "y": 240,
         "wires": [
@@ -679,8 +677,6 @@
         "g": "fec5c43f.4caea8",
         "name": "Das freut mich. Ich bin auch gerne hier.",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 680,
         "y": 700,
         "wires": [
@@ -696,8 +692,6 @@
         "g": "fec5c43f.4caea8",
         "name": "Du findest es also langweilig hier?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 660,
         "y": 740,
         "wires": [
@@ -713,8 +707,6 @@
         "g": "fec5c43f.4caea8",
         "name": "Ich habe dich leider nicht verstanden",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 670,
         "y": 780,
         "wires": [
@@ -760,8 +752,6 @@
         "g": "a8081aca.df57b8",
         "name": "Du hast ja gar nichts gesagt.",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 880,
         "y": 440,
         "wires": [
@@ -799,8 +789,6 @@
         "g": "7f6892dc.4d798c",
         "name": "was müsste es denn hier geben damit du ins museum gehen willst?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 1340,
         "y": 740,
         "wires": [
@@ -863,8 +851,6 @@
         "g": "7f6892dc.4d798c",
         "name": "Vermisst du denn trotzdem irgendwas am Museum?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 1380,
         "y": 700,
         "wires": [
@@ -904,8 +890,6 @@
         "g": "7f6892dc.4d798c",
         "name": "Was hältst du denn von Museum?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 1440,
         "y": 780,
         "wires": [
@@ -939,8 +923,6 @@
         "g": "bc4a0f7b.4ef6f",
         "name": "Danke fuer deine Antwort. Ich hoffe wir sprechen uns bald wieder.",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 1020,
         "y": 1020,
         "wires": [
@@ -984,8 +966,6 @@
         "g": "bc4a0f7b.4ef6f",
         "name": "Na, vielleicht fällt dir ja spaeter noch etwas ein.",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 960,
         "y": 980,
         "wires": [
@@ -1086,8 +1066,6 @@
         "g": "98284da6.430f8",
         "name": "Hallo, schön, dass du da bist",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 700,
         "y": 240,
         "wires": [
@@ -1103,8 +1081,6 @@
         "g": "98284da6.430f8",
         "name": "Herzlich willkommen bei uns im Museum",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "",
         "x": 740,
         "y": 280,
         "wires": [
@@ -2281,8 +2257,6 @@
         "z": "5fecfc4e.735094",
         "name": "Hi, wie gehts dir?",
         "voice": ":",
-        "voiceString": "Anna",
-        "speed": "1",
         "x": 400,
         "y": 120,
         "wires": [
@@ -2468,6 +2442,834 @@
         "wires": [
             [
                 "91d4f892.f42ff8"
+            ]
+        ]
+    },
+    {
+        "id": "91752b72.02cba8",
+        "type": "inject",
+        "z": "4a06756c.fb29bc",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "223d2bf4.4932b4"
+            ]
+        ]
+    },
+    {
+        "id": "223d2bf4.4932b4",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "01_hallo.aif",
+        "allow_multiple": false,
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "9c89a05f.e7694"
+            ]
+        ]
+    },
+    {
+        "id": "9c89a05f.e7694",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 990,
+        "y": 200,
+        "wires": [
+            [
+                "a7799a33.f32428"
+            ]
+        ]
+    },
+    {
+        "id": "a7799a33.f32428",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "02_datenschutz.aif",
+        "allow_multiple": false,
+        "x": 1330,
+        "y": 200,
+        "wires": [
+            [
+                "354b8c1e.420bb4"
+            ]
+        ]
+    },
+    {
+        "id": "354b8c1e.420bb4",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 1520,
+        "y": 200,
+        "wires": [
+            [
+                "3df70560.4cbdba"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3df70560.4cbdba",
+        "type": "fuzzy-match",
+        "z": "4a06756c.fb29bc",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "30",
+        "x": 1730,
+        "y": 200,
+        "wires": [
+            [
+                "d0a467f9.26d9e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4eaed88c.d5fc58",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Begrüssung",
+        "info": "",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ae6fabba.be2ff8",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Datenschutz Frage",
+        "info": "",
+        "x": 1330,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6b3e7318.93a25c",
+        "type": "switch",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "property": "payload.key",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2290,
+        "y": 200,
+        "wires": [
+            [
+                "d5e84c21.9e042"
+            ],
+            [
+                "3a8f010f.e6ccee"
+            ]
+        ]
+    },
+    {
+        "id": "d5e84c21.9e042",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "03_startfrage.aif",
+        "allow_multiple": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "78acd09c.97a66"
+            ]
+        ]
+    },
+    {
+        "id": "7a68758a.01c34c",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Datenschutz Ja / Geschichte",
+        "info": "",
+        "x": 800,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3a8f010f.e6ccee",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "11_datenschutz_nein.aif",
+        "allow_multiple": false,
+        "x": 2510,
+        "y": 660,
+        "wires": [
+            [
+                "939a061a.661e88"
+            ]
+        ]
+    },
+    {
+        "id": "5edf2052.64a29",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 2150,
+        "y": 200,
+        "wires": [
+            [
+                "6b3e7318.93a25c"
+            ]
+        ]
+    },
+    {
+        "id": "687bc218.ef272c",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Datenschutz Nein",
+        "info": "",
+        "x": 2490,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "78acd09c.97a66",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 960,
+        "y": 420,
+        "wires": [
+            [
+                "2e1e323f.d7290e"
+            ]
+        ]
+    },
+    {
+        "id": "2fa7c47f.b2154c",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "04_frage1_ja.aif",
+        "allow_multiple": false,
+        "x": 760,
+        "y": 560,
+        "wires": [
+            [
+                "8cb50038.d81af"
+            ]
+        ]
+    },
+    {
+        "id": "bf20ebd0.988888",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Wo engagieren?",
+        "info": "",
+        "x": 760,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8cb50038.d81af",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 980,
+        "y": 560,
+        "wires": [
+            [
+                "af386139.abee1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "af386139.abee1",
+        "type": "change",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "answer1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            [
+                "10fabef5.aba741"
+            ]
+        ]
+    },
+    {
+        "id": "ae06731b.68017",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "06_frage2.aif",
+        "allow_multiple": false,
+        "x": 750,
+        "y": 700,
+        "wires": [
+            [
+                "6d735572.e8dcec"
+            ]
+        ]
+    },
+    {
+        "id": "c4a2a98b.74d388",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Wo hast du dich schonmal engagiert?",
+        "info": "",
+        "x": 830,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "10fabef5.aba741",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1370,
+        "y": 560,
+        "wires": [
+            [
+                "ae06731b.68017"
+            ]
+        ]
+    },
+    {
+        "id": "6d735572.e8dcec",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 960,
+        "y": 700,
+        "wires": [
+            [
+                "3c9c1082.eeefa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3c9c1082.eeefa",
+        "type": "change",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "answer2",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1170,
+        "y": 700,
+        "wires": [
+            [
+                "3f62c0dd.dbf8e"
+            ]
+        ]
+    },
+    {
+        "id": "3f62c0dd.dbf8e",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1350,
+        "y": 700,
+        "wires": [
+            [
+                "a397d564.f61628"
+            ]
+        ]
+    },
+    {
+        "id": "2eb9ca5b.5f7e16",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Danke",
+        "info": "",
+        "x": 730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a397d564.f61628",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "08_danke_geschichte.aif",
+        "allow_multiple": false,
+        "x": 790,
+        "y": 800,
+        "wires": [
+            [
+                "584b8fab.7360c"
+            ]
+        ]
+    },
+    {
+        "id": "584b8fab.7360c",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 990,
+        "y": 800,
+        "wires": [
+            [
+                "939a061a.661e88"
+            ]
+        ]
+    },
+    {
+        "id": "939a061a.661e88",
+        "type": "subflow:79d9afa4.2a85",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 2480,
+        "y": 800,
+        "wires": [
+            [
+                "55b19002.b79aa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "55b19002.b79aa",
+        "type": "fuzzy-match",
+        "z": "4a06756c.fb29bc",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:gerne\nyes:ja bitte\nyes:gerne\nyes:klar\nno:nein\nno:heute nicht\nno:will ich nicht\nno:moechte ich nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "30",
+        "x": 2690,
+        "y": 800,
+        "wires": [
+            [
+                "a131fc76.02f68"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d773b97.ac25d48",
+        "type": "switch",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "property": "payload.key",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 3050,
+        "y": 800,
+        "wires": [
+            [
+                "c6fcb53c.ad68d8"
+            ],
+            [
+                "c6fcb53c.ad68d8"
+            ],
+            [
+                "c6fcb53c.ad68d8"
+            ]
+        ]
+    },
+    {
+        "id": "c6fcb53c.ad68d8",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "f0c6baff.ba8948",
+        "file": "10_danke_tschuess.aif",
+        "allow_multiple": false,
+        "x": 3260,
+        "y": 800,
+        "wires": [
+            [
+                "4b47c22f.d3746c"
+            ]
+        ]
+    },
+    {
+        "id": "c562d61e.0d17a8",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Moechtest du eine Stimme hoeren?",
+        "info": "",
+        "x": 2540,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "3199c064.ddabb",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 3240,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f7292713.8bc008",
+        "type": "inject",
+        "z": "4a06756c.fb29bc",
+        "name": "reset",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "9533224b.d3687"
+            ]
+        ]
+    },
+    {
+        "id": "9533224b.d3687",
+        "type": "change",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "recording",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2883541.617a28",
+        "type": "file",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "filename": "/Users/lutz/Desktop/kiezgeschichten-dialog/answers.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2950,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e03c8f6f.2f2a8",
+        "type": "template",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "time: {{time}}; select1: {{select1.key}}; select2: {{select2.key}}; answer1: {{answer1}}; answer2: {{answer2}}",
+        "output": "str",
+        "x": 2640,
+        "y": 940,
+        "wires": [
+            [
+                "c2883541.617a28"
+            ]
+        ]
+    },
+    {
+        "id": "a0b31b04.6ead78",
+        "type": "comment",
+        "z": "4a06756c.fb29bc",
+        "name": "In datei speichern",
+        "info": "",
+        "x": 2490,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "d0a467f9.26d9e8",
+        "type": "change",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "select1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1960,
+        "y": 200,
+        "wires": [
+            [
+                "5edf2052.64a29"
+            ]
+        ]
+    },
+    {
+        "id": "4b47c22f.d3746c",
+        "type": "change",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2470,
+        "y": 940,
+        "wires": [
+            [
+                "e03c8f6f.2f2a8"
+            ]
+        ]
+    },
+    {
+        "id": "a131fc76.02f68",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 2890,
+        "y": 800,
+        "wires": [
+            [
+                "d773b97.ac25d48"
+            ]
+        ]
+    },
+    {
+        "id": "2e1e323f.d7290e",
+        "type": "play-soundfile",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "03_startfrage.aif",
+        "allow_multiple": false,
+        "x": 1160,
+        "y": 420,
+        "wires": [
+            [
+                "c173b418.e7ca48"
+            ]
+        ]
+    },
+    {
+        "id": "c173b418.e7ca48",
+        "type": "delay",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1340,
+        "y": 420,
+        "wires": [
+            [
+                "2fa7c47f.b2154c"
             ]
         ]
     }
