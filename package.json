@@ -3,7 +3,7 @@
     "description": "A Node-RED Project",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-contrib-say": "^0.1.1",
+        "node-red-contrib-say": "https://github.com/lutzer/node-red-contrib-say.git",
         "node-red-contrib-simple-gate": "^0.4.0",
         "node-red-contrib-fuzzywuzzy": "^0.2.0",
         "node-red-contrib-random-output": "^0.0.1",

@@ -354,7 +354,7 @@
     {
         "id": "113bba6b.b1a796",
         "type": "soundfile-directory",
-        "directory": "/Users/lutz/Desktop/futurium-dialog"
+        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
     },
     {
         "id": "c0df7363.1c449",
@@ -557,8 +557,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "98284da6.430f8",
-        "name": "Hallo, willkommen im Museum.",
+        "name": "",
+        "text": "Hallo, willkommen im Museum.",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 710,
         "y": 200,
         "wires": [
@@ -596,8 +599,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "98284da6.430f8",
-        "name": "Vermisst du das Museum ueberhaupt?",
+        "name": "",
+        "text": "Vermisst du das Museum ueberhaupt?",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 1270,
         "y": 240,
         "wires": [
@@ -685,8 +691,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "fec5c43f.4caea8",
-        "name": "Das freut mich. Ich bin auch gerne hier.",
+        "name": "",
+        "text": "Das freut mich. Ich bin auch gerne hier.",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 680,
         "y": 700,
         "wires": [
@@ -700,8 +709,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "fec5c43f.4caea8",
-        "name": "Du findest es also langweilig hier?",
+        "name": "",
+        "text": "Du findest es also langweilig hier?",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 660,
         "y": 740,
         "wires": [
@@ -715,8 +727,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "fec5c43f.4caea8",
-        "name": "Ich habe dich leider nicht verstanden",
+        "name": "",
+        "text": "Ich habe dich leider nicht verstanden",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 670,
         "y": 780,
         "wires": [
@@ -760,8 +775,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "a8081aca.df57b8",
-        "name": "Du hast ja gar nichts gesagt.",
+        "name": "",
+        "text": "Du hast ja gar nichts gesagt.",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 880,
         "y": 440,
         "wires": [
@@ -797,8 +815,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "7f6892dc.4d798c",
-        "name": "was müsste es denn hier geben damit du ins museum gehen willst?",
+        "name": "",
+        "text": "was müsste es denn hier geben damit du ins museum gehen willst?",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 1340,
         "y": 740,
         "wires": [
@@ -859,8 +880,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "7f6892dc.4d798c",
-        "name": "Vermisst du denn trotzdem irgendwas am Museum?",
+        "name": "",
+        "text": "Vermisst du denn trotzdem irgendwas am Museum?",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 1380,
         "y": 700,
         "wires": [
@@ -898,8 +922,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "7f6892dc.4d798c",
-        "name": "Was hältst du denn von Museum?",
+        "name": "",
+        "text": "Was hältst du denn von Museum?",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 1440,
         "y": 780,
         "wires": [
@@ -931,8 +958,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "bc4a0f7b.4ef6f",
-        "name": "Danke fuer deine Antwort. Ich hoffe wir sprechen uns bald wieder.",
+        "name": "",
+        "text": "Danke fuer deine Antwort. Ich hoffe wir sprechen uns bald wieder.",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 1020,
         "y": 1020,
         "wires": [
@@ -974,8 +1004,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "bc4a0f7b.4ef6f",
-        "name": "Na, vielleicht fällt dir ja spaeter noch etwas ein.",
+        "name": "",
+        "text": "Na, vielleicht fällt dir ja spaeter noch etwas ein.",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 960,
         "y": 980,
         "wires": [
@@ -1074,8 +1107,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "98284da6.430f8",
-        "name": "Hallo, schön, dass du da bist",
+        "name": "",
+        "text": "Hallo, schön, dass du da bist",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 700,
         "y": 240,
         "wires": [
@@ -1089,8 +1125,11 @@
         "type": "say",
         "z": "29928cb0.ddef64",
         "g": "98284da6.430f8",
-        "name": "Herzlich willkommen bei uns im Museum",
+        "name": "",
+        "text": "Herzlich willkommen bei uns im Museum",
         "voice": ":",
+        "voiceString": "",
+        "speed": "",
         "x": 740,
         "y": 280,
         "wires": [
@@ -2262,47 +2301,6 @@
         ]
     },
     {
-        "id": "181b0e7.01d7ef2",
-        "type": "say",
-        "z": "5fecfc4e.735094",
-        "name": "Hi, wie gehts dir?",
-        "voice": ":",
-        "x": 400,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e0a2f459.777ee8",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 150,
-        "y": 120,
-        "wires": [
-            [
-                "181b0e7.01d7ef2"
-            ]
-        ]
-    },
-    {
         "id": "f3133d04.42bdf",
         "type": "subflow:79d9afa4.2a85",
         "z": "5fecfc4e.735094",
@@ -2315,35 +2313,6 @@
                 "519f3921.507f88"
             ],
             []
-        ]
-    },
-    {
-        "id": "32dd6bac.9ad9c4",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 200,
-        "wires": [
-            [
-                "f3133d04.42bdf"
-            ]
         ]
     },
     {
@@ -2631,7 +2600,7 @@
         "file": "03_seitDreiWochen.aif",
         "allow_multiple": false,
         "x": 400,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "78acd09c.97a66"
@@ -2645,7 +2614,7 @@
         "name": "Datenschutz Ja / Geschichte",
         "info": "",
         "x": 420,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
@@ -2656,8 +2625,8 @@
         "directory": "113bba6b.b1a796",
         "file": "09_Nein.aif",
         "allow_multiple": false,
-        "x": 2090,
-        "y": 660,
+        "x": 2070,
+        "y": 400,
         "wires": [
             [
                 "939a061a.661e88"
@@ -2693,8 +2662,8 @@
         "z": "4a06756c.fb29bc",
         "name": "Datenschutz Nein",
         "info": "",
-        "x": 2110,
-        "y": 620,
+        "x": 2090,
+        "y": 360,
         "wires": []
     },
     {
@@ -2712,8 +2681,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 580,
-        "y": 420,
+        "x": 600,
+        "y": 400,
         "wires": [
             [
                 "2e1e323f.d7290e"
@@ -2729,7 +2698,7 @@
         "file": "05_Frage1_deineMeinung.aif",
         "allow_multiple": false,
         "x": 420,
-        "y": 560,
+        "y": 540,
         "wires": [
             [
                 "8cb50038.d81af"
@@ -2743,7 +2712,7 @@
         "name": "Wo engagieren?",
         "info": "",
         "x": 380,
-        "y": 520,
+        "y": 500,
         "wires": []
     },
     {
@@ -2753,7 +2722,7 @@
         "name": "",
         "env": [],
         "x": 660,
-        "y": 560,
+        "y": 540,
         "wires": [
             [
                 "af386139.abee1"
@@ -2781,7 +2750,7 @@
         "to": "",
         "reg": false,
         "x": 870,
-        "y": 560,
+        "y": 540,
         "wires": [
             [
                 "10fabef5.aba741"
@@ -2797,7 +2766,7 @@
         "file": "06_Frage2_wofürEngagiert.aif",
         "allow_multiple": false,
         "x": 430,
-        "y": 700,
+        "y": 680,
         "wires": [
             [
                 "6d735572.e8dcec"
@@ -2811,7 +2780,7 @@
         "name": "Wo hast du dich schonmal engagiert?",
         "info": "",
         "x": 450,
-        "y": 660,
+        "y": 640,
         "wires": []
     },
     {
@@ -2830,7 +2799,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1050,
-        "y": 560,
+        "y": 540,
         "wires": [
             [
                 "ae06731b.68017"
@@ -2844,7 +2813,7 @@
         "name": "",
         "env": [],
         "x": 700,
-        "y": 700,
+        "y": 680,
         "wires": [
             [
                 "3c9c1082.eeefa"
@@ -2872,7 +2841,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 700,
+        "y": 680,
         "wires": [
             [
                 "3f62c0dd.dbf8e"
@@ -2895,7 +2864,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1110,
-        "y": 700,
+        "y": 680,
         "wires": [
             [
                 "a397d564.f61628"
@@ -2909,7 +2878,7 @@
         "name": "Danke",
         "info": "",
         "x": 350,
-        "y": 760,
+        "y": 780,
         "wires": []
     },
     {
@@ -2921,7 +2890,7 @@
         "file": "07_nochWeitereStimmen.aif",
         "allow_multiple": false,
         "x": 420,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "584b8fab.7360c"
@@ -2944,7 +2913,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 710,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "939a061a.661e88"
@@ -2964,7 +2933,7 @@
             }
         ],
         "x": 2100,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "55b19002.b79aa"
@@ -2983,7 +2952,7 @@
         "limit": "0",
         "cutoff": "30",
         "x": 2310,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "a131fc76.02f68"
@@ -3017,7 +2986,7 @@
         "repair": false,
         "outputs": 3,
         "x": 2670,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "c6fcb53c.ad68d8"
@@ -3035,11 +3004,11 @@
         "type": "play-soundfile",
         "z": "4a06756c.fb29bc",
         "name": "",
-        "directory": "f0c6baff.ba8948",
+        "directory": "113bba6b.b1a796",
         "file": "08_Verabschiedung.aif",
         "allow_multiple": false,
         "x": 2880,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "4b47c22f.d3746c"
@@ -3053,7 +3022,7 @@
         "name": "Moechtest du eine Stimme hoeren?",
         "info": "",
         "x": 2160,
-        "y": 760,
+        "y": 780,
         "wires": []
     },
     {
@@ -3063,7 +3032,7 @@
         "name": "Verabschiedung",
         "info": "",
         "x": 2860,
-        "y": 760,
+        "y": 780,
         "wires": []
     },
     {
@@ -3115,13 +3084,13 @@
         "type": "file",
         "z": "4a06756c.fb29bc",
         "name": "",
-        "filename": "/Users/lutz/Desktop/kiezgeschichten-dialog/answers.txt",
+        "filename": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 2570,
-        "y": 940,
+        "x": 2540,
+        "y": 960,
         "wires": [
             []
         ]
@@ -3138,7 +3107,7 @@
         "template": "time: {{time}}; select1: {{select1.key}}; select2: {{select2.key}}; answer1: {{answer1}}; answer2: {{answer2}}",
         "output": "str",
         "x": 2260,
-        "y": 940,
+        "y": 960,
         "wires": [
             [
                 "c2883541.617a28"
@@ -3152,7 +3121,7 @@
         "name": "In datei speichern",
         "info": "",
         "x": 2110,
-        "y": 900,
+        "y": 920,
         "wires": []
     },
     {
@@ -3202,7 +3171,7 @@
         "to": "",
         "reg": false,
         "x": 2090,
-        "y": 940,
+        "y": 960,
         "wires": [
             [
                 "e03c8f6f.2f2a8"
@@ -3225,7 +3194,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 2510,
-        "y": 800,
+        "y": 820,
         "wires": [
             [
                 "d773b97.ac25d48"
@@ -3241,7 +3210,7 @@
         "file": "04_Zitat.aif",
         "allow_multiple": false,
         "x": 770,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "c173b418.e7ca48"
@@ -3263,8 +3232,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 960,
-        "y": 420,
+        "x": 940,
+        "y": 400,
         "wires": [
             [
                 "2fa7c47f.b2154c"
