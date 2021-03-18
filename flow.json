@@ -3,21 +3,21 @@
         "id": "29928cb0.ddef64",
         "type": "tab",
         "label": "Example",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "6dbde5f0.a7aefc",
         "type": "tab",
         "label": "Kiezgeschichten",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "4a06756c.fb29bc",
         "type": "tab",
         "label": "Futurium",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -152,61 +152,36 @@
         }
     },
     {
-        "id": "ab8c8a6d.bb5358",
+        "id": "f161ee02.77c0d",
         "type": "subflow",
-        "name": "text to speech",
+        "name": "stereo-to-mono",
         "info": "",
-        "category": "",
+        "category": "tools",
         "in": [
             {
                 "x": 60,
                 "y": 80,
                 "wires": [
                     {
-                        "id": "7a9114e4.b7aa8c"
+                        "id": "c3c396b.e004868"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 760,
+                "x": 340,
                 "y": 80,
                 "wires": [
                     {
-                        "id": "1fcc4076.5ee39",
-                        "port": 2
-                    },
-                    {
-                        "id": "4a0da2a9.e2c17c",
+                        "id": "c3c396b.e004868",
                         "port": 0
                     }
                 ]
             }
         ],
-        "env": [
-            {
-                "name": "engine",
-                "type": "str",
-                "value": "say"
-            },
-            {
-                "name": "language",
-                "type": "str",
-                "value": "de"
-            }
-        ],
-        "color": "#DDAA99",
-        "status": {
-            "x": 440,
-            "y": 220,
-            "wires": [
-                {
-                    "id": "220ece7.5afd932",
-                    "port": 0
-                }
-            ]
-        }
+        "env": [],
+        "color": "#DDAA99"
     },
     {
         "id": "98284da6.430f8",
@@ -430,103 +405,6 @@
         "y": 160,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "1fcc4076.5ee39",
-        "type": "exec",
-        "z": "ab8c8a6d.bb5358",
-        "command": "/Users/lutz/Projects/drl-tools/modules/text-to-speech/.venv/bin/python /Users/lutz/Projects/drl-tools/modules/text-to-speech/speak.py",
-        "addpay": true,
-        "append": "",
-        "useSpawn": "true",
-        "timer": "",
-        "oldrc": false,
-        "name": "speak",
-        "x": 510,
-        "y": 80,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "220ece7.5afd932",
-        "type": "status",
-        "z": "ab8c8a6d.bb5358",
-        "name": "",
-        "scope": [
-            "1fcc4076.5ee39",
-            "4a0da2a9.e2c17c"
-        ],
-        "x": 210,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4a0da2a9.e2c17c",
-        "type": "say",
-        "z": "ab8c8a6d.bb5358",
-        "name": "",
-        "voice": "",
-        "x": 330,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7a9114e4.b7aa8c",
-        "type": "switch",
-        "z": "ab8c8a6d.bb5358",
-        "name": "",
-        "property": "engine",
-        "propertyType": "env",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "google",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "say",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 170,
-        "y": 80,
-        "wires": [
-            [
-                "2a0d725c.27289e"
-            ],
-            [
-                "4a0da2a9.e2c17c"
-            ]
-        ]
-    },
-    {
-        "id": "2a0d725c.27289e",
-        "type": "function",
-        "z": "ab8c8a6d.bb5358",
-        "name": "set language",
-        "func": "let lang = env.get(\"language\");\nmsg.payload = `\"${msg.payload}\" --lang ${lang}`\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 350,
-        "y": 80,
-        "wires": [
-            [
-                "1fcc4076.5ee39"
-            ]
         ]
     },
     {
@@ -3224,7 +3102,7 @@
         "message": "",
         "messageType": "json",
         "name": "",
-        "x": 970,
+        "x": 890,
         "y": 360,
         "wires": []
     },
@@ -3237,7 +3115,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 970,
+        "x": 890,
         "y": 480,
         "wires": []
     },
@@ -3332,7 +3210,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 970,
+        "x": 890,
         "y": 420,
         "wires": []
     },
@@ -3388,8 +3266,10 @@
         "z": "5fecfc4e.735094",
         "name": "",
         "sampleRate": "8000",
-        "channels": 1,
+        "channels": "2",
         "device": "",
+        "endian": "little",
+        "bitwidth": "16",
         "x": 360,
         "y": 440,
         "wires": [
@@ -3397,7 +3277,7 @@
                 "71e5ad86.eb7824"
             ],
             [
-                "df9f28ae.b8e168"
+                "d85c944e.3dc958"
             ]
         ]
     },
@@ -3418,7 +3298,7 @@
                 "t": "set",
                 "p": "payload.sampleRate",
                 "pt": "msg",
-                "to": "config.sampleRate",
+                "to": "config.rate",
                 "tot": "msg"
             }
         ],
@@ -3427,11 +3307,41 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
+        "x": 700,
         "y": 360,
         "wires": [
             [
                 "668d49fc.51d3c8"
+            ]
+        ]
+    },
+    {
+        "id": "c3c396b.e004868",
+        "type": "function",
+        "z": "f161ee02.77c0d",
+        "name": "",
+        "func": "if (msg.config.channels == 1)\n    return msg\n    \nconst bytewidth = msg.config.bitwidth/8\nconst input = msg.payload\nconst output = Buffer.alloc(input.length/2)\n\nif (bytewidth == 1) {\n    for (let i=0;i<output.length;i+=1) {\n        output[i] = input[i*2];\n    }\n    msg.payload = output\n} else if (bytewidth == 2) {\n    for (let i=0;i<output.length;i+=2) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n    }\n    msg.payload = output\n} else if (bytewidth == 3) {\n    for (let i=0;i<output.length;i+=3) {\n        output[i] = input[i*3]\n        output[i+1] = input[i*3+1]\n        output[i+2] = input[i*3+2]\n    }\n    msg.payload = output\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d85c944e.3dc958",
+        "type": "subflow:f161ee02.77c0d",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "env": [],
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "df9f28ae.b8e168"
             ]
         ]
     }
