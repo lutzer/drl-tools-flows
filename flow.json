@@ -3094,7 +3094,23 @@
         ]
     },
     {
-        "id": "668d49fc.51d3c8",
+        "id": "c3c396b.e004868",
+        "type": "function",
+        "z": "f161ee02.77c0d",
+        "name": "",
+        "func": "if (msg.config.channels == 1)\n    return msg\n    \nconst bytewidth = msg.config.bitwidth/8\nconst input = msg.payload\nconst output = Buffer.alloc(input.length/2)\n\nif (bytewidth == 1) {\n    for (let i=0;i<output.length;i+=1) {\n        output[i] = input[i*2];\n    }\n    msg.payload = output\n} else if (bytewidth == 2) {\n    for (let i=0;i<output.length;i+=2) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n    }\n    msg.payload = output\n} else if (bytewidth == 3) {\n    for (let i=0;i<output.length;i+=3) {\n        output[i] = input[i*3]\n        output[i+1] = input[i*3+1]\n        output[i+2] = input[i*3+2]\n    }\n    msg.payload = output\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb17c65.b4bf538",
         "type": "socketio-emitter",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
@@ -3102,12 +3118,12 @@
         "message": "",
         "messageType": "json",
         "name": "",
-        "x": 890,
-        "y": 360,
+        "x": 910,
+        "y": 500,
         "wires": []
     },
     {
-        "id": "df9f28ae.b8e168",
+        "id": "1a5de69.5304a19",
         "type": "socketio-emitter",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
@@ -3115,12 +3131,12 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 890,
-        "y": 480,
+        "x": 910,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "dfca12cd.d0943",
+        "id": "6a56d2cb.1a97bc",
         "type": "inject",
         "z": "5fecfc4e.735094",
         "name": "",
@@ -3136,16 +3152,16 @@
         "onceDelay": 0.1,
         "topic": "start",
         "payloadType": "str",
-        "x": 190,
-        "y": 420,
+        "x": 210,
+        "y": 560,
         "wires": [
             [
-                "f8382649.e159f8"
+                "759bcfd4.8d471"
             ]
         ]
     },
     {
-        "id": "6d0148db.3be3f8",
+        "id": "da351163.b21b3",
         "type": "inject",
         "z": "5fecfc4e.735094",
         "name": "",
@@ -3160,16 +3176,16 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "stop",
-        "x": 190,
-        "y": 480,
+        "x": 210,
+        "y": 620,
         "wires": [
             [
-                "f8382649.e159f8"
+                "759bcfd4.8d471"
             ]
         ]
     },
     {
-        "id": "71e5ad86.eb7824",
+        "id": "f440d7f.3fe9928",
         "type": "switch",
         "z": "5fecfc4e.735094",
         "name": "",
@@ -3190,19 +3206,19 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 530,
-        "y": 420,
+        "x": 550,
+        "y": 560,
         "wires": [
             [
-                "ce23d93c.c2e428"
+                "9f593351.83f4b"
             ],
             [
-                "27610e77.e46972"
+                "fdcda051.7be04"
             ]
         ]
     },
     {
-        "id": "27610e77.e46972",
+        "id": "fdcda051.7be04",
         "type": "socketio-emitter",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
@@ -3210,58 +3226,42 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 890,
-        "y": 420,
+        "x": 910,
+        "y": 560,
         "wires": []
     },
     {
-        "id": "60fb0c6d.9e0e94",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "7487d266.c75f7c",
+        "id": "ddc9b0f7.df242",
         "type": "socketio-listener",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
         "eventname": "error",
         "name": "",
-        "x": 310,
-        "y": 240,
+        "x": 330,
+        "y": 360,
         "wires": [
             [
-                "60fb0c6d.9e0e94"
+                "5bda3553.4be7cc"
             ]
         ]
     },
     {
-        "id": "a8535378.b6bb5",
+        "id": "42534189.3ebae",
         "type": "socketio-listener",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
         "eventname": "speech/result",
         "name": "",
-        "x": 290,
-        "y": 180,
+        "x": 310,
+        "y": 300,
         "wires": [
             [
-                "60fb0c6d.9e0e94"
+                "8a40e583.479f68"
             ]
         ]
     },
     {
-        "id": "f8382649.e159f8",
+        "id": "759bcfd4.8d471",
         "type": "tools-mic",
         "z": "5fecfc4e.735094",
         "name": "",
@@ -3270,19 +3270,19 @@
         "device": "",
         "endian": "little",
         "bitwidth": "16",
-        "x": 360,
-        "y": 440,
+        "x": 380,
+        "y": 580,
         "wires": [
             [
-                "71e5ad86.eb7824"
+                "f440d7f.3fe9928"
             ],
             [
-                "d85c944e.3dc958"
+                "895548c7.a62cb8"
             ]
         ]
     },
     {
-        "id": "ce23d93c.c2e428",
+        "id": "9f593351.83f4b",
         "type": "change",
         "z": "5fecfc4e.735094",
         "name": "",
@@ -3307,42 +3307,76 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 360,
+        "x": 720,
+        "y": 500,
         "wires": [
             [
-                "668d49fc.51d3c8"
+                "eb17c65.b4bf538"
             ]
         ]
     },
     {
-        "id": "c3c396b.e004868",
-        "type": "function",
-        "z": "f161ee02.77c0d",
-        "name": "",
-        "func": "if (msg.config.channels == 1)\n    return msg\n    \nconst bytewidth = msg.config.bitwidth/8\nconst input = msg.payload\nconst output = Buffer.alloc(input.length/2)\n\nif (bytewidth == 1) {\n    for (let i=0;i<output.length;i+=1) {\n        output[i] = input[i*2];\n    }\n    msg.payload = output\n} else if (bytewidth == 2) {\n    for (let i=0;i<output.length;i+=2) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n    }\n    msg.payload = output\n} else if (bytewidth == 3) {\n    for (let i=0;i<output.length;i+=3) {\n        output[i] = input[i*3]\n        output[i+1] = input[i*3+1]\n        output[i+2] = input[i*3+2]\n    }\n    msg.payload = output\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 200,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d85c944e.3dc958",
+        "id": "895548c7.a62cb8",
         "type": "subflow:f161ee02.77c0d",
         "z": "5fecfc4e.735094",
         "name": "",
         "env": [],
-        "x": 560,
-        "y": 480,
+        "x": 580,
+        "y": 620,
         "wires": [
             [
-                "df9f28ae.b8e168"
+                "1a5de69.5304a19"
             ]
         ]
+    },
+    {
+        "id": "5bda3553.4be7cc",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8a40e583.479f68",
+        "type": "json",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "38c473e2.77f0ec"
+            ]
+        ]
+    },
+    {
+        "id": "38c473e2.77f0ec",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload[0].alternatives[0]",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 300,
+        "wires": []
     }
 ]
