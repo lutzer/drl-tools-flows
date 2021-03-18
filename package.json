@@ -4,10 +4,11 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-say": "https://github.com/lutzer/node-red-contrib-say.git",
-        "node-red-contrib-simple-gate": "^0.4.0",
         "node-red-contrib-fuzzywuzzy": "^0.2.0",
         "node-red-contrib-random-output": "^0.0.1",
-        "node-red-contrib-play-soundfile": "0.0.4"
+        "node-red-contrib-play-soundfile": "0.0.4",
+        "node-red-contrib-socketio-agent": "https://github.com/lutzer/node-red-contrib-socketio-agent.git",
+        "drl-tools-nodes": "https://github.com/lutzer/drl-tools-nodes.git"
     },
     "node-red": {
         "settings": {
