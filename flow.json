@@ -357,6 +357,12 @@
         "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
     },
     {
+        "id": "cfbb12ea.54ab9",
+        "type": "socketio-config",
+        "uri": "http://localhost:3000",
+        "options": "{ \"forceNew\": true }"
+    },
+    {
         "id": "c0df7363.1c449",
         "type": "exec",
         "z": "79d9afa4.2a85",
@@ -560,7 +566,7 @@
         "name": "",
         "text": "Hallo, willkommen im Museum.",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 710,
         "y": 200,
@@ -602,7 +608,7 @@
         "name": "",
         "text": "Vermisst du das Museum ueberhaupt?",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 1270,
         "y": 240,
@@ -694,7 +700,7 @@
         "name": "",
         "text": "Das freut mich. Ich bin auch gerne hier.",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 680,
         "y": 700,
@@ -712,7 +718,7 @@
         "name": "",
         "text": "Du findest es also langweilig hier?",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 660,
         "y": 740,
@@ -730,7 +736,7 @@
         "name": "",
         "text": "Ich habe dich leider nicht verstanden",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 670,
         "y": 780,
@@ -778,7 +784,7 @@
         "name": "",
         "text": "Du hast ja gar nichts gesagt.",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 880,
         "y": 440,
@@ -818,7 +824,7 @@
         "name": "",
         "text": "was müsste es denn hier geben damit du ins museum gehen willst?",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 1340,
         "y": 740,
@@ -883,7 +889,7 @@
         "name": "",
         "text": "Vermisst du denn trotzdem irgendwas am Museum?",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 1380,
         "y": 700,
@@ -925,7 +931,7 @@
         "name": "",
         "text": "Was hältst du denn von Museum?",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 1440,
         "y": 780,
@@ -961,7 +967,7 @@
         "name": "",
         "text": "Danke fuer deine Antwort. Ich hoffe wir sprechen uns bald wieder.",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 1020,
         "y": 1020,
@@ -1007,7 +1013,7 @@
         "name": "",
         "text": "Na, vielleicht fällt dir ja spaeter noch etwas ein.",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 960,
         "y": 980,
@@ -1110,7 +1116,7 @@
         "name": "",
         "text": "Hallo, schön, dass du da bist",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 700,
         "y": 240,
@@ -1128,7 +1134,7 @@
         "name": "",
         "text": "Herzlich willkommen bei uns im Museum",
         "voice": ":",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": "",
         "x": 740,
         "y": 280,
@@ -2301,37 +2307,6 @@
         ]
     },
     {
-        "id": "f3133d04.42bdf",
-        "type": "subflow:79d9afa4.2a85",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "env": [],
-        "x": 380,
-        "y": 200,
-        "wires": [
-            [
-                "519f3921.507f88"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "519f3921.507f88",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "4c8fb24c.29c81c",
         "type": "inject",
         "z": "79d9afa4.2a85",
@@ -3237,6 +3212,226 @@
         "wires": [
             [
                 "2fa7c47f.b2154c"
+            ]
+        ]
+    },
+    {
+        "id": "668d49fc.51d3c8",
+        "type": "socketio-emitter",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "audio/start",
+        "message": "",
+        "messageType": "json",
+        "name": "",
+        "x": 970,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "df9f28ae.b8e168",
+        "type": "socketio-emitter",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "audio/data",
+        "message": "",
+        "messageType": "str",
+        "name": "",
+        "x": 970,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "dfca12cd.d0943",
+        "type": "inject",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payloadType": "str",
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "f8382649.e159f8"
+            ]
+        ]
+    },
+    {
+        "id": "6d0148db.3be3f8",
+        "type": "inject",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "stop",
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "f8382649.e159f8"
+            ]
+        ]
+    },
+    {
+        "id": "71e5ad86.eb7824",
+        "type": "switch",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "ce23d93c.c2e428"
+            ],
+            [
+                "27610e77.e46972"
+            ]
+        ]
+    },
+    {
+        "id": "27610e77.e46972",
+        "type": "socketio-emitter",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "audio/stop",
+        "message": "",
+        "messageType": "str",
+        "name": "",
+        "x": 970,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "60fb0c6d.9e0e94",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7487d266.c75f7c",
+        "type": "socketio-listener",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "error",
+        "name": "",
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "60fb0c6d.9e0e94"
+            ]
+        ]
+    },
+    {
+        "id": "a8535378.b6bb5",
+        "type": "socketio-listener",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "speech/result",
+        "name": "",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "60fb0c6d.9e0e94"
+            ]
+        ]
+    },
+    {
+        "id": "f8382649.e159f8",
+        "type": "tools-mic",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "sampleRate": "8000",
+        "channels": 1,
+        "device": "",
+        "x": 360,
+        "y": 440,
+        "wires": [
+            [
+                "71e5ad86.eb7824"
+            ],
+            [
+                "df9f28ae.b8e168"
+            ]
+        ]
+    },
+    {
+        "id": "ce23d93c.c2e428",
+        "type": "change",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.language",
+                "pt": "msg",
+                "to": "de",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.sampleRate",
+                "pt": "msg",
+                "to": "config.sampleRate",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 360,
+        "wires": [
+            [
+                "668d49fc.51d3c8"
             ]
         ]
     }
