@@ -3116,9 +3116,9 @@
         "server": "cfbb12ea.54ab9",
         "eventname": "audio/start",
         "message": "",
-        "messageType": "json",
+        "messageType": "str",
         "name": "",
-        "x": 1070,
+        "x": 1090,
         "y": 580,
         "wires": []
     },
@@ -3131,7 +3131,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1070,
+        "x": 1090,
         "y": 700,
         "wires": []
     },
@@ -3229,7 +3229,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1070,
+        "x": 1090,
         "y": 640,
         "wires": []
     },
@@ -3254,7 +3254,7 @@
         "type": "socketio-listener",
         "z": "5fecfc4e.735094",
         "server": "cfbb12ea.54ab9",
-        "eventname": "speech/result",
+        "eventname": "speech/ended",
         "name": "",
         "x": 130,
         "y": 300,
@@ -3283,6 +3283,13 @@
                 "pt": "msg",
                 "to": "config.rate",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.interimResults",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -3579,5 +3586,36 @@
                 "1d148ee6.04d741"
             ]
         ]
+    },
+    {
+        "id": "24707236.7e402e",
+        "type": "socketio-listener",
+        "z": "5fecfc4e.735094",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "speech/result",
+        "name": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "a1a1e922.39e2d8"
+            ]
+        ]
+    },
+    {
+        "id": "a1a1e922.39e2d8",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 240,
+        "wires": []
     }
 ]
