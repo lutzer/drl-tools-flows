@@ -206,7 +206,9 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99
+        "y": 99,
+        "w": 1132,
+        "h": 222
     },
     {
         "id": "a8081aca.df57b8",
@@ -230,7 +232,9 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379
+        "y": 379,
+        "w": 872,
+        "h": 162
     },
     {
         "id": "fec5c43f.4caea8",
@@ -256,7 +260,9 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "7f6892dc.4d798c",
@@ -279,7 +285,9 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -304,7 +312,9 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879
+        "y": 879,
+        "w": 972,
+        "h": 262
     },
     {
         "id": "c531aa1.9af8558",
@@ -3088,7 +3098,7 @@
         "type": "function",
         "z": "f161ee02.77c0d",
         "name": "",
-        "func": "if (msg.config.channels == 1)\n    return msg\n    \nconst bytewidth = msg.config.bitwidth/8\nconst input = msg.payload\nconst output = Buffer.alloc(input.length/2)\n\nif (bytewidth == 1) {\n    for (let i=0;i<output.length;i+=1) {\n        output[i] = input[i*2];\n    }\n    msg.payload = output\n} else if (bytewidth == 2) {\n    for (let i=0;i<output.length;i+=2) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n    }\n    msg.payload = output\n} else if (bytewidth == 3) {\n    for (let i=0;i<output.length;i+=3) {\n        output[i] = input[i*3]\n        output[i+1] = input[i*3+1]\n        output[i+2] = input[i*3+2]\n    }\n    msg.payload = output\n}\n\nreturn msg;",
+        "func": "if (msg.config.channels == 1)\n    return msg\n    \nconst bytewidth = msg.config.bitwidth/8\nconst input = msg.payload\nconst output = Buffer.alloc(input.length/2)\n\nif (bytewidth == 1) {\n    for (let i=0;i<output.length;i+=1) {\n        output[i] = input[i*2];\n    }\n    msg.payload = output\n} else if (bytewidth == 2) {\n    for (let i=0;i<output.length;i+=2) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n    }\n    msg.payload = output\n} else if (bytewidth == 3) {\n    for (let i=0;i<output.length;i+=3) {\n        output[i] = input[i*2]\n        output[i+1] = input[i*2+1]\n        output[i+2] = input[i*2+2]\n    }\n    msg.payload = output\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3315,7 +3325,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
+        "x": 830,
         "y": 360,
         "wires": []
     },
@@ -3331,27 +3341,9 @@
         "y": 300,
         "wires": [
             [
-                "38c473e2.77f0ec",
-                "54995007.bcb75"
+                "fa81083e.830838"
             ]
         ]
-    },
-    {
-        "id": "38c473e2.77f0ec",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload[0].alternatives[0]",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "2c8a5d89.13ffc2",
@@ -3360,39 +3352,12 @@
         "name": "",
         "text": "",
         "voice": "",
-        "voiceString": "",
+        "voiceString": "Anna",
         "speed": 1,
-        "x": 910,
+        "x": 830,
         "y": 240,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "54995007.bcb75",
-        "type": "change",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0].alternatives[0].transcript",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 740,
-        "y": 240,
-        "wires": [
-            [
-                "2c8a5d89.13ffc2"
-            ]
         ]
     },
     {
@@ -3576,6 +3541,42 @@
         "wires": [
             [
                 "5b646bc3.17c2b4"
+            ]
+        ]
+    },
+    {
+        "id": "1d148ee6.04d741",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fa81083e.830838",
+        "type": "function",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "func": "msg.payload = msg.payload.join(\".\")\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 660,
+        "y": 300,
+        "wires": [
+            [
+                "2c8a5d89.13ffc2",
+                "1d148ee6.04d741"
             ]
         ]
     }
