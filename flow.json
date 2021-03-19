@@ -3288,7 +3288,7 @@
                 "t": "set",
                 "p": "payload.interimResults",
                 "pt": "msg",
-                "to": "true",
+                "to": "false",
                 "tot": "bool"
             }
         ],
