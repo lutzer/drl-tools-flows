@@ -184,6 +184,62 @@
         "color": "#DDAA99"
     },
     {
+        "id": "d9115fe7.1fc6d",
+        "type": "subflow",
+        "name": "tools-speech-to-text",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 620,
+                "wires": [
+                    {
+                        "id": "f620cb7.c2a0838"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1140,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "7e7bd489.1b262c",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1140,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "7d153c7d.caffe4",
+                        "port": 0
+                    },
+                    {
+                        "id": "af8041c4.6c94a",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99",
+        "status": {
+            "x": 1140,
+            "y": 880,
+            "wires": [
+                {
+                    "id": "fe9f376.9f7dfc8",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "98284da6.430f8",
         "type": "group",
         "z": "29928cb0.ddef64",
@@ -334,7 +390,7 @@
     {
         "id": "cfbb12ea.54ab9",
         "type": "socketio-config",
-        "uri": "http://192.168.1.143:3000",
+        "uri": "http://localhost:3000",
         "options": "{ \"forceNew\": true }"
     },
     {
@@ -3110,32 +3166,6 @@
         ]
     },
     {
-        "id": "eb17c65.b4bf538",
-        "type": "socketio-emitter",
-        "z": "5fecfc4e.735094",
-        "server": "cfbb12ea.54ab9",
-        "eventname": "audio/start",
-        "message": "",
-        "messageType": "str",
-        "name": "",
-        "x": 1090,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "1a5de69.5304a19",
-        "type": "socketio-emitter",
-        "z": "5fecfc4e.735094",
-        "server": "cfbb12ea.54ab9",
-        "eventname": "audio/data",
-        "message": "",
-        "messageType": "str",
-        "name": "",
-        "x": 1090,
-        "y": 700,
-        "wires": []
-    },
-    {
         "id": "6a56d2cb.1a97bc",
         "type": "inject",
         "z": "5fecfc4e.735094",
@@ -3156,7 +3186,7 @@
         "y": 640,
         "wires": [
             [
-                "759bcfd4.8d471"
+                "47411968.b363c8"
             ]
         ]
     },
@@ -3181,14 +3211,57 @@
         "y": 680,
         "wires": [
             [
-                "759bcfd4.8d471"
+                "47411968.b363c8"
             ]
         ]
     },
     {
-        "id": "f440d7f.3fe9928",
-        "type": "switch",
+        "id": "44d17a71.f5a584",
+        "type": "rpi-gpio in",
         "z": "5fecfc4e.735094",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 150,
+        "y": 740,
+        "wires": [
+            [
+                "47411968.b363c8"
+            ]
+        ]
+    },
+    {
+        "id": "e1cfc843.f838c8",
+        "type": "socketio-emitter",
+        "z": "d9115fe7.1fc6d",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "audio/start",
+        "message": "",
+        "messageType": "str",
+        "name": "",
+        "x": 1190,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2cbfe629.961bca",
+        "type": "socketio-emitter",
+        "z": "d9115fe7.1fc6d",
+        "server": "cfbb12ea.54ab9",
+        "eventname": "audio/data",
+        "message": "",
+        "messageType": "str",
+        "name": "",
+        "x": 1190,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c04b67ed.1f4f28",
+        "type": "switch",
+        "z": "d9115fe7.1fc6d",
         "name": "",
         "property": "topic",
         "propertyType": "msg",
@@ -3207,67 +3280,69 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 670,
-        "y": 640,
+        "x": 770,
+        "y": 580,
         "wires": [
             [
-                "9f593351.83f4b",
-                "2a34c26e.6a50ce"
+                "a2c2ab39.bdfb78",
+                "82cc7399.2d938",
+                "219e1c88.33fb94"
             ],
             [
-                "fdcda051.7be04",
-                "5b646bc3.17c2b4"
+                "83fa70f9.b2ead",
+                "cdf84064.1cff6",
+                "9aeb99a7.8859d8"
             ]
         ]
     },
     {
-        "id": "fdcda051.7be04",
+        "id": "83fa70f9.b2ead",
         "type": "socketio-emitter",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "server": "cfbb12ea.54ab9",
         "eventname": "audio/stop",
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1090,
-        "y": 640,
+        "x": 1190,
+        "y": 580,
         "wires": []
     },
     {
-        "id": "ddc9b0f7.df242",
+        "id": "7d153c7d.caffe4",
         "type": "socketio-listener",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "server": "cfbb12ea.54ab9",
         "eventname": "error",
         "name": "",
-        "x": 110,
-        "y": 360,
+        "x": 270,
+        "y": 340,
         "wires": [
             [
-                "5bda3553.4be7cc",
-                "ebd306af.f56e08"
+                "76a206d2.e91198"
             ]
         ]
     },
     {
-        "id": "42534189.3ebae",
+        "id": "4367d77b.ce6148",
         "type": "socketio-listener",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "server": "cfbb12ea.54ab9",
         "eventname": "speech/ended",
         "name": "",
-        "x": 130,
-        "y": 300,
+        "x": 250,
+        "y": 280,
         "wires": [
             [
-                "8a40e583.479f68"
+                "1efcab02.8b5bb5",
+                "76a206d2.e91198"
             ]
         ]
     },
     {
-        "id": "9f593351.83f4b",
+        "id": "a2c2ab39.bdfb78",
         "type": "change",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "name": "",
         "rules": [
             {
@@ -3286,10 +3361,24 @@
             },
             {
                 "t": "set",
-                "p": "payload.interimResults",
+                "p": "payload.timeout",
                 "pt": "msg",
-                "to": "false",
-                "tot": "bool"
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "60",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.initialWait",
+                "pt": "msg",
+                "to": "10",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -3297,155 +3386,70 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 900,
-        "y": 580,
+        "x": 1020,
+        "y": 500,
         "wires": [
             [
-                "eb17c65.b4bf538"
+                "e1cfc843.f838c8"
             ]
         ]
     },
     {
-        "id": "895548c7.a62cb8",
+        "id": "c6744c4f.dc0d9",
         "type": "subflow:f161ee02.77c0d",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "name": "",
         "env": [],
-        "x": 700,
-        "y": 700,
+        "x": 800,
+        "y": 660,
         "wires": [
             [
-                "1a5de69.5304a19"
+                "2cbfe629.961bca"
             ]
         ]
     },
     {
-        "id": "5bda3553.4be7cc",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "8a40e583.479f68",
+        "id": "1efcab02.8b5bb5",
         "type": "json",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 490,
-        "y": 300,
+        "x": 430,
+        "y": 280,
         "wires": [
             [
-                "fa81083e.830838"
+                "7e7bd489.1b262c"
             ]
         ]
     },
     {
-        "id": "2c8a5d89.13ffc2",
-        "type": "say",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "text": "",
-        "voice": "",
-        "voiceString": "Anna",
-        "speed": 1,
-        "x": 830,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "44d17a71.f5a584",
-        "type": "rpi-gpio in",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "pin": "16",
-        "intype": "tri",
-        "debounce": "25",
-        "read": false,
-        "x": 150,
-        "y": 740,
-        "wires": [
-            [
-                "57f88c1e.cde284"
-            ]
-        ]
-    },
-    {
-        "id": "57f88c1e.cde284",
-        "type": "toggle",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "onOffTopic": "",
-        "onValue": "start",
-        "onType": "str",
-        "offValue": "stop",
-        "offType": "str",
-        "toggleTopic": "",
-        "toggleValue": "",
-        "toggleType": "str",
-        "passOnOff": "",
-        "x": 270,
-        "y": 740,
-        "wires": [
-            [
-                "759bcfd4.8d471"
-            ]
-        ]
-    },
-    {
-        "id": "17912357.442a6d",
-        "type": "rpi-gpio out",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "pin": "22",
-        "set": "",
-        "level": "0",
-        "freq": "",
-        "out": "out",
-        "x": 1060,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "759bcfd4.8d471",
+        "id": "c57260b.2b006a",
         "type": "tools-mic",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "name": "",
         "sampleRate": "16000",
         "channels": "2",
         "device": "hw:1",
         "endian": "little",
         "bitwidth": "16",
-        "x": 520,
-        "y": 660,
+        "x": 620,
+        "y": 620,
         "wires": [
             [
-                "f440d7f.3fe9928"
+                "c04b67ed.1f4f28"
             ],
             [
-                "895548c7.a62cb8"
+                "c6744c4f.dc0d9"
             ]
         ]
     },
     {
-        "id": "ebd306af.f56e08",
+        "id": "76a206d2.e91198",
         "type": "change",
-        "z": "5fecfc4e.735094",
-        "name": "",
+        "z": "d9115fe7.1fc6d",
+        "name": "stop",
         "rules": [
             {
                 "t": "set",
@@ -3460,18 +3464,96 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 560,
+        "x": 470,
+        "y": 580,
         "wires": [
             [
-                "759bcfd4.8d471"
+                "c57260b.2b006a"
             ]
         ]
     },
     {
-        "id": "2a34c26e.6a50ce",
-        "type": "change",
+        "id": "7e7bd489.1b262c",
+        "type": "function",
+        "z": "d9115fe7.1fc6d",
+        "name": "join array",
+        "func": "msg.payload = msg.payload.join(\".\")\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 580,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e935458.9087bc",
+        "type": "status",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "scope": [
+            "c57260b.2b006a"
+        ],
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "64e74f09.ede9d"
+            ]
+        ]
+    },
+    {
+        "id": "47411968.b363c8",
+        "type": "subflow:d9115fe7.1fc6d",
         "z": "5fecfc4e.735094",
+        "name": "",
+        "env": [],
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "480e1ea2.9f4e7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "480e1ea2.9f4e7",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "bef652e8.b5129",
+        "type": "rpi-gpio out",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "pin": "22",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1180,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "82cc7399.2d938",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
         "name": "1",
         "rules": [
             {
@@ -3487,18 +3569,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 480,
+        "x": 990,
+        "y": 400,
         "wires": [
             [
-                "17912357.442a6d"
+                "bef652e8.b5129"
             ]
         ]
     },
     {
-        "id": "5b646bc3.17c2b4",
+        "id": "cdf84064.1cff6",
         "type": "change",
-        "z": "5fecfc4e.735094",
+        "z": "d9115fe7.1fc6d",
         "name": "0",
         "rules": [
             {
@@ -3514,108 +3596,204 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 520,
+        "x": 990,
+        "y": 440,
         "wires": [
             [
-                "17912357.442a6d"
+                "bef652e8.b5129"
             ]
         ]
     },
     {
-        "id": "3371ddf0.708fb2",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
+        "id": "9bb51859.d52808",
+        "type": "status",
+        "z": "d9115fe7.1fc6d",
         "name": "",
-        "props": [
+        "scope": [
+            "4367d77b.ce6148"
+        ],
+        "x": 500,
+        "y": 920,
+        "wires": [
+            [
+                "a6c48026.c22c4"
+            ]
+        ]
+    },
+    {
+        "id": "64e74f09.ede9d",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "rules": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "t": "set",
+                "p": "recordingState",
+                "pt": "flow",
+                "to": "status",
+                "tot": "msg"
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 630,
-        "y": 520,
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 860,
         "wires": [
             [
-                "5b646bc3.17c2b4"
+                "fe9f376.9f7dfc8"
             ]
         ]
     },
     {
-        "id": "1d148ee6.04d741",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
+        "id": "a6c48026.c22c4",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 300,
-        "wires": []
+        "rules": [
+            {
+                "t": "set",
+                "p": "connectionState",
+                "pt": "flow",
+                "to": "status",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 920,
+        "wires": [
+            [
+                "fe9f376.9f7dfc8"
+            ]
+        ]
     },
     {
-        "id": "fa81083e.830838",
+        "id": "fe9f376.9f7dfc8",
         "type": "function",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "func": "msg.payload = msg.payload.join(\".\")\n\nreturn msg;",
+        "z": "d9115fe7.1fc6d",
+        "name": "set state",
+        "func": "let connectionState = flow.get('connectionState')\nlet recordingState = flow.get('recordingState')\n\nif (recordingState && recordingState.text == 'recording')\n    msg.status = recordingState\nelse if (connectionState)\n    msg.status = connectionState\n    \nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 660,
-        "y": 300,
+        "x": 980,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "219e1c88.33fb94",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "transkribing",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9aeb99a7.8859d8",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "transkribing",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f620cb7.c2a0838",
+        "type": "switch",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "property": "transcribing",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "true",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 620,
         "wires": [
             [
-                "2c8a5d89.13ffc2",
-                "1d148ee6.04d741"
+                "c57260b.2b006a"
+            ],
+            [
+                "af8041c4.6c94a"
             ]
         ]
     },
     {
-        "id": "24707236.7e402e",
-        "type": "socketio-listener",
-        "z": "5fecfc4e.735094",
-        "server": "cfbb12ea.54ab9",
-        "eventname": "speech/result",
+        "id": "af8041c4.6c94a",
+        "type": "change",
+        "z": "d9115fe7.1fc6d",
         "name": "",
-        "x": 130,
-        "y": 240,
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "cannot start transcription, other node is currently transcribing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 380,
         "wires": [
-            [
-                "a1a1e922.39e2d8"
-            ]
+            []
         ]
-    },
-    {
-        "id": "a1a1e922.39e2d8",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 240,
-        "wires": []
     }
 ]
