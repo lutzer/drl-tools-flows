@@ -222,8 +222,75 @@
                 ]
             }
         ],
-        "env": [],
-        "color": "#DDAA99",
+        "env": [
+            {
+                "name": "language",
+                "type": "str",
+                "value": "de",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "timeout",
+                "type": "num",
+                "value": "2",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "initialWait",
+                "type": "num",
+                "value": "10",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "duration",
+                "type": "num",
+                "value": "60",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "playBeep",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool"
+                        ]
+                    }
+                }
+            }
+        ],
+        "color": "#FDD0A2",
+        "icon": "font-awesome/fa-microphone",
         "status": {
             "x": 860,
             "y": 140,
@@ -3334,8 +3401,8 @@
                 "t": "set",
                 "p": "payload.language",
                 "pt": "msg",
-                "to": "en",
-                "tot": "str"
+                "to": "language",
+                "tot": "env"
             },
             {
                 "t": "set",
@@ -3348,22 +3415,22 @@
                 "t": "set",
                 "p": "payload.timeout",
                 "pt": "msg",
-                "to": "2",
-                "tot": "num"
+                "to": "timeout",
+                "tot": "env"
             },
             {
                 "t": "set",
                 "p": "payload.duration",
                 "pt": "msg",
-                "to": "60",
-                "tot": "num"
+                "to": "duration",
+                "tot": "env"
             },
             {
                 "t": "set",
                 "p": "payload.initialWait",
                 "pt": "msg",
-                "to": "10",
-                "tot": "num"
+                "to": "initialWait",
+                "tot": "env"
             },
             {
                 "t": "set",
