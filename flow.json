@@ -284,12 +284,12 @@
     {
         "id": "113bba6b.b1a796",
         "type": "soundfile-directory",
-        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
+        "directory": "/home/pi/futurium-dialog/rebecca"
     },
     {
         "id": "cfbb12ea.54ab9",
         "type": "socketio-config",
-        "uri": "http://localhost:3000",
+        "uri": "http://192.168.178.159:3000",
         "options": "{ \"forceNew\": true }"
     },
     {
@@ -1767,7 +1767,8 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "01_Hallo.aif",
+        "file": "01_Hallo.wav",
+        "options": "",
         "allow_multiple": false,
         "x": 370,
         "y": 200,
@@ -1806,9 +1807,10 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "02_Datenschutz.aif",
+        "file": "02_Datenschutz.wav",
+        "options": "",
         "allow_multiple": false,
-        "x": 890,
+        "x": 900,
         "y": 200,
         "wires": [
             [
@@ -1894,9 +1896,10 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "03_seitDreiWochen.aif",
+        "file": "03_seitDreiWochen.wav",
+        "options": "",
         "allow_multiple": false,
-        "x": 400,
+        "x": 410,
         "y": 400,
         "wires": [
             [
@@ -1920,7 +1923,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "09_Nein.aif",
+        "file": "09_Nein.wav",
         "allow_multiple": false,
         "x": 2070,
         "y": 400,
@@ -1936,7 +1939,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -1945,7 +1948,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1770,
+        "x": 1760,
         "y": 200,
         "wires": [
             [
@@ -1992,9 +1995,9 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "05_Frage1_deineMeinung.aif",
+        "file": "05_Frage1_deineMeinung.wav",
         "allow_multiple": false,
-        "x": 420,
+        "x": 430,
         "y": 540,
         "wires": [
             [
@@ -2045,9 +2048,9 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "06_Frage2_wofürEngagiert.aif",
+        "file": "06_Frage2_wofuerEngagiert.wav",
         "allow_multiple": false,
-        "x": 430,
+        "x": 440,
         "y": 680,
         "wires": [
             [
@@ -2071,7 +2074,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -2080,7 +2083,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1050,
+        "x": 1040,
         "y": 540,
         "wires": [
             [
@@ -2121,7 +2124,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -2130,7 +2133,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1110,
+        "x": 1100,
         "y": 680,
         "wires": [
             [
@@ -2154,9 +2157,9 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "07_nochWeitereStimmen.aif",
+        "file": "07_nochWeitereStimmen.wav",
         "allow_multiple": false,
-        "x": 420,
+        "x": 430,
         "y": 820,
         "wires": [
             [
@@ -2251,9 +2254,9 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "08_Verabschiedung.aif",
+        "file": "08_Verabschiedung.wav",
         "allow_multiple": false,
-        "x": 2880,
+        "x": 2890,
         "y": 820,
         "wires": [
             [
@@ -2289,7 +2292,7 @@
         "props": [],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "x": 170,
@@ -2330,12 +2333,12 @@
         "type": "file",
         "z": "4a06756c.fb29bc",
         "name": "",
-        "filename": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+        "filename": "/home/pi/futurium-dialog/answers.txt",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 2540,
+        "x": 2510,
         "y": 960,
         "wires": [
             []
@@ -2430,7 +2433,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -2439,7 +2442,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 2510,
+        "x": 2500,
         "y": 820,
         "wires": [
             [
@@ -2453,7 +2456,7 @@
         "z": "4a06756c.fb29bc",
         "name": "",
         "directory": "113bba6b.b1a796",
-        "file": "04_Zitat.aif",
+        "file": "04_Zitat.wav",
         "allow_multiple": false,
         "x": 770,
         "y": 400,
@@ -2508,8 +2511,8 @@
         "topic": "",
         "payload": "start",
         "payloadType": "str",
-        "x": 170,
-        "y": 640,
+        "x": 130,
+        "y": 200,
         "wires": [
             [
                 "47411968.b363c8"
@@ -2533,25 +2536,8 @@
         "topic": "",
         "payload": "stop",
         "payloadType": "str",
-        "x": 170,
-        "y": 680,
-        "wires": [
-            [
-                "47411968.b363c8"
-            ]
-        ]
-    },
-    {
-        "id": "44d17a71.f5a584",
-        "type": "rpi-gpio in",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "pin": "16",
-        "intype": "tri",
-        "debounce": "25",
-        "read": false,
-        "x": 150,
-        "y": 740,
+        "x": 130,
+        "y": 240,
         "wires": [
             [
                 "47411968.b363c8"
@@ -2816,13 +2802,15 @@
                 "type": "str"
             }
         ],
-        "x": 450,
-        "y": 660,
+        "x": 410,
+        "y": 220,
         "wires": [
             [
                 "480e1ea2.9f4e7"
             ],
-            []
+            [
+                "c4ef7da4.c5232"
+            ]
         ]
     },
     {
@@ -2838,8 +2826,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 640,
+        "x": 690,
+        "y": 200,
         "wires": []
     },
     {
@@ -3040,8 +3028,8 @@
         "z": "5fecfc4e.735094",
         "name": "",
         "env": [],
-        "x": 460,
-        "y": 800,
+        "x": 420,
+        "y": 420,
         "wires": [
             [
                 "f1595735.0c08d8"
@@ -3064,8 +3052,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
-        "y": 800,
+        "x": 630,
+        "y": 420,
         "wires": []
     },
     {
@@ -3174,6 +3162,7 @@
         "name": "",
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
+        "options": "",
         "allow_multiple": true,
         "x": 1580,
         "y": 440,
@@ -3440,6 +3429,38 @@
             [
                 "6f413d3.5cfb3c4"
             ]
+        ]
+    },
+    {
+        "id": "be136e9e.9f93c",
+        "type": "rpi-gpio in",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "223d2bf4.4932b4"
+            ]
+        ]
+    },
+    {
+        "id": "c4ef7da4.c5232",
+        "type": "say",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "text": "",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 690,
+        "y": 240,
+        "wires": [
+            []
         ]
     }
 ]
