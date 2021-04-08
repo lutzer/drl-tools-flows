@@ -9,7 +9,6 @@
         "node-red-contrib-play-soundfile": "0.0.4",
         "node-red-contrib-socketio-agent": "https://github.com/lutzer/node-red-contrib-socketio-agent.git",
         "drl-tools-nodes": "https://github.com/lutzer/drl-tools-nodes.git",
-        "node-red-contrib-toggle": "0.1.1",
         "node-red-node-pi-gpio": "1.2.3",
         "node-red-contrib-fs-ops": "1.6.0"
     },
