@@ -210,9 +210,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -235,9 +233,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -263,9 +259,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -288,9 +282,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -314,9 +306,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -3706,7 +3696,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<h2>File List</h2>\n<p>File Directory: {{directory}}</p>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\" />\n    <input type=\"submit\" value=\"Upload\">\n</form>\n\n<script>\n    function onDeleteClicked(index) {\n        fetch(\"/uploads/delete/\" + index).then((res) => {\n            alert(\"File deleted.\")\n            location.reload()\n        })\n    }\n</script>\n\n",
+        "template": "<h2>File List</h2>\n<pre>Directory: {{directory}}</pre>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\" />\n    <input type=\"submit\" value=\"Upload\">\n</form>\n\n<script>\n    function onDeleteClicked(index) {\n        fetch(\"/uploads/delete/\" + index).then((res) => {\n            alert(\"File deleted.\")\n            location.reload()\n        })\n    }\n</script>\n\n",
         "output": "str",
         "x": 460,
         "y": 260,
@@ -3721,7 +3711,7 @@
         "type": "function",
         "z": "400cca0.99e3638",
         "name": "HTML Template",
-        "func": "msg.payload = \n`\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"utf-8\">\n        <title>File Uploader</title>\n        <style>\n            body {\n              background-color: linen;\n              font-family: sans-serif;\n            }\n            \n            h1 {\n              color: maroon;\n              margin-left: 40px;\n            }\n            \n            li {\n                padding: 3px;\n            }\n            \n        </style>\n      </head>\n      <body>\n        ${msg.payload}\n      </body>\n    </html>\n`\nreturn msg;",
+        "func": "msg.payload = \n`\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>File Uploader</title>\n        <style>\n            body {\n              background-color: linen;\n              font-family: monospace;\n            }\n            \n            input, button, selector::file-selector-button {\n                font-family: monospace;\n            }\n            \n            .content {\n                max-width: 500px;\n                margin: 0 auto;\n                padding: 5px;\n            }\n            \n            h2 {\n              border-bottom: 1px solid black;\n            }\n            \n            li {\n                padding: 3px;\n                white-space: nowrap;\n            }\n            \n        </style>\n      </head>\n      <body>\n        <div class=\"content\">\n        ${msg.payload}\n        </div>\n      </body>\n    </html>\n`\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
