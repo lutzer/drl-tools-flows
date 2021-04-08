@@ -3706,7 +3706,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<h2>File List</h2>\n<pre>Directory: <span class=\"highlight\">{{directory}}</span></pre>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\" />\n    <input type=\"submit\" value=\"Upload\">\n</form>\n\n<script>\n    function onDeleteClicked(index) {\n        fetch(\"/uploads/delete/\" + index).then((res) => {\n            alert(\"File deleted.\")\n            location.reload()\n        })\n    }\n</script>\n\n",
+        "template": "<h2>File List</h2>\n<pre>Directory: <span class=\"highlight\">{{directory}}</span></pre>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\" />\n    <input type=\"submit\" value=\"Upload\">\n</form>\n<p>Only accepts wav files.</p>\n\n<script>\n    function onDeleteClicked(index) {\n        fetch(\"/uploads/delete/\" + index).then((res) => {\n            alert(\"File deleted.\")\n            location.reload()\n        })\n    }\n</script>\n\n",
         "output": "str",
         "x": 660,
         "y": 260,
