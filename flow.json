@@ -28,6 +28,13 @@
         "info": ""
     },
     {
+        "id": "965f4c84.d4613",
+        "type": "tab",
+        "label": "File Upload",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "d9115fe7.1fc6d",
         "type": "subflow",
         "name": "speech-to-text",
@@ -153,6 +160,32 @@
                 }
             ]
         }
+    },
+    {
+        "id": "400cca0.99e3638",
+        "type": "subflow",
+        "name": "tools-file-uploader",
+        "info": "This node needs to be in an active flow to enable the upload web interface, reachable at http://localhost:1880/uploads",
+        "category": "tools",
+        "in": [],
+        "out": [],
+        "env": [
+            {
+                "name": "fileDirectory",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "color": "#C0DEED",
+        "icon": "font-awesome/fa-upload"
     },
     {
         "id": "98284da6.430f8",
@@ -305,6 +338,138 @@
         "type": "socketio-config",
         "uri": "http://tools.drlab.org",
         "options": "{ \"forceNew\": true }"
+    },
+    {
+        "id": "b7f1f48.d6bf208",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8d5c3afb.dd9ec8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b9dbe733.9dccf8",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "b7f1f48.d6bf208",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "160e81fb.f1c86e",
+        "type": "ui_group",
+        "name": "File Browser",
+        "tab": "b63d1f91.68095",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "b63d1f91.68095",
+        "type": "ui_tab",
+        "name": "Files",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "1d5cf971.7c7997",
@@ -3503,5 +3668,700 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c23ea50f.09e798",
+        "type": "http in",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "url": "/uploads",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "440484a1.072dfc"
+            ]
+        ]
+    },
+    {
+        "id": "8b94628b.0c2e9",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1010,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6561721e.6ce77c",
+        "type": "template",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<h2>File List</h2>\n<p>File Directory: {{directory}}</p>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\" />\n    <input type=\"submit\" value=\"Upload\">\n</form>\n\n<script>\n    function onDeleteClicked(index) {\n        fetch(\"/uploads/delete/\" + index).then((res) => {\n            alert(\"File deleted.\")\n            location.reload()\n        })\n    }\n</script>\n\n",
+        "output": "str",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "12f00f00.030a11"
+            ]
+        ]
+    },
+    {
+        "id": "12f00f00.030a11",
+        "type": "function",
+        "z": "400cca0.99e3638",
+        "name": "HTML Template",
+        "func": "msg.payload = \n`\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"utf-8\">\n        <title>File Uploader</title>\n        <style>\n            body {\n              background-color: linen;\n              font-family: sans-serif;\n            }\n            \n            h1 {\n              color: maroon;\n              margin-left: 40px;\n            }\n            \n            li {\n                padding: 3px;\n            }\n            \n        </style>\n      </head>\n      <body>\n        ${msg.payload}\n      </body>\n    </html>\n`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "8b94628b.0c2e9"
+            ]
+        ]
+    },
+    {
+        "id": "3119cc28.bf8554",
+        "type": "function",
+        "z": "400cca0.99e3638",
+        "name": "format file array",
+        "func": "msg.payload = msg.files.map((val,i) => {\n    return {\n        path: val,\n        fileName: val.replace(/^.*[\\\\\\/]/, ''),\n        index: i\n    }\n})\nmsg.directory = flow.get(\"directory\")\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "6561721e.6ce77c"
+            ]
+        ]
+    },
+    {
+        "id": "91e1411a.876ca",
+        "type": "http in",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "url": "/uploads/delete/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "1cf89335.70009d"
+            ]
+        ]
+    },
+    {
+        "id": "daa360e9.96b8e",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1020,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "682d3ab.6ec34c4",
+        "type": "http in",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "url": "/uploads/file/:file",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "6ac3f475.b5805c"
+            ]
+        ]
+    },
+    {
+        "id": "87648aee.dd0818",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1010,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c39b4074.cccd9",
+        "type": "file in",
+        "z": "400cca0.99e3638",
+        "name": "read file",
+        "filename": "",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 640,
+        "y": 400,
+        "wires": [
+            [
+                "68e0beb4.de5f1"
+            ]
+        ]
+    },
+    {
+        "id": "9ef6fd57.695b1",
+        "type": "inject",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "ad6a6b77.6f2558"
+            ]
+        ]
+    },
+    {
+        "id": "ad6a6b77.6f2558",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "directory",
+                "pt": "flow",
+                "to": "fileDirectory",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ac3f475.b5805c",
+        "type": "function",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "func": "msg.filename = `${flow.get('directory')}/${msg.req.params.file}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "c39b4074.cccd9"
+            ]
+        ]
+    },
+    {
+        "id": "68e0beb4.de5f1",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "Set Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "headers.content-type",
+                "pt": "msg",
+                "to": "audio/wav",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "87648aee.dd0818"
+            ]
+        ]
+    },
+    {
+        "id": "440484a1.072dfc",
+        "type": "fs-ops-dir",
+        "z": "400cca0.99e3638",
+        "name": "list files",
+        "path": "directory",
+        "pathType": "flow",
+        "filter": "*.wav",
+        "filterType": "str",
+        "dir": "files",
+        "dirType": "msg",
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "3119cc28.bf8554"
+            ]
+        ]
+    },
+    {
+        "id": "e78bf516.ea7368",
+        "type": "fs-ops-delete",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "path": "directory",
+        "pathType": "flow",
+        "filename": "file",
+        "filenameType": "msg",
+        "x": 790,
+        "y": 520,
+        "wires": [
+            [
+                "daa360e9.96b8e"
+            ]
+        ]
+    },
+    {
+        "id": "1cf89335.70009d",
+        "type": "fs-ops-dir",
+        "z": "400cca0.99e3638",
+        "name": "get file list",
+        "path": "directory",
+        "pathType": "flow",
+        "filter": "*.wav",
+        "filterType": "str",
+        "dir": "files",
+        "dirType": "msg",
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "19744c3a.6e3a74"
+            ]
+        ]
+    },
+    {
+        "id": "19744c3a.6e3a74",
+        "type": "function",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "func": "const files = msg.files || []\nmsg.file = files[msg.req.params.id]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 620,
+        "y": 520,
+        "wires": [
+            [
+                "e78bf516.ea7368"
+            ]
+        ]
+    },
+    {
+        "id": "e2c614c.3f3d5e8",
+        "type": "catch",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "scope": [
+            "e78bf516.ea7368",
+            "1cf89335.70009d"
+        ],
+        "uncaught": false,
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "cec7ef19.0966b"
+            ]
+        ]
+    },
+    {
+        "id": "e199c87d.f4d148",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1020,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b678cddc.95212",
+        "type": "comment",
+        "z": "400cca0.99e3638",
+        "name": "List Files",
+        "info": "",
+        "x": 200,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "322df236.ba450e",
+        "type": "comment",
+        "z": "400cca0.99e3638",
+        "name": "Server Files for Listening",
+        "info": "",
+        "x": 250,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b5321508.9f6078",
+        "type": "comment",
+        "z": "400cca0.99e3638",
+        "name": "Delete File",
+        "info": "",
+        "x": 200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "835dc718.c50478",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "x": 1010,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "62acfd9.5955d04",
+        "type": "http in",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "url": "/uploads/add",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 680,
+        "wires": [
+            [
+                "5f1057c4.da6538"
+            ]
+        ]
+    },
+    {
+        "id": "bb267c7c.e7458",
+        "type": "template",
+        "z": "400cca0.99e3638",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "File {{name}} has been uploaded !\n\n<a href=\"/uploads\">Go back</a>",
+        "output": "str",
+        "x": 870,
+        "y": 680,
+        "wires": [
+            [
+                "835dc718.c50478"
+            ]
+        ]
+    },
+    {
+        "id": "5f1057c4.da6538",
+        "type": "function",
+        "z": "400cca0.99e3638",
+        "name": "remove special chars in filename",
+        "func": "\n\nconst file = msg.req.files[0]\nmsg.name = file.originalname.replace(/[\\\\/:\\\"*?<>\\s|]+/g,\"\")\nmsg.filename = `${flow.get(\"directory\")}/${msg.name}`\nmsg.payload = file.buffer\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 680,
+        "wires": [
+            [
+                "c2fd8d8.8ba497"
+            ]
+        ]
+    },
+    {
+        "id": "6f9f99fb.a080a8",
+        "type": "catch",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "scope": [
+            "440484a1.072dfc"
+        ],
+        "uncaught": false,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "e1629cd2.60fe3"
+            ]
+        ]
+    },
+    {
+        "id": "6e1586fa.2abc08",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1020,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c2fd8d8.8ba497",
+        "type": "file",
+        "z": "400cca0.99e3638",
+        "name": "write file",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 740,
+        "y": 680,
+        "wires": [
+            [
+                "bb267c7c.e7458"
+            ]
+        ]
+    },
+    {
+        "id": "421f4e20.0508c",
+        "type": "catch",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "scope": [
+            "5f1057c4.da6538",
+            "c2fd8d8.8ba497"
+        ],
+        "uncaught": false,
+        "x": 410,
+        "y": 720,
+        "wires": [
+            [
+                "82c8be74.922a"
+            ]
+        ]
+    },
+    {
+        "id": "b86a156e.dd5bc8",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1020,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c5a93e32.273eb",
+        "type": "catch",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "scope": [
+            "c39b4074.cccd9"
+        ],
+        "uncaught": false,
+        "x": 630,
+        "y": 440,
+        "wires": [
+            [
+                "3379728d.d5013e"
+            ]
+        ]
+    },
+    {
+        "id": "42db5b35.ede624",
+        "type": "http response",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1020,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "82c8be74.922a",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 720,
+        "wires": [
+            [
+                "b86a156e.dd5bc8"
+            ]
+        ]
+    },
+    {
+        "id": "cec7ef19.0966b",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "e199c87d.f4d148"
+            ]
+        ]
+    },
+    {
+        "id": "3379728d.d5013e",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 440,
+        "wires": [
+            [
+                "42db5b35.ede624"
+            ]
+        ]
+    },
+    {
+        "id": "e1629cd2.60fe3",
+        "type": "change",
+        "z": "400cca0.99e3638",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "6e1586fa.2abc08"
+            ]
+        ]
+    },
+    {
+        "id": "843a45d8.f111e8",
+        "type": "comment",
+        "z": "400cca0.99e3638",
+        "name": "Upload File",
+        "info": "",
+        "x": 210,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "3701e7bf.7951b8",
+        "type": "subflow:400cca0.99e3638",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "env": [
+            {
+                "name": "fileDirectory",
+                "value": "/Users/lutz/Desktop/futurium-dialog/rebecca 2",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b6b9f4e.ee87c08",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "This node needs to be here to enable the file uploader. reachable at http://localhost:1880/uploads",
+        "info": "",
+        "x": 390,
+        "y": 80,
+        "wires": []
     }
 ]
