@@ -30,7 +30,7 @@
     {
         "id": "965f4c84.d4613",
         "type": "tab",
-        "label": "File Uploader",
+        "label": "Http Servers",
         "disabled": false,
         "info": ""
     },
@@ -255,6 +255,32 @@
         }
     },
     {
+        "id": "6096a378.7f109c",
+        "type": "subflow",
+        "name": "tools serve output file",
+        "info": "",
+        "category": "tools",
+        "in": [],
+        "out": [],
+        "env": [
+            {
+                "name": "filepath",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "color": "#C0DEED",
+        "icon": "node-red/parser-json.svg"
+    },
+    {
         "id": "98284da6.430f8",
         "type": "group",
         "z": "29928cb0.ddef64",
@@ -277,9 +303,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -302,9 +326,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -330,9 +352,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -355,9 +375,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -381,9 +399,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -4648,7 +4664,7 @@
             }
         ],
         "x": 1590,
-        "y": 140,
+        "y": 160,
         "wires": []
     },
     {
@@ -4711,7 +4727,7 @@
             }
         ],
         "x": 2530,
-        "y": 740,
+        "y": 760,
         "wires": []
     },
     {
@@ -4755,5 +4771,287 @@
         "x": 630,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "e42a56e1.0023f8",
+        "type": "http in",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "url": "/answers/json",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "6bdbed67.e2d6b4"
+            ]
+        ]
+    },
+    {
+        "id": "8b3d3049.ea7b1",
+        "type": "file in",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "b9d9fa83.e99bd8"
+            ]
+        ]
+    },
+    {
+        "id": "73350c38.d18564",
+        "type": "http response",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1230,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b9d9fa83.e99bd8",
+        "type": "function",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "func": "msg.payload = msg.payload.split('\\n').map((s) => {\n    try {\n        return JSON.parse(s)\n    } catch (err) {\n        return s\n    }\n})\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 740,
+        "y": 100,
+        "wires": [
+            [
+                "73350c38.d18564"
+            ]
+        ]
+    },
+    {
+        "id": "6bdbed67.e2d6b4",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "filepath",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "8b3d3049.ea7b1"
+            ]
+        ]
+    },
+    {
+        "id": "a0581166.fc0d2",
+        "type": "subflow:6096a378.7f109c",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a1d5af14.a922c",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "This node serves the collected answers. Filepath might need to be adjusted.",
+        "info": "reachable at [http://:server:/answers](/answers). You should only use a single instance of this node.",
+        "x": 330,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "88e46b7c.331338",
+        "type": "http in",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "url": "/answers",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "99e99071.c33af"
+            ]
+        ]
+    },
+    {
+        "id": "99e99071.c33af",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "filepath",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "5ac501a1.66266"
+            ]
+        ]
+    },
+    {
+        "id": "5ac501a1.66266",
+        "type": "file in",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "20cba3c8.addb7c"
+            ]
+        ]
+    },
+    {
+        "id": "20cba3c8.addb7c",
+        "type": "function",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "func": "msg.payload = msg.payload.trim().split('\\n').map((s) => {\n    try {\n        const r = JSON.parse(s)\n        r.value = (typeof r.value === 'string') ? r.value : JSON.stringify(r.value)\n        return r\n    } catch (err) {\n        return s\n    }\n})\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 740,
+        "y": 160,
+        "wires": [
+            [
+                "1e2455ea.65ebea"
+            ]
+        ]
+    },
+    {
+        "id": "6ecff95.54ed408",
+        "type": "http response",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1230,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1e2455ea.65ebea",
+        "type": "template",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>File Uploader</title>\n    <style>\n        body {\n          background-color: linen;\n          font-family: monospace;\n        }\n        \n        input, button {\n            font-family: monospace;\n        }\n        \n        h1 {\n            padding: 10px;\n        }\n        \n        .content {\n            width: 100%;\n            max-width: 700px;\n            margin: 0 auto;\n            padding: 10px 0;\n        }\n    </style>\n  </head>\n  <body>\n    <div class=\"content\">\n    <h1>Answers</h1>\n    <ul>\n    {{#payload}}\n        <li>{{topic}}: {{value}}</li>\n    {{/payload}}\n    </ul>\n    </div>\n  </body>\n</html>",
+        "output": "str",
+        "x": 940,
+        "y": 160,
+        "wires": [
+            [
+                "6ecff95.54ed408"
+            ]
+        ]
+    },
+    {
+        "id": "5cc5ac44.637eb4",
+        "type": "catch",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "ab473ec9.18c65"
+            ]
+        ]
+    },
+    {
+        "id": "e166e1bc.64419",
+        "type": "http response",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1240,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ab473ec9.18c65",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 220,
+        "wires": [
+            [
+                "e166e1bc.64419"
+            ]
+        ]
     }
 ]
