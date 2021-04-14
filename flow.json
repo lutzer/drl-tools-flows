@@ -188,6 +188,73 @@
         "icon": "font-awesome/fa-upload"
     },
     {
+        "id": "aaf06e2c.e5b2f",
+        "type": "subflow",
+        "name": "tools output writer",
+        "info": "",
+        "category": "tools",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4d41ee73.24003"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [
+            {
+                "name": "filepath",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "topic",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "color": "#C0DEED",
+        "icon": "font-awesome/fa-save",
+        "status": {
+            "x": 900,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "42a63d67.d4def4",
+                    "port": 0
+                },
+                {
+                    "id": "4ae4daed.2d7f54",
+                    "port": 0
+                },
+                {
+                    "id": "9aabf298.0b56e",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "98284da6.430f8",
         "type": "group",
         "z": "29928cb0.ddef64",
@@ -326,12 +393,12 @@
     {
         "id": "f0c6baff.ba8948",
         "type": "soundfile-directory",
-        "directory": "/Users/lutz/Desktop/kiezgeschichten-dialog/rebecca"
+        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
     },
     {
         "id": "113bba6b.b1a796",
         "type": "soundfile-directory",
-        "directory": "/home/pi/futurium-dialog/rebecca"
+        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
     },
     {
         "id": "cfbb12ea.54ab9",
@@ -1953,7 +2020,8 @@
         "y": 200,
         "wires": [
             [
-                "9c89a05f.e7694"
+                "9c89a05f.e7694",
+                "df0ab0a.fd2525"
             ]
         ]
     },
@@ -2011,7 +2079,8 @@
         "y": 200,
         "wires": [
             [
-                "d0a467f9.26d9e8"
+                "44409dca.4c5454",
+                "5edf2052.64a29"
             ],
             []
         ]
@@ -2058,7 +2127,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1910,
+        "x": 1710,
         "y": 200,
         "wires": [
             [
@@ -2127,7 +2196,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1760,
+        "x": 1560,
         "y": 200,
         "wires": [
             [
@@ -2383,7 +2452,8 @@
         "y": 820,
         "wires": [
             [
-                "a131fc76.02f68"
+                "a131fc76.02f68",
+                "61641ef2.ed3bd"
             ],
             []
         ]
@@ -2508,76 +2578,14 @@
         ]
     },
     {
-        "id": "c2883541.617a28",
-        "type": "file",
-        "z": "4a06756c.fb29bc",
-        "name": "",
-        "filename": "/home/pi/futurium-dialog/answers.txt",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 2510,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e03c8f6f.2f2a8",
-        "type": "template",
-        "z": "4a06756c.fb29bc",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "time: {{time}}; select1: {{select1.key}}; select2: {{select2.key}}; answer1: {{answer1}}; answer2: {{answer2}}",
-        "output": "str",
-        "x": 2260,
-        "y": 960,
-        "wires": [
-            [
-                "c2883541.617a28"
-            ]
-        ]
-    },
-    {
         "id": "a0b31b04.6ead78",
         "type": "comment",
         "z": "4a06756c.fb29bc",
-        "name": "In datei speichern",
+        "name": "ende des dialogs speichern",
         "info": "",
-        "x": 2110,
+        "x": 2140,
         "y": 920,
         "wires": []
-    },
-    {
-        "id": "d0a467f9.26d9e8",
-        "type": "change",
-        "z": "4a06756c.fb29bc",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "select1",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1580,
-        "y": 200,
-        "wires": [
-            [
-                "5edf2052.64a29"
-            ]
-        ]
     },
     {
         "id": "4b47c22f.d3746c",
@@ -2586,11 +2594,9 @@
         "name": "",
         "rules": [
             {
-                "t": "set",
-                "p": "time",
-                "pt": "msg",
-                "to": "",
-                "tot": "date"
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
             }
         ],
         "action": "",
@@ -2598,11 +2604,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2090,
+        "x": 2110,
         "y": 960,
         "wires": [
             [
-                "e03c8f6f.2f2a8"
+                "e9e89562.3003e8"
             ]
         ]
     },
@@ -3524,7 +3530,8 @@
         "y": 540,
         "wires": [
             [
-                "af386139.abee1"
+                "af386139.abee1",
+                "2029792b.2b7cc6"
             ],
             []
         ]
@@ -3545,7 +3552,8 @@
         "y": 680,
         "wires": [
             [
-                "3c9c1082.eeefa"
+                "3c9c1082.eeefa",
+                "3a825df2.078a82"
             ],
             []
         ]
@@ -3706,7 +3714,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<h2>File List</h2>\n<p>Directory: <span class=\"highlight\">{{directory}}</span></p>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\"/>\n    <input type=\"submit\" value=\"Submit\">\n</form>\n<p>Only accepts wav files.</p>\n\n<script>\n    function onDeleteClicked(index) {\n        var ok = confirm('Are you sure to delete file?')\n        if (ok)\n            fetch(\"/uploads/delete/\" + index).then((res) => {\n                location.reload()\n            })\n    }\n</script>\n\n",
+        "template": "<h2>File List</h2>\n<p>Directory: <span class=\"highlight\">{{directory}}</span></p>\n<ul>\n{{#payload}}\n    <li>\n        <button onClick=\"onDeleteClicked({{index}})\">Delete</button>\n        <a href=\"/uploads/file/{{fileName}}\">{{fileName}}</a>\n    </li>\n{{/payload}}\n</ul>\n\n<h3>Upload wav file</h3>\n<form action=\"/uploads/add\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" accept=\".wav\"/>\n    <input type=\"submit\" value=\"Upload\">\n</form>\n<p>Only accepts wav files.</p>\n\n<script>\n    function onDeleteClicked(index) {\n        var ok = confirm('Are you sure to delete file?')\n        if (ok)\n            fetch(\"/uploads/delete/\" + index).then((res) => {\n                location.reload()\n            })\n    }\n</script>\n\n",
         "output": "str",
         "x": 660,
         "y": 260,
@@ -4040,9 +4048,9 @@
         "id": "322df236.ba450e",
         "type": "comment",
         "z": "400cca0.99e3638",
-        "name": "Server Files for Listening",
+        "name": "Serve files for listening",
         "info": "",
-        "x": 250,
+        "x": 240,
         "y": 360,
         "wires": []
     },
@@ -4360,9 +4368,9 @@
         "id": "b6b9f4e.ee87c08",
         "type": "comment",
         "z": "965f4c84.d4613",
-        "name": "This node needs to be here to enable the file uploader. reachable at http://localhost:1880/uploads. You should only use a single instance of this node.",
-        "info": "",
-        "x": 560,
+        "name": "This node enables the file uploader. ",
+        "info": "reachable at [http://:server:/uploads](/uploads). You should only use a single instance of this node.",
+        "x": 200,
         "y": 80,
         "wires": []
     },
@@ -4471,5 +4479,281 @@
                 "6e1586fa.2abc08"
             ]
         ]
+    },
+    {
+        "id": "258422f1.019dde",
+        "type": "file",
+        "z": "aaf06e2c.e5b2f",
+        "name": "",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "42a63d67.d4def4",
+                "8d8a43e9.27f7d"
+            ]
+        ]
+    },
+    {
+        "id": "6ada7437.e15d1c",
+        "type": "catch",
+        "z": "aaf06e2c.e5b2f",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "9aabf298.0b56e"
+            ]
+        ]
+    },
+    {
+        "id": "4d41ee73.24003",
+        "type": "function",
+        "z": "aaf06e2c.e5b2f",
+        "name": "format line",
+        "func": "msg.payload = {\n    time: Date.now(),\n    value: msg.payload,\n    topic: env.get('topic') || msg.topic\n}\nmsg.filename = env.get('filepath')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "258422f1.019dde"
+            ]
+        ]
+    },
+    {
+        "id": "42a63d67.d4def4",
+        "type": "change",
+        "z": "aaf06e2c.e5b2f",
+        "name": "status saved",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"fill\":\"green\",\"shape\":\"dot\",\"text\":\"saved\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d8a43e9.27f7d",
+        "type": "delay",
+        "z": "aaf06e2c.e5b2f",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "3",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "4ae4daed.2d7f54"
+            ]
+        ]
+    },
+    {
+        "id": "4ae4daed.2d7f54",
+        "type": "change",
+        "z": "aaf06e2c.e5b2f",
+        "name": "clear",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9aabf298.0b56e",
+        "type": "change",
+        "z": "aaf06e2c.e5b2f",
+        "name": "status saved",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"fill\":\"red\",\"shape\":\"dot\",\"text\":\"error\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44409dca.4c5454",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "datenschutz",
+                "type": "str"
+            }
+        ],
+        "x": 1590,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2029792b.2b7cc6",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "meinung",
+                "type": "str"
+            }
+        ],
+        "x": 870,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3a825df2.078a82",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "engagiert",
+                "type": "str"
+            }
+        ],
+        "x": 910,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "61641ef2.ed3bd",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "mehr",
+                "type": "str"
+            }
+        ],
+        "x": 2530,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e9e89562.3003e8",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "end",
+                "type": "str"
+            }
+        ],
+        "x": 2330,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "df0ab0a.fd2525",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "4a06756c.fb29bc",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "start",
+                "type": "str"
+            }
+        ],
+        "x": 630,
+        "y": 240,
+        "wires": []
     }
 ]
