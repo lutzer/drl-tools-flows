@@ -2207,7 +2207,7 @@
         "type": "switch",
         "z": "4a06756c.fb29bc",
         "name": "",
-        "property": "payload.key",
+        "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
@@ -2505,7 +2505,7 @@
         "type": "switch",
         "z": "4a06756c.fb29bc",
         "name": "",
-        "property": "payload.key",
+        "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
@@ -2571,7 +2571,7 @@
         "z": "4a06756c.fb29bc",
         "name": "Verabschiedung",
         "info": "",
-        "x": 2860,
+        "x": 3040,
         "y": 780,
         "wires": []
     },
@@ -5203,6 +5203,89 @@
         "wires": [
             [
                 "a131fc76.02f68"
+            ]
+        ]
+    },
+    {
+        "id": "17fc38f8.bce467",
+        "type": "fuzzy-match",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "no: bsaldlsakd\nyes: kjashdkjs",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 320,
+        "y": 560,
+        "wires": [
+            [
+                "b0e4546.cc670a8"
+            ],
+            [
+                "d7cc8c15.7b4af"
+            ]
+        ]
+    },
+    {
+        "id": "b0e4546.cc670a8",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d7cc8c15.7b4af",
+        "type": "debug",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a47e99cc.a3bae8",
+        "type": "inject",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 100,
+        "y": 560,
+        "wires": [
+            [
+                "17fc38f8.bce467"
             ]
         ]
     }
