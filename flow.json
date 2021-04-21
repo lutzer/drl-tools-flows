@@ -2113,7 +2113,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "01_Hallo.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 370,
         "y": 200,
@@ -2153,7 +2152,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "02_Datenschutz.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 1000,
         "y": 200,
@@ -2242,7 +2240,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "03_seitDreiWochen.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 410,
         "y": 400,
@@ -3022,13 +3019,7 @@
         "type": "subflow:d9115fe7.1fc6d",
         "z": "5fecfc4e.735094",
         "name": "",
-        "env": [
-            {
-                "name": "language",
-                "value": "en",
-                "type": "str"
-            }
-        ],
+        "env": [],
         "x": 410,
         "y": 220,
         "wires": [
@@ -3391,7 +3382,6 @@
         "name": "",
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
-        "options": "",
         "allow_multiple": true,
         "x": 1580,
         "y": 440,
@@ -4396,7 +4386,7 @@
         "env": [
             {
                 "name": "fileDirectory",
-                "value": "/Users/lutz/Desktop/futurium-dialog/rebecca 2",
+                "value": "/Users/rebecca/TOOLS/tool_files",
                 "type": "str"
             }
         ],
