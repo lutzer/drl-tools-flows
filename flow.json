@@ -17,7 +17,7 @@
         "id": "4a06756c.fb29bc",
         "type": "tab",
         "label": "Futurium",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -31,6 +31,13 @@
         "id": "965f4c84.d4613",
         "type": "tab",
         "label": "Http Servers",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c548c02.213374",
+        "type": "tab",
+        "label": "Futurium Workshop Example",
         "disabled": false,
         "info": ""
     },
@@ -307,10 +314,6 @@
                     {
                         "id": "e885ba21.712b88",
                         "port": 0
-                    },
-                    {
-                        "id": "e801eec2.e0d4b",
-                        "port": 0
                     }
                 ]
             }
@@ -335,12 +338,6 @@
                                     "en-US": "append"
                                 },
                                 "v": "append"
-                            },
-                            {
-                                "l": {
-                                    "en-US": "get"
-                                },
-                                "v": "get"
                             }
                         ]
                     }
@@ -386,9 +383,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -411,9 +406,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -439,9 +432,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -464,9 +455,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -490,9 +479,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -507,7 +494,7 @@
     {
         "id": "113bba6b.b1a796",
         "type": "soundfile-directory",
-        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
+        "directory": "/Users/lutz/Desktop/futurium-workshop/soundfiles"
     },
     {
         "id": "cfbb12ea.54ab9",
@@ -2108,7 +2095,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 170,
+        "x": 150,
         "y": 200,
         "wires": [
             [
@@ -2683,61 +2670,6 @@
         ]
     },
     {
-        "id": "6a56d2cb.1a97bc",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "config",
-                "v": "test",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 200,
-        "wires": [
-            [
-                "47411968.b363c8"
-            ]
-        ]
-    },
-    {
-        "id": "da351163.b21b3",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "stop",
-        "payloadType": "str",
-        "x": 130,
-        "y": 240,
-        "wires": [
-            [
-                "47411968.b363c8"
-            ]
-        ]
-    },
-    {
         "id": "e1cfc843.f838c8",
         "type": "socketio-emitter",
         "z": "d9115fe7.1fc6d",
@@ -2986,46 +2918,6 @@
         ]
     },
     {
-        "id": "47411968.b363c8",
-        "type": "subflow:d9115fe7.1fc6d",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "env": [
-            {
-                "name": "language",
-                "value": "en",
-                "type": "str"
-            }
-        ],
-        "x": 410,
-        "y": 220,
-        "wires": [
-            [
-                "480e1ea2.9f4e7"
-            ],
-            [
-                "c4ef7da4.c5232"
-            ]
-        ]
-    },
-    {
-        "id": "480e1ea2.9f4e7",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "9bb51859.d52808",
         "type": "status",
         "z": "d9115fe7.1fc6d",
@@ -3216,40 +3108,6 @@
                 "7e7bd489.1b262c"
             ]
         ]
-    },
-    {
-        "id": "c2e21719.6d9b38",
-        "type": "subflow:d9115fe7.1fc6d",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "env": [],
-        "x": 420,
-        "y": 420,
-        "wires": [
-            [
-                "f1595735.0c08d8"
-            ],
-            [
-                "f1595735.0c08d8"
-            ]
-        ]
-    },
-    {
-        "id": "f1595735.0c08d8",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "f9f69b61.5aa078",
@@ -3643,21 +3501,6 @@
             [
                 "223d2bf4.4932b4"
             ]
-        ]
-    },
-    {
-        "id": "c4ef7da4.c5232",
-        "type": "say",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "text": "",
-        "voice": "",
-        "voiceString": "",
-        "speed": 1,
-        "x": 690,
-        "y": 240,
-        "wires": [
-            []
         ]
     },
     {
@@ -4364,7 +4207,7 @@
         "env": [
             {
                 "name": "fileDirectory",
-                "value": "/Users/lutz/Desktop/futurium-dialog/rebecca 2",
+                "value": "/Users/lutz/Desktop/futurium-workshop/soundfiles",
                 "type": "str"
             }
         ],
@@ -4721,7 +4564,7 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/Users/lutz/Desktop/futurium-dialog/answers.txt",
+                "value": "/Users/lutz/Desktop/futurium-workshop/answers.txt",
                 "type": "str"
             }
         ],
@@ -4919,16 +4762,11 @@
                 "t": "eq",
                 "v": "append",
                 "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "get",
-                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
+        "outputs": 2,
         "x": 430,
         "y": 120,
         "wires": [
@@ -4937,9 +4775,6 @@
             ],
             [
                 "e885ba21.712b88"
-            ],
-            [
-                "e801eec2.e0d4b"
             ]
         ]
     },
@@ -4971,22 +4806,6 @@
         "finalize": "",
         "x": 690,
         "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e801eec2.e0d4b",
-        "type": "function",
-        "z": "7c973ed1.90f49",
-        "name": "get output",
-        "func": "msg.payload = global.get('tools-output')\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 690,
-        "y": 160,
         "wires": [
             []
         ]
@@ -5139,6 +4958,13 @@
                 "pt": "msg",
                 "to": "filepath",
                 "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tools-output",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -5146,7 +4972,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 210,
+        "x": 200,
         "y": 80,
         "wires": [
             [
@@ -5171,89 +4997,6 @@
         "wires": [
             [
                 "a131fc76.02f68"
-            ]
-        ]
-    },
-    {
-        "id": "17fc38f8.bce467",
-        "type": "fuzzy-match",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "inputOptions": "text",
-        "choices": "no: bsaldlsakd\nyes: kjashdkjs",
-        "scorer": "WRatio",
-        "limit": "0",
-        "cutoff": "0",
-        "x": 320,
-        "y": 560,
-        "wires": [
-            [
-                "b0e4546.cc670a8"
-            ],
-            [
-                "d7cc8c15.7b4af"
-            ]
-        ]
-    },
-    {
-        "id": "b0e4546.cc670a8",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "d7cc8c15.7b4af",
-        "type": "debug",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "a47e99cc.a3bae8",
-        "type": "inject",
-        "z": "5fecfc4e.735094",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "test",
-        "payloadType": "str",
-        "x": 100,
-        "y": 560,
-        "wires": [
-            [
-                "17fc38f8.bce467"
             ]
         ]
     },
@@ -5510,7 +5253,7 @@
         "props": [],
         "repeat": "",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
@@ -5737,5 +5480,366 @@
                 "b2c7c2fc.3a8ab"
             ]
         ]
+    },
+    {
+        "id": "92bc015.3d735",
+        "type": "inject",
+        "z": "c548c02.213374",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "967c809c.e2304",
+                "ecac7d64.49e88"
+            ]
+        ]
+    },
+    {
+        "id": "967c809c.e2304",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "01_Hallo.wav",
+        "options": "",
+        "allow_multiple": false,
+        "x": 330,
+        "y": 420,
+        "wires": [
+            [
+                "2b0604f7.bb0fac"
+            ]
+        ]
+    },
+    {
+        "id": "27a40772.be6cd8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Begrüssung",
+        "info": "",
+        "x": 330,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "12bfbdba.8d7242",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "02_Datenschutz.wav",
+        "options": "",
+        "allow_multiple": false,
+        "x": 700,
+        "y": 420,
+        "wires": [
+            [
+                "1be27684.4f2899"
+            ]
+        ]
+    },
+    {
+        "id": "2b0604f7.bb0fac",
+        "type": "delay",
+        "z": "c548c02.213374",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "12bfbdba.8d7242"
+            ]
+        ]
+    },
+    {
+        "id": "9f50e640.e4adc8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Frage: Datenschutz",
+        "info": "",
+        "x": 690,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1be27684.4f2899",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 940,
+        "y": 420,
+        "wires": [
+            [
+                "af45de6f.a9daf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "af45de6f.a9daf",
+        "type": "fuzzy-match",
+        "z": "c548c02.213374",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "30",
+        "x": 1170,
+        "y": 420,
+        "wires": [
+            [
+                "15a3c7e.8cca538"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "15a3c7e.8cca538",
+        "type": "switch",
+        "z": "c548c02.213374",
+        "name": "switch yes / no",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1380,
+        "y": 420,
+        "wires": [
+            [
+                "542d7f80.74"
+            ],
+            [
+                "9e000d12.586f"
+            ]
+        ]
+    },
+    {
+        "id": "542d7f80.74",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "09_Nein.wav",
+        "allow_multiple": false,
+        "x": 1590,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e000d12.586f",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "06_Frage2_wofuerEngagiert.wav",
+        "options": "",
+        "allow_multiple": false,
+        "x": 1660,
+        "y": 520,
+        "wires": [
+            [
+                "179a4cbd.7d7993"
+            ]
+        ]
+    },
+    {
+        "id": "74e5eb95.4cda74",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Aufnahme ja / nein",
+        "info": "",
+        "x": 930,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "179a4cbd.7d7993",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 1960,
+        "y": 520,
+        "wires": [
+            [
+                "1b653bbe.945aa4",
+                "9d15dd36.eafeb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "98370861.d708e8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Frage: Wofür hast du dich schonmal angagiert",
+        "info": "",
+        "x": 1690,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "12036120.b5edef",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 2200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9fdbf032.18892",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Antwort auf Nein",
+        "info": "",
+        "x": 1600,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ecac7d64.49e88",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 350,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b653bbe.945aa4",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Engagement",
+                "type": "str"
+            }
+        ],
+        "x": 2210,
+        "y": 620,
+        "wires": [
+            [
+                "7e1ae908.3aa6b8"
+            ]
+        ]
+    },
+    {
+        "id": "7e1ae908.3aa6b8",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-workshop/answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 2440,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d15dd36.eafeb",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "113bba6b.b1a796",
+        "file": "08_Verabschiedung.wav",
+        "allow_multiple": false,
+        "x": 2230,
+        "y": 520,
+        "wires": [
+            [
+                "63a03536.ecf92c"
+            ]
+        ]
+    },
+    {
+        "id": "63a03536.ecf92c",
+        "type": "debug",
+        "z": "c548c02.213374",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2470,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "2f2fe960.ccd6e6",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Speichern",
+        "info": "",
+        "x": 2180,
+        "y": 580,
+        "wires": []
     }
 ]
