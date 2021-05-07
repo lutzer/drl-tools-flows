@@ -4222,7 +4222,7 @@
             }
         ],
         "x": 150,
-        "y": 120,
+        "y": 140,
         "wires": []
     },
     {
@@ -4232,7 +4232,7 @@
         "name": "This node enables the file uploader. ",
         "info": "reachable at [http://:server:/uploads](/uploads). You should only use a single instance of this node.",
         "x": 200,
-        "y": 80,
+        "y": 100,
         "wires": []
     },
     {
@@ -4579,7 +4579,7 @@
             }
         ],
         "x": 160,
-        "y": 240,
+        "y": 260,
         "wires": []
     },
     {
@@ -4589,7 +4589,7 @@
         "name": "This node serves the collected answers. Adjust filepath to the correct output file.",
         "info": "reachable at [http://:server:/answers](/answers). You should only use a single instance of this node.",
         "x": 340,
-        "y": 200,
+        "y": 220,
         "wires": []
     },
     {
@@ -5267,7 +5267,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "7c08db92.a6bde4",
@@ -5282,7 +5282,7 @@
         "name": "Blink led to indicate startup",
         "info": "",
         "x": 180,
-        "y": 320,
+        "y": 340,
         "wires": []
     },
     {
@@ -5301,7 +5301,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "11614d8c.0debb2"
@@ -5324,7 +5324,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "b2c7c2fc.3a8ab"
@@ -5347,7 +5347,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 480,
+        "y": 500,
         "wires": [
             [
                 "11614d8c.0debb2"
@@ -5370,7 +5370,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 520,
+        "y": 540,
         "wires": [
             [
                 "b2c7c2fc.3a8ab"
@@ -5388,7 +5388,7 @@
         "freq": "",
         "out": "out",
         "x": 680,
-        "y": 400,
+        "y": 420,
         "wires": []
     },
     {
@@ -5411,7 +5411,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "5f2b26bc.0f08d8"
@@ -5438,7 +5438,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "5f2b26bc.0f08d8"
@@ -5461,7 +5461,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "11614d8c.0debb2"
@@ -5484,7 +5484,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 600,
+        "y": 620,
         "wires": [
             [
                 "b2c7c2fc.3a8ab"
@@ -5696,9 +5696,9 @@
         "id": "74e5eb95.4cda74",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Aufnahme ja / nein",
+        "name": "Aufnahme ja/nein zu datenschutz",
         "info": "",
-        "x": 930,
+        "x": 970,
         "y": 380,
         "wires": []
     },
@@ -5728,9 +5728,9 @@
         "id": "98370861.d708e8",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Frage: Wofür hast du dich schonmal angagiert",
+        "name": "Antwort: Ja",
         "info": "",
-        "x": 1690,
+        "x": 1590,
         "y": 480,
         "wires": []
     },
@@ -5748,9 +5748,9 @@
         "id": "9fdbf032.18892",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Antwort auf Nein",
+        "name": "Antwort: Nein",
         "info": "",
-        "x": 1600,
+        "x": 1590,
         "y": 320,
         "wires": []
     },
@@ -5767,7 +5767,7 @@
             }
         ],
         "x": 330,
-        "y": 520,
+        "y": 540,
         "wires": [
             []
         ]
@@ -5785,7 +5785,7 @@
             }
         ],
         "x": 2190,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "7e1ae908.3aa6b8"
@@ -5805,7 +5805,7 @@
             }
         ],
         "x": 2430,
-        "y": 620,
+        "y": 640,
         "wires": [
             []
         ]
@@ -5849,7 +5849,7 @@
         "name": "Antwort speichern",
         "info": "",
         "x": 2210,
-        "y": 580,
+        "y": 600,
         "wires": []
     },
     {
@@ -5859,7 +5859,7 @@
         "name": "Starte einen neuen Datenbank Eintrag",
         "info": "",
         "x": 410,
-        "y": 480,
+        "y": 500,
         "wires": []
     },
     {
@@ -5869,7 +5869,27 @@
         "name": "In Datenbank speichern",
         "info": "",
         "x": 2440,
-        "y": 580,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "bd292dcc.2f2ba",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "This flow needs to be enabled to activate the web interfaces and the startup animation of the chatterbox.",
+        "info": "reachable at [http://:server:/uploads](/uploads). You should only use a single instance of this node.",
+        "x": 420,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fc82e1b9.bce3d",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 1960,
+        "y": 480,
         "wires": []
     }
 ]
