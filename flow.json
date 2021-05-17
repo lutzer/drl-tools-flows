@@ -516,138 +516,6 @@
         "options": "{ \"forceNew\": true }"
     },
     {
-        "id": "b7f1f48.d6bf208",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "8d5c3afb.dd9ec8",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "b9dbe733.9dccf8",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "b7f1f48.d6bf208",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "160e81fb.f1c86e",
-        "type": "ui_group",
-        "name": "File Browser",
-        "tab": "b63d1f91.68095",
-        "order": 1,
-        "disp": true,
-        "width": "18",
-        "collapse": false
-    },
-    {
-        "id": "b63d1f91.68095",
-        "type": "ui_tab",
-        "name": "Files",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "1d5cf971.7c7997",
         "type": "inject",
         "z": "29928cb0.ddef64",
@@ -2123,7 +1991,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "01_Hallo.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 370,
         "y": 200,
@@ -2163,7 +2030,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "02_Datenschutz.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 1000,
         "y": 200,
@@ -2252,7 +2118,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "03_seitDreiWochen.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 410,
         "y": 400,
@@ -3289,11 +3154,12 @@
         "type": "function",
         "z": "d9115fe7.1fc6d",
         "name": "throw Error",
-        "func": "throw new Error(Json.stringify(msg.payload.error))\nreturn msg;",
+        "func": "throw new Error(JSON.stringify(msg.payload.error))\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 530,
         "y": 400,
         "wires": [
@@ -3359,7 +3225,6 @@
         "name": "",
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
-        "options": "",
         "allow_multiple": true,
         "x": 1580,
         "y": 440,
