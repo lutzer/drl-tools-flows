@@ -425,7 +425,9 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99
+        "y": 99,
+        "w": 1132,
+        "h": 222
     },
     {
         "id": "a8081aca.df57b8",
@@ -448,7 +450,9 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379
+        "y": 379,
+        "w": 872,
+        "h": 162
     },
     {
         "id": "fec5c43f.4caea8",
@@ -474,7 +478,9 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "7f6892dc.4d798c",
@@ -497,7 +503,9 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -521,7 +529,9 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879
+        "y": 879,
+        "w": 972,
+        "h": 262
     },
     {
         "id": "c531aa1.9af8558",
@@ -6366,7 +6376,7 @@
         "type": "comment",
         "z": "5588b46c.506a2c",
         "name": "Ausgabe von Dialog Nachrichten",
-        "info": "Diese node rrlaubt es innerhalb des Dialog Flows Nachrichten abzugreifen um den Flow zu testen bzw sich die Ausgabe anzusehen",
+        "info": "Diese node erlaubt es innerhalb des Dialog Flows Nachrichten abzugreifen um den Flow zu testen bzw sich die Ausgabe anzusehen. Die Ausgebeben Nachrichten erscheinen im Debug Reiter der Anzeige auf der rechten Seite der Node Red Bedienoberflaeche.",
         "x": 1050,
         "y": 600,
         "wires": []
