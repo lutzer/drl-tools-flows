@@ -24,7 +24,7 @@
         "id": "5588b46c.506a2c",
         "type": "tab",
         "label": "Components",
-        "disabled": true,
+        "disabled": false,
         "info": ""
     },
     {
@@ -158,7 +158,7 @@
                 }
             }
         ],
-        "color": "#E9967A",
+        "color": "#FFAAAA",
         "outputLabels": [
             "transcript",
             "intermediate"
@@ -198,7 +198,7 @@
                 }
             }
         ],
-        "color": "#E6E0F8",
+        "color": "#C0DEED",
         "icon": "font-awesome/fa-upload"
     },
     {
@@ -245,7 +245,7 @@
                 }
             }
         ],
-        "color": "#C0DEED",
+        "color": "#FFAAAA",
         "icon": "font-awesome/fa-save",
         "status": {
             "x": 900,
@@ -289,7 +289,7 @@
                 }
             }
         ],
-        "color": "#E6E0F8",
+        "color": "#C0DEED",
         "icon": "node-red/parser-json.svg"
     },
     {
@@ -364,7 +364,7 @@
                 }
             }
         ],
-        "color": "#C0DEED",
+        "color": "#FFAAAA",
         "icon": "font-awesome/fa-save"
     },
     {
@@ -5266,7 +5266,7 @@
         "props": [],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
@@ -5896,14 +5896,14 @@
     {
         "id": "5feea866.a5d7b8",
         "type": "rpi-gpio in",
-        "z": "5588b46c.506a2c",
+        "z": "5e5de4d5.8fa87c",
         "name": "",
         "pin": "16",
         "intype": "tri",
         "debounce": "25",
         "read": false,
-        "x": 150,
-        "y": 180,
+        "x": 190,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5912,10 +5912,10 @@
         "id": "ae0f48b9.eabec8",
         "type": "comment",
         "z": "5588b46c.506a2c",
-        "name": "Reagiert auf den Pusbutton der Dose",
+        "name": "Reagiert auf den Pusbutton der Dose und gibst signal aus wenn er gedrueckt wird.",
         "info": "",
-        "x": 250,
-        "y": 140,
+        "x": 370,
+        "y": 120,
         "wires": []
     },
     {
@@ -5923,7 +5923,8 @@
         "type": "subflow:d9115fe7.1fc6d",
         "z": "5588b46c.506a2c",
         "name": "",
-        "x": 200,
+        "env": [],
+        "x": 180,
         "y": 300,
         "wires": [
             [],
@@ -5935,8 +5936,9 @@
         "type": "subflow:aaf06e2c.e5b2f",
         "z": "5588b46c.506a2c",
         "name": "",
-        "x": 190,
-        "y": 420,
+        "env": [],
+        "x": 170,
+        "y": 940,
         "wires": [
             []
         ]
@@ -5946,8 +5948,15 @@
         "type": "subflow:7c973ed1.90f49",
         "z": "5588b46c.506a2c",
         "name": "",
-        "x": 170,
-        "y": 520,
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 820,
         "wires": [
             []
         ]
@@ -5961,8 +5970,8 @@
         "voice": "",
         "voiceString": "",
         "speed": 1,
-        "x": 150,
-        "y": 620,
+        "x": 130,
+        "y": 680,
         "wires": [
             []
         ]
@@ -5973,12 +5982,12 @@
         "z": "5588b46c.506a2c",
         "name": "",
         "inputOptions": "text",
-        "choices": "",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
         "scorer": "WRatio",
         "limit": "0",
         "cutoff": "0",
-        "x": 170,
-        "y": 700,
+        "x": 150,
+        "y": 440,
         "wires": [
             [],
             []
@@ -5989,11 +5998,11 @@
         "type": "play-soundfile",
         "z": "5588b46c.506a2c",
         "name": "",
-        "directory": "",
+        "directory": "c531aa1.9af8558",
         "file": "",
         "allow_multiple": false,
-        "x": 180,
-        "y": 800,
+        "x": 160,
+        "y": 560,
         "wires": [
             []
         ]
@@ -6013,8 +6022,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 520,
-        "y": 300,
+        "x": 980,
+        "y": 160,
         "wires": [
             []
         ]
@@ -6029,16 +6038,22 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 510,
-        "y": 420,
+        "outputs": 2,
+        "x": 970,
+        "y": 440,
         "wires": [
+            [],
             []
         ]
     },
@@ -6054,8 +6069,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 520,
+        "x": 990,
+        "y": 640,
         "wires": []
     },
     {
@@ -6063,24 +6078,14 @@
         "type": "inject",
         "z": "5588b46c.506a2c",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 540,
-        "y": 620,
+        "x": 990,
+        "y": 820,
         "wires": [
             []
         ]
@@ -6094,7 +6099,7 @@
         "intype": "tri",
         "debounce": "25",
         "read": false,
-        "x": 150,
+        "x": 130,
         "y": 360,
         "wires": [
             [
@@ -6254,5 +6259,365 @@
         "y": 1320,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "5e5de4d5.8fa87c",
+        "type": "subflow",
+        "name": "tools-button",
+        "info": "",
+        "category": "tools",
+        "in": [],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "5feea866.a5d7b8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#FFAAAA",
+        "outputLabels": [
+            "pressed"
+        ],
+        "status": {
+            "x": 340,
+            "y": 160,
+            "wires": [
+                {
+                    "id": "7587a0a4.521ec",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "c2578116.aee73",
+        "type": "subflow:5e5de4d5.8fa87c",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "env": [],
+        "x": 150,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_switch.png"
+    },
+    {
+        "id": "7587a0a4.521ec",
+        "type": "status",
+        "z": "5e5de4d5.8fa87c",
+        "name": "",
+        "scope": [
+            "5feea866.a5d7b8"
+        ],
+        "x": 200,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ffd82054.4c32f",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Startet Microfon-Aufnahme und Sprach-Transcription.",
+        "info": "Opionen:\n\n* language: Wähle hier den die Sprache fuer die eingesprochenen Texte aus. Standard: de\n\n* timeout: Zeitspanne, nach der die Sprach-Aufnahme automatisch beendet wird, wenn nichts empfangen wird. (in s)\n\n* initialWait: Zeitspanne, wie lange am Anfang der Aufnahme auf eine Eingabe gewartet wird. (in s)\n\n* duration: Maximale Dauer einer Aufnahme. (in s)\n\n* playBeep: Spiele einen kurzen Ton beim Starten und Beenden der Aufnahme",
+        "x": 280,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2a695a61.2df8c6",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Hier werden alle wichtigen nodes zum erstellen von Dialogen beschrieben. Mit einem Doppelklick auf ein Kommentar kannst du mehr zu den einzelnen Nodes erfahren.",
+        "info": "",
+        "x": 590,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f2f768ce.3f64d8",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Node dient zum speichern der eingesprochenen Antworten.",
+        "info": "Zu Begin des Dialogs (gleich nach dem Pushbutton) wird eine neue Aufzeichnung mit der Opeartion \"new\" gestartet. Das Topic wird dabei ignoriert\n\nJede Eingabe die gespeichert wird, wird durch die operation append hinzugefuegt. Zu jeder Eingabe kann ein Topic angegeben werden.\n\nAm Ende des Dialogs koennen die Eingaben mit der Node \"tools-write-output\" gespeichert werden.",
+        "x": 300,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "af297d34.66244",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Unterscheidet zwischen verschiedenen Optionen, die eingesprochen wurden.",
+        "info": "Dieses Beispiel unterscheidet zwischen ja/nein und gibt entweder yes oder no aus, je nachdem was erkannt wurde. Je mehr Saetze in der Node Config eingegeben werden, desto besser funktioniert die Erkennung.\n\nDiese Node kann nicht nur zwischen ja und nein unterscheiden, sondern auch zwischen anderen Fällen mit der entsprechenden Konfiguration.",
+        "x": 350,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1f197cbb.b0d463",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Spielt eine Sound Datei ab.",
+        "info": "Als directory muss der entsprechende Ordner ausgewaehlt werden in dem sich die Sound Dateien befinden.\n\nAls Dateiname muss der Name der entsprechenden Datei angegeben werden.\n\nSound Dateien koennen mittels des uploads tools unter [http://raspberrypi.local:1880/uploads]() hochgeladen werden",
+        "x": 190,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ef39f7e2.90d658",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Gibt den eingegenen Text mit einer synthetischen Stimme aus.",
+        "info": "",
+        "x": 300,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e9473fb3.17bb2",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Schreibt die mit tools-output gespeicherten Antworten in eine Datei.",
+        "info": "filepath spezifiziert die Datei in welche geschrieben wird.",
+        "x": 320,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "2d8d881b.e1bf38",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Verzoegert den Dialog Flow",
+        "info": "Mit dieser Node kann man Pausen zwischen den verschiedenen Ablaeufen einfuegen.",
+        "x": 1040,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7b7341d6.7903b",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Diese Node erlaubt eine Fallunterscheidung und damit eine Verzweigung des dialogs",
+        "info": "Sie laesst sich z.b. mit fuzzy match paaren",
+        "x": 1210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5862b396.f8434c",
+        "type": "fuzzy-match",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 1210,
+        "y": 440,
+        "wires": [
+            [
+                "2f91e717.d70c98"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2f91e717.d70c98",
+        "type": "switch",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1390,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "af3e0827.ca5968",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "env": [],
+        "x": 420,
+        "y": 820,
+        "wires": [
+            [
+                "30c64b9e.d37794"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "30c64b9e.d37794",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 630,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d25a43e.80806c",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "env": [],
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "a67fae6c.c2bd9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a67fae6c.c2bd9",
+        "type": "fuzzy-match",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 630,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fd73afb9.8d628",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Ausgabe von Dialog Nachrichten",
+        "info": "Diese node rrlaubt es innerhalb des Dialog Flows Nachrichten abzugreifen um den Flow zu testen bzw sich die Ausgabe anzusehen",
+        "x": 1050,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "68de2d58.842774",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Kann eine Aktion im Flow triggern",
+        "info": "Die inject node wird in den Dialog Flow eingebaut um bestimmte Aktionen zu triggern, z.b. um den Ablauf eines Dialogs zu testen. Durch clicken auf die Node wird die Aktion ausgeloest.",
+        "x": 1060,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b0242b4f.3672d8",
+        "type": "say",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "text": "Hello, how are you?",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 1360,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6a1d489.4471f8",
+        "type": "inject",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1170,
+        "y": 820,
+        "wires": [
+            [
+                "b0242b4f.3672d8"
+            ]
+        ]
+    },
+    {
+        "id": "a3076424.ecb408",
+        "type": "inject",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 1230,
+        "y": 640,
+        "wires": [
+            [
+                "17734061.da4ba"
+            ]
+        ]
+    },
+    {
+        "id": "17734061.da4ba",
+        "type": "debug",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 640,
+        "wires": []
     }
 ]
