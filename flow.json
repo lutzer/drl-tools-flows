@@ -21,6 +21,13 @@
         "info": ""
     },
     {
+        "id": "5588b46c.506a2c",
+        "type": "tab",
+        "label": "Components",
+        "disabled": true,
+        "info": ""
+    },
+    {
         "id": "5fecfc4e.735094",
         "type": "tab",
         "label": "Test",
@@ -383,9 +390,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -408,9 +413,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -436,9 +439,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -461,9 +462,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -487,9 +486,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -2120,7 +2117,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "01_Hallo.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 370,
         "y": 200,
@@ -2160,7 +2156,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "02_Datenschutz.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 1000,
         "y": 200,
@@ -2249,7 +2244,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "03_seitDreiWochen.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 410,
         "y": 400,
@@ -3227,7 +3221,6 @@
         "name": "",
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
-        "options": "",
         "allow_multiple": true,
         "x": 1580,
         "y": 440,
@@ -5506,8 +5499,7 @@
         "y": 420,
         "wires": [
             [
-                "967c809c.e2304",
-                "ecac7d64.49e88"
+                "967c809c.e2304"
             ]
         ]
     },
@@ -5518,13 +5510,13 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "01_Hallo.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 330,
         "y": 420,
         "wires": [
             [
-                "2b0604f7.bb0fac"
+                "2b0604f7.bb0fac",
+                "ecac7d64.49e88"
             ]
         ]
     },
@@ -5545,7 +5537,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "02_Datenschutz.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 700,
         "y": 420,
@@ -5682,7 +5673,6 @@
         "name": "",
         "directory": "113bba6b.b1a796",
         "file": "06_Frage2_wofuerEngagiert.wav",
-        "options": "",
         "allow_multiple": false,
         "x": 1660,
         "y": 520,
@@ -5766,7 +5756,7 @@
                 "type": "str"
             }
         ],
-        "x": 330,
+        "x": 510,
         "y": 540,
         "wires": [
             []
@@ -5858,7 +5848,7 @@
         "z": "c548c02.213374",
         "name": "Starte einen neuen Datenbank Eintrag",
         "info": "",
-        "x": 410,
+        "x": 590,
         "y": 500,
         "wires": []
     },
@@ -5891,5 +5881,214 @@
         "x": 1960,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "5feea866.a5d7b8",
+        "type": "rpi-gpio in",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 150,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae0f48b9.eabec8",
+        "type": "comment",
+        "z": "5588b46c.506a2c",
+        "name": "Reagiert auf den Pusbutton der Dose",
+        "info": "",
+        "x": 250,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f0a9febc.879f8",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4f1cc2bb.b97cac",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "x": 190,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53aec3fd.b2ad4c",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a12978e0.701fa8",
+        "type": "say",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "text": "",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 150,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b2e457.2141fb8",
+        "type": "fuzzy-match",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 170,
+        "y": 700,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9e15d46f.7e2248",
+        "type": "play-soundfile",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "directory": "",
+        "file": "",
+        "allow_multiple": false,
+        "x": 180,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60f67e35.6ad11",
+        "type": "delay",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1851008e.84bc0f",
+        "type": "switch",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fa5b64e.cd3998",
+        "type": "debug",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ec63c1a6.1d772",
+        "type": "inject",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 540,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e14d7f9.469f78",
+        "type": "rpi-gpio in",
+        "z": "c548c02.213374",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "967c809c.e2304"
+            ]
+        ]
     }
 ]
