@@ -425,7 +425,9 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99
+        "y": 99,
+        "w": 1132,
+        "h": 222
     },
     {
         "id": "a8081aca.df57b8",
@@ -448,7 +450,9 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379
+        "y": 379,
+        "w": 872,
+        "h": 162
     },
     {
         "id": "fec5c43f.4caea8",
@@ -474,7 +478,9 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "7f6892dc.4d798c",
@@ -497,7 +503,9 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -521,7 +529,9 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879
+        "y": 879,
+        "w": 972,
+        "h": 262
     },
     {
         "id": "c531aa1.9af8558",
@@ -6903,5 +6913,65 @@
         "y": 2400,
         "wires": [],
         "icon": "node-red/debug.svg"
+    },
+    {
+        "id": "dd546d33.eb76e8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "begrüßung: herzlich willkommen bei uns im museum, ich hab ien paar fragen",
+        "info": "",
+        "x": 310,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d0565fa1.40028",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "gehst du gerne ins museum?",
+        "info": "",
+        "x": 720,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "490300fe.6595c8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "ja -> freut uns, was gefällt dir besonder gut?",
+        "info": "",
+        "x": 1120,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b27dceec.eca1f8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "oh schade, warum denn nicht?",
+        "info": "",
+        "x": 1070,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2007efca.4d486",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "wenn du dir ein neues ausstellungstück /... aussuchen könntest ...?",
+        "info": "",
+        "x": 1680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4e90d80e.749748",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "verabschiedung",
+        "info": "",
+        "x": 2130,
+        "y": 180,
+        "wires": []
     }
 ]
