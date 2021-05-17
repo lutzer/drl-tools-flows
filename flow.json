@@ -390,7 +390,9 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99
+        "y": 99,
+        "w": 1132,
+        "h": 222
     },
     {
         "id": "a8081aca.df57b8",
@@ -413,7 +415,9 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379
+        "y": 379,
+        "w": 872,
+        "h": 162
     },
     {
         "id": "fec5c43f.4caea8",
@@ -439,7 +443,9 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "7f6892dc.4d798c",
@@ -462,7 +468,9 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -486,7 +494,9 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879
+        "y": 879,
+        "w": 972,
+        "h": 262
     },
     {
         "id": "c531aa1.9af8558",
@@ -5495,6 +5505,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+        "payloadType": "str",
         "x": 150,
         "y": 420,
         "wires": [
@@ -5524,7 +5535,7 @@
         "id": "27a40772.be6cd8",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Begrüssung",
+        "name": "1. Begrüßung",
         "info": "",
         "x": 330,
         "y": 380,
@@ -5573,9 +5584,9 @@
         "id": "9f50e640.e4adc8",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Frage: Datenschutz",
+        "name": "2. Frage: Datenschutz",
         "info": "",
-        "x": 690,
+        "x": 700,
         "y": 380,
         "wires": []
     },
@@ -5846,9 +5857,9 @@
         "id": "d5f3ddea.95b8e",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "Starte einen neuen Datenbank Eintrag",
+        "name": "1a. Starte einen neuen Datenbank Eintrag",
         "info": "",
-        "x": 590,
+        "x": 600,
         "y": 500,
         "wires": []
     },
@@ -6090,5 +6101,158 @@
                 "967c809c.e2304"
             ]
         ]
+    },
+    {
+        "id": "2c218fbe.8287c",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "0. Start",
+        "info": "Beginne den Dialog",
+        "x": 150,
+        "y": 280,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "998ffec0.427118",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "0. Um den Dialog zu starten gibt es zwei Optionen: ",
+        "info": "Beginne den Dialog",
+        "x": 290,
+        "y": 820,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "5641a4f9.aa48bc",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Ist der Raspberry Pi (über den Pin 16) bereits mit der Dose verbunden, startet der Dialog durch Drücken des Knopfes.",
+        "info": "",
+        "x": 500,
+        "y": 860,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "209dba10.32e5ae",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Alternativ kann der Dialog innerhalb von Node Red auch über das Drücken der \"start\"-Node gestartet werden.",
+        "info": "",
+        "x": 480,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "7a523be.563ffc4",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "ERLÄUTERUNGEN",
+        "info": "",
+        "x": 190,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "1ad9adec.8056a2",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "1. Begrüßung",
+        "info": "",
+        "x": 170,
+        "y": 960,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "3012ce44.3d54d2",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Der Dialog startet hier mit einer Begrüßung. Mit einer kleinen Vorstellung (Wer spricht, worum geht's) schafft man einen einfachen Einstieg.",
+        "info": "",
+        "x": 570,
+        "y": 1000,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "b675f00f.5237d",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "1a. Datenbankeintrag starten",
+        "info": "",
+        "x": 220,
+        "y": 1140,
+        "wires": [],
+        "icon": "font-awesome/fa-save"
+    },
+    {
+        "id": "b93a341b.361",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Für einen persönlichen Charakter empfielt sich das Einsprechen des Textes und das Einbinden der Audiodatei.",
+        "info": "",
+        "x": 480,
+        "y": 1040,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "f9845618.4bcbc8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Es ist aber auch möglich einen Text mit Hilfe einer computergenerierten Stimme abzuspielen.",
+        "info": "",
+        "x": 420,
+        "y": 1080,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "3d5a2079.d55588",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Mit jedem Abspielen wird ein neuer Eintrag in die Datenbank gestartet, so dass die Antworten pro durchgespielten Dialog zusammen gespeichert werden.",
+        "info": "",
+        "x": 610,
+        "y": 1180,
+        "wires": [],
+        "icon": "font-awesome/fa-save"
+    },
+    {
+        "id": "95877448.6384",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Für die Erste \"tools-output\"-Node muss daher die Operation: \"new\" gewählt werden.",
+        "info": "",
+        "x": 400,
+        "y": 1220,
+        "wires": [],
+        "icon": "font-awesome/fa-save"
+    },
+    {
+        "id": "27f00329.f47c1c",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "2. Frage: Datenschutz",
+        "info": "",
+        "x": 200,
+        "y": 1280,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "23805258.a1a27e",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- Ein wichtiger Zwischenschritt: Je nach geplantem Einsatz ist es datenschutztechnisch ratsam die interagierende Person nach ihrer Zustimmung bzgl. der Aufnahme ihrer Stimme zu fragen.",
+        "info": "",
+        "x": 720,
+        "y": 1320,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
     }
 ]
