@@ -23,8 +23,15 @@
     {
         "id": "5588b46c.506a2c",
         "type": "tab",
-        "label": "Components",
-        "disabled": false,
+        "label": "Dialog Nodes",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "a22a1db7.e3ac9",
+        "type": "tab",
+        "label": "Dialog Components",
+        "disabled": true,
         "info": ""
     },
     {
@@ -218,18 +225,7 @@
                 ]
             }
         ],
-        "out": [
-            {
-                "x": 900,
-                "y": 80,
-                "wires": [
-                    {
-                        "id": "258422f1.019dde",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
+        "out": [],
         "env": [
             {
                 "name": "filepath",
@@ -295,7 +291,7 @@
     {
         "id": "7c973ed1.90f49",
         "type": "subflow",
-        "name": "tools-output",
+        "name": "tools-save-output",
         "info": "",
         "category": "tools",
         "in": [
@@ -309,22 +305,7 @@
                 ]
             }
         ],
-        "out": [
-            {
-                "x": 880,
-                "y": 120,
-                "wires": [
-                    {
-                        "id": "f17be409.f899d8",
-                        "port": 0
-                    },
-                    {
-                        "id": "e885ba21.712b88",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
+        "out": [],
         "env": [
             {
                 "name": "operation",
@@ -365,7 +346,17 @@
             }
         ],
         "color": "#FFAAAA",
-        "icon": "font-awesome/fa-save"
+        "icon": "font-awesome/fa-save",
+        "status": {
+            "x": 740,
+            "y": 200,
+            "wires": [
+                {
+                    "id": "71f0a300.24c17c",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "5e5de4d5.8fa87c",
@@ -685,6 +676,11 @@
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "bbacc559.40a508",
+        "type": "soundfile-directory",
+        "directory": "/home/pi/sounds/"
     },
     {
         "id": "1d5cf971.7c7997",
@@ -4255,7 +4251,7 @@
         "env": [
             {
                 "name": "fileDirectory",
-                "value": "/Users/lutz/Desktop/futurium-workshop/soundfiles",
+                "value": "/home/pi/sounds",
                 "type": "str"
             }
         ],
@@ -4612,7 +4608,7 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/Users/lutz/Desktop/futurium-workshop/answers.txt",
+                "value": "/home/pi/data/answers.txt",
                 "type": "str"
             }
         ],
@@ -4872,11 +4868,7 @@
         ],
         "x": 580,
         "y": 200,
-        "wires": [
-            [
-                "9c89a05f.e7694"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "9723637e.f3469",
@@ -4892,11 +4884,7 @@
         ],
         "x": 1700,
         "y": 200,
-        "wires": [
-            [
-                "5edf2052.64a29"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "599e4eb5.7120a",
@@ -4912,11 +4900,7 @@
         ],
         "x": 920,
         "y": 540,
-        "wires": [
-            [
-                "10fabef5.aba741"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "3249520c.28de1e",
@@ -4932,11 +4916,7 @@
         ],
         "x": 930,
         "y": 680,
-        "wires": [
-            [
-                "3f62c0dd.dbf8e"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "c5ee9fe1.73d0f",
@@ -4952,12 +4932,7 @@
         ],
         "x": 2320,
         "y": 960,
-        "wires": [
-            [
-                "653336d7.82b198",
-                "cc14e4.61587b2"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "653336d7.82b198",
@@ -4990,9 +4965,7 @@
         ],
         "x": 2580,
         "y": 960,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "dfaaf640.82c618",
@@ -5042,11 +5015,7 @@
         ],
         "x": 2520,
         "y": 820,
-        "wires": [
-            [
-                "a131fc76.02f68"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "a9d3504c.ff359",
@@ -5804,9 +5773,7 @@
         ],
         "x": 510,
         "y": 540,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "1b653bbe.945aa4",
@@ -5822,11 +5789,7 @@
         ],
         "x": 2350,
         "y": 640,
-        "wires": [
-            [
-                "7e1ae908.3aa6b8"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "7e1ae908.3aa6b8",
@@ -5842,9 +5805,7 @@
         ],
         "x": 2590,
         "y": 640,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "9d15dd36.eafeb",
@@ -5974,9 +5935,7 @@
         "env": [],
         "x": 170,
         "y": 940,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "53aec3fd.b2ad4c",
@@ -5992,9 +5951,7 @@
         ],
         "x": 150,
         "y": 820,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "a12978e0.701fa8",
@@ -6033,7 +5990,7 @@
         "type": "play-soundfile",
         "z": "5588b46c.506a2c",
         "name": "",
-        "directory": "c531aa1.9af8558",
+        "directory": "bbacc559.40a508",
         "file": "",
         "allow_multiple": false,
         "x": 160,
@@ -6489,9 +6446,7 @@
         ],
         "x": 630,
         "y": 820,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "4d25a43e.80806c",
@@ -6913,5 +6868,728 @@
         "y": 2400,
         "wires": [],
         "icon": "node-red/debug.svg"
+    },
+    {
+        "id": "b41f3ae8.6fb888",
+        "type": "say",
+        "z": "5588b46c.506a2c",
+        "name": "",
+        "text": "",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 1570,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b10a06e5.4a69c8",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Freitext Frage",
+        "info": "",
+        "x": 290,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c88b438d.445e1",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Dialog Start / Begruesung",
+        "info": "",
+        "x": 330,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b481433e.840ae",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Dialog Ende / Verabschiedung",
+        "info": "",
+        "x": 340,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ee605bc5.3e0998",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "ja/nein / Unterschiedliche Dialog Verlaeufe",
+        "info": "",
+        "x": 380,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "82d0d2e0.6ca35",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "skala / von-bis",
+        "info": "",
+        "x": 300,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "864d3204.6ed41",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Speichern von antworten",
+        "info": "",
+        "x": 330,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "ff7b0b6d.0a54b8",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Stimm synthese",
+        "info": "",
+        "x": 300,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "863a6698.56d418",
+        "type": "play-soundfile",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "",
+        "allow_multiple": false,
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "4876f0e8.ffe6"
+            ]
+        ]
+    },
+    {
+        "id": "82ee7528.2e6428",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "863a6698.56d418"
+            ]
+        ]
+    },
+    {
+        "id": "4876f0e8.ffe6",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [],
+        "x": 700,
+        "y": 180,
+        "wires": [
+            [
+                "1966dad8.0b8bd5",
+                "49458b63.a15974"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1966dad8.0b8bd5",
+        "type": "debug",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6b612bac.d184b4",
+        "type": "play-soundfile",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "",
+        "allow_multiple": false,
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "d84b173c.1aa648",
+                "23e323be.f9666c"
+            ]
+        ]
+    },
+    {
+        "id": "68e67e36.5a862",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "6b612bac.d184b4"
+            ]
+        ]
+    },
+    {
+        "id": "d84b173c.1aa648",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "23e323be.f9666c",
+        "type": "delay",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 660,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b4a46d3.671f68",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 540,
+        "wires": [
+            [
+                "220f163.e7debea"
+            ]
+        ]
+    },
+    {
+        "id": "220f163.e7debea",
+        "type": "play-soundfile",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "",
+        "allow_multiple": false,
+        "x": 480,
+        "y": 540,
+        "wires": [
+            [
+                "b6469eb4.a553"
+            ]
+        ]
+    },
+    {
+        "id": "b6469eb4.a553",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/home/pi/data/test-answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 690,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "49458b63.a15974",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "tools-test",
+                "type": "str"
+            }
+        ],
+        "x": 970,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "65aea4ba.f6998c",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 720,
+        "wires": [
+            [
+                "8b88232b.b193"
+            ]
+        ]
+    },
+    {
+        "id": "8b88232b.b193",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "9e469f7d.ae723"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9e469f7d.ae723",
+        "type": "fuzzy-match",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nno:Nein",
+        "scorer": "WRatio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 690,
+        "y": 720,
+        "wires": [
+            [
+                "ffbf6fc3.d41dc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ffbf6fc3.d41dc",
+        "type": "switch",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 720,
+        "wires": [
+            [
+                "ad5a6c16.2ba3"
+            ],
+            [
+                "1d1bfcd0.9fe443"
+            ]
+        ]
+    },
+    {
+        "id": "ad5a6c16.2ba3",
+        "type": "say",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "text": "Yes",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 1010,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d1bfcd0.9fe443",
+        "type": "say",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "text": "No",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 1010,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c195ed90.68808",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "verlauf nach ja",
+        "info": "",
+        "x": 1160,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "db90226e.c587c",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "verlauf nach nein",
+        "info": "",
+        "x": 1160,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ba43d73d.a360d8",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 900,
+        "wires": [
+            [
+                "97699212.22276"
+            ]
+        ]
+    },
+    {
+        "id": "57e03f0.fe610c",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 800,
+        "y": 900,
+        "wires": [
+            [
+                "c0909535.d5e5f8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c0909535.d5e5f8",
+        "type": "fuzzy-match",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "inputOptions": "text",
+        "choices": "1:eins\n1:1\n2:zwei\n2:2\n3:drei\n3:3\n4:vier\n4:4\n5:fünf\n5:5",
+        "scorer": "distance",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 1010,
+        "y": 900,
+        "wires": [
+            [
+                "3f9b79f2.2d2e96"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "97699212.22276",
+        "type": "say",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "text": "Waehle auf einer Skala 1 bis 5",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 510,
+        "y": 900,
+        "wires": [
+            [
+                "57e03f0.fe610c"
+            ]
+        ]
+    },
+    {
+        "id": "3f9b79f2.2d2e96",
+        "type": "debug",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "68a1d22a.2af1ac",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 1100,
+        "wires": [
+            [
+                "a862dccc.d9721",
+                "c430de9e.6a1f7"
+            ]
+        ]
+    },
+    {
+        "id": "a862dccc.d9721",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 490,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "71f0a300.24c17c",
+        "type": "inject",
+        "z": "7c973ed1.90f49",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "operation",
+        "payloadType": "env",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ad0fe1e.c0533",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/home/pi/data/test-answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 990,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "c430de9e.6a1f7",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 500,
+        "y": 1100,
+        "wires": [
+            [
+                "a75d63fa.87c0c",
+                "48c20c04.d4ad34"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a75d63fa.87c0c",
+        "type": "delay",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 1100,
+        "wires": [
+            [
+                "6ad0fe1e.c0533",
+                "dd42dc58.a8269"
+            ]
+        ]
+    },
+    {
+        "id": "48c20c04.d4ad34",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "tools-test",
+                "type": "str"
+            }
+        ],
+        "x": 750,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "dd42dc58.a8269",
+        "type": "debug",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "561ea576.c2dbec",
+        "type": "inject",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 1320,
+        "wires": [
+            [
+                "75752ea6.2823c"
+            ]
+        ]
+    },
+    {
+        "id": "75752ea6.2823c",
+        "type": "say",
+        "z": "a22a1db7.e3ac9",
+        "name": "",
+        "text": "Hello, how are you?",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 480,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9aa42819.4baf98",
+        "type": "comment",
+        "z": "a22a1db7.e3ac9",
+        "name": "Dieser Flow beeinhaltet Funktionale Bloecke aus denen Dialoge zussammengesetzt werden koennen.",
+        "info": "",
+        "x": 390,
+        "y": 40,
+        "wires": []
     }
 ]
