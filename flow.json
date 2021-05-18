@@ -727,6 +727,11 @@
         "directory": "/home/pi/sounds/"
     },
     {
+        "id": "10395df2.5a7632",
+        "type": "soundfile-directory",
+        "directory": "/Users/rebecca/TOOLS/audio/exampleDialog"
+    },
+    {
         "id": "1d5cf971.7c7997",
         "type": "inject",
         "z": "29928cb0.ddef64",
@@ -5550,7 +5555,7 @@
         "topic": "",
         "payloadType": "str",
         "x": 150,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "967c809c.e2304"
@@ -5566,7 +5571,7 @@
         "file": "01_Hallo.wav",
         "allow_multiple": false,
         "x": 330,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "2b0604f7.bb0fac",
@@ -5581,7 +5586,7 @@
         "name": "1. Begrüßung",
         "info": "",
         "x": 330,
-        "y": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -5593,7 +5598,7 @@
         "file": "02_Datenschutz.wav",
         "allow_multiple": false,
         "x": 700,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "1be27684.4f2899"
@@ -5616,7 +5621,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 500,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "12bfbdba.8d7242"
@@ -5630,7 +5635,7 @@
         "name": "2. Frage: Datenschutz",
         "info": "",
         "x": 700,
-        "y": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -5646,7 +5651,7 @@
             }
         ],
         "x": 940,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "af45de6f.a9daf"
@@ -5665,7 +5670,7 @@
         "limit": "0",
         "cutoff": "30",
         "x": 1270,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "15a3c7e.8cca538"
@@ -5696,7 +5701,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1540,
-        "y": 420,
+        "y": 180,
         "wires": [
             [
                 "542d7f80.74"
@@ -5715,7 +5720,7 @@
         "file": "09_Nein.wav",
         "allow_multiple": false,
         "x": 1770,
-        "y": 360,
+        "y": 120,
         "wires": [
             []
         ]
@@ -5729,7 +5734,7 @@
         "file": "06_Frage2_wofuerEngagiert.wav",
         "allow_multiple": false,
         "x": 1840,
-        "y": 520,
+        "y": 280,
         "wires": [
             [
                 "179a4cbd.7d7993"
@@ -5743,7 +5748,7 @@
         "name": "3a. Aufnahme Antwort bzgl. Datenschutz",
         "info": "",
         "x": 1000,
-        "y": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -5759,7 +5764,7 @@
             }
         ],
         "x": 2120,
-        "y": 520,
+        "y": 280,
         "wires": [
             [
                 "1b653bbe.945aa4",
@@ -5775,7 +5780,7 @@
         "name": "Antwort: Ja",
         "info": "",
         "x": 1770,
-        "y": 480,
+        "y": 240,
         "wires": []
     },
     {
@@ -5785,7 +5790,7 @@
         "name": "Verabschiedung",
         "info": "",
         "x": 2360,
-        "y": 480,
+        "y": 240,
         "wires": []
     },
     {
@@ -5795,7 +5800,7 @@
         "name": "Antwort: Nein",
         "info": "",
         "x": 1770,
-        "y": 320,
+        "y": 80,
         "wires": []
     },
     {
@@ -5811,7 +5816,7 @@
             }
         ],
         "x": 510,
-        "y": 540,
+        "y": 300,
         "wires": []
     },
     {
@@ -5827,7 +5832,7 @@
             }
         ],
         "x": 2350,
-        "y": 640,
+        "y": 400,
         "wires": []
     },
     {
@@ -5843,7 +5848,7 @@
             }
         ],
         "x": 2590,
-        "y": 640,
+        "y": 400,
         "wires": [
             []
         ]
@@ -5857,7 +5862,7 @@
         "file": "08_Verabschiedung.wav",
         "allow_multiple": false,
         "x": 2390,
-        "y": 520,
+        "y": 280,
         "wires": [
             [
                 "63a03536.ecf92c"
@@ -5877,7 +5882,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2630,
-        "y": 520,
+        "y": 280,
         "wires": []
     },
     {
@@ -5887,7 +5892,7 @@
         "name": "4. Antwort speichern",
         "info": "",
         "x": 2370,
-        "y": 600,
+        "y": 360,
         "wires": []
     },
     {
@@ -5897,7 +5902,7 @@
         "name": "1a. Starte einen neuen Datenbank Eintrag",
         "info": "",
         "x": 600,
-        "y": 500,
+        "y": 260,
         "wires": []
     },
     {
@@ -5907,7 +5912,7 @@
         "name": "5. In Datenbank speichern",
         "info": "",
         "x": 2610,
-        "y": 600,
+        "y": 360,
         "wires": []
     },
     {
@@ -5927,7 +5932,7 @@
         "name": "Aufnahme der Antwort",
         "info": "",
         "x": 2120,
-        "y": 480,
+        "y": 240,
         "wires": []
     },
     {
@@ -6137,7 +6142,7 @@
         "debounce": "25",
         "read": false,
         "x": 130,
-        "y": 360,
+        "y": 120,
         "wires": [
             [
                 "967c809c.e2304"
@@ -6151,7 +6156,7 @@
         "name": "0. Start",
         "info": "Beginne den Dialog",
         "x": 130,
-        "y": 300,
+        "y": 60,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -6162,7 +6167,7 @@
         "name": "0. Um den Dialog zu starten gibt es zwei Optionen: ",
         "info": "Beginne den Dialog",
         "x": 290,
-        "y": 820,
+        "y": 1120,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -6173,7 +6178,7 @@
         "name": "- Ist der Raspberry Pi (über den Pin 16) bereits mit der Dose verbunden, startet der Dialog durch Drücken des Knopfes.",
         "info": "",
         "x": 500,
-        "y": 860,
+        "y": 1160,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -6184,7 +6189,7 @@
         "name": "- Alternativ kann der Dialog innerhalb von Node Red auch über das Drücken der \"start\"-Node gestartet werden.",
         "info": "",
         "x": 480,
-        "y": 900,
+        "y": 1200,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -6195,7 +6200,7 @@
         "name": "ERLÄUTERUNGEN",
         "info": "",
         "x": 190,
-        "y": 740,
+        "y": 1040,
         "wires": []
     },
     {
@@ -6205,7 +6210,7 @@
         "name": "1. Begrüßung (Audio)",
         "info": "",
         "x": 200,
-        "y": 960,
+        "y": 1260,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6216,7 +6221,7 @@
         "name": "- Der Dialog startet hier mit einer Begrüßung. Mit einer kleinen Vorstellung (Wer spricht, worum geht's) schafft man einen einfachen Einstieg.",
         "info": "",
         "x": 570,
-        "y": 1000,
+        "y": 1300,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6227,7 +6232,7 @@
         "name": "1a. Datenbankeintrag starten",
         "info": "",
         "x": 220,
-        "y": 1140,
+        "y": 1440,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6238,7 +6243,7 @@
         "name": "- Für einen persönlichen Charakter empfielt sich das Einsprechen des Textes und das Einbinden der Audiodatei.",
         "info": "",
         "x": 480,
-        "y": 1040,
+        "y": 1340,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6249,7 +6254,7 @@
         "name": "- Es ist aber auch möglich einen Text mit Hilfe einer computergenerierten Stimme abzuspielen.",
         "info": "",
         "x": 420,
-        "y": 1080,
+        "y": 1380,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6260,7 +6265,7 @@
         "name": "- Mit jedem Abspielen wird ein neuer Eintrag in die Datenbank gestartet, so dass die Antworten pro durchgespielten Dialog zusammen gespeichert werden.",
         "info": "",
         "x": 610,
-        "y": 1180,
+        "y": 1480,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6271,7 +6276,7 @@
         "name": "- Für die Erste \"tools-output\"-Node muss daher die Operation: \"new\" gewählt werden.",
         "info": "",
         "x": 400,
-        "y": 1220,
+        "y": 1520,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6279,10 +6284,10 @@
         "id": "27f00329.f47c1c",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "2. Frage: Datenschutz (Audio)",
+        "name": "1b. optionale Frage: Datenschutz (Audio)",
         "info": "",
-        "x": 220,
-        "y": 1280,
+        "x": 260,
+        "y": 1580,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6290,10 +6295,10 @@
         "id": "23805258.a1a27e",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "- Ein wichtiger Zwischenschritt: Je nach geplantem Einsatz ist es datenschutztechnisch ratsam die interagierende ",
+        "name": "- Ein möglicher Zwischenschritt: Je nach geplantem Einsatz ist es datenschutztechnisch ratsam die interagierende ",
         "info": "",
-        "x": 480,
-        "y": 1320,
+        "x": 490,
+        "y": 1620,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6627,7 +6632,7 @@
         "name": " Person nach ihrer Zustimmung bzgl. der Aufnahme ihrer Stimme zu fragen.",
         "info": "",
         "x": 360,
-        "y": 1360,
+        "y": 1660,
         "wires": [],
         "icon": "font-awesome/fa-file-audio-o"
     },
@@ -6635,10 +6640,10 @@
         "id": "e1e10162.5e5be8",
         "type": "comment",
         "z": "c548c02.213374",
-        "name": "3a. Aufnahme Antwort bzgl. Datenschutz",
+        "name": "3a. Aufnahme Antwort ",
         "info": "",
-        "x": 260,
-        "y": 1420,
+        "x": 200,
+        "y": 1820,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6649,7 +6654,7 @@
         "name": "- Diese Node startet die Mikrofon-Aufnahme und Sprach-Transkription um eine Antwort auf die aktuelle Frage zu speichern.",
         "info": "",
         "x": 520,
-        "y": 1460,
+        "y": 1860,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6660,7 +6665,7 @@
         "name": "- language: Wähle hier die Sprache für die eingesprochenen Texte aus. Standard: de  ",
         "info": "",
         "x": 390,
-        "y": 1500,
+        "y": 1900,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6671,7 +6676,7 @@
         "name": "- timeout: Zeitspanne, nach der die Sprach-Aufnahme automatisch beendet wird, wenn nichts empfangen wird. (in s)  ",
         "info": "",
         "x": 490,
-        "y": 1540,
+        "y": 1940,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6682,7 +6687,7 @@
         "name": "- initialWait: Zeitspanne, wie lange am Anfang der Aufnahme auf eine Eingabe gewartet wird. (in s)",
         "info": "",
         "x": 430,
-        "y": 1580,
+        "y": 1980,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6693,7 +6698,7 @@
         "name": "- duration: Maximale Dauer einer Aufnahme. (in s)",
         "info": "",
         "x": 280,
-        "y": 1620,
+        "y": 2020,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6704,7 +6709,7 @@
         "name": "- playBeep: Spiele einen kurzen Ton beim Starten und Beenden der Aufnahme",
         "info": "",
         "x": 370,
-        "y": 1660,
+        "y": 2060,
         "wires": [],
         "icon": "font-awesome/fa-microphone"
     },
@@ -6715,7 +6720,7 @@
         "name": "3b. Antwort erkennen (Ja/Nein)",
         "info": "",
         "x": 1310,
-        "y": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -6725,7 +6730,7 @@
         "name": "3b. Antwort erkennen (Ja/Nein)",
         "info": "",
         "x": 230,
-        "y": 1720,
+        "y": 2120,
         "wires": [],
         "icon": "font-awesome/fa-search"
     },
@@ -6736,7 +6741,7 @@
         "name": "- Diese Node erkennt im aufgenommenen Text festgelegte Stichworte, in diesem Fall Ja /Nein und selbst festgelegte äquivalente Aussagen (z.B. Okay = Ja).",
         "info": "",
         "x": 620,
-        "y": 1760,
+        "y": 2160,
         "wires": [],
         "icon": "font-awesome/fa-search"
     },
@@ -6747,7 +6752,7 @@
         "name": "- Entsprechend der Konfiguration werden unterschiedliche Werte weitergegeben: Hier yes / no.",
         "info": "",
         "x": 430,
-        "y": 1800,
+        "y": 2200,
         "wires": [],
         "icon": "font-awesome/fa-search"
     },
@@ -6758,7 +6763,7 @@
         "name": "- Es sind aber theoretisch auch mehr als zwei Fallunterscheidungen möglich (z.B. Ja / Nein / Keine Angabe)",
         "info": "",
         "x": 460,
-        "y": 1840,
+        "y": 2240,
         "wires": [],
         "icon": "font-awesome/fa-search"
     },
@@ -6769,7 +6774,7 @@
         "name": "3c. Switch (Ja/Nein)",
         "info": "",
         "x": 1550,
-        "y": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -6779,7 +6784,7 @@
         "name": "3c. Switch (Ja/Nein)",
         "info": "",
         "x": 190,
-        "y": 1900,
+        "y": 2300,
         "wires": [],
         "icon": "node-red/switch.svg"
     },
@@ -6790,7 +6795,7 @@
         "name": "- Je nachdem was in der vorherigen Node erkannt wurde, entscheidet diese Node über die Weiterentwicklung des Dialogs.",
         "info": "",
         "x": 510,
-        "y": 1940,
+        "y": 2340,
         "wires": [],
         "icon": "node-red/switch.svg"
     },
@@ -6801,7 +6806,7 @@
         "name": "- Bei Antwort \"Nein\" wird der Dialog abgebrochen und die interagierende Person verabschiedet.",
         "info": "",
         "x": 430,
-        "y": 1980,
+        "y": 2380,
         "wires": [],
         "icon": "node-red/switch.svg"
     },
@@ -6812,7 +6817,7 @@
         "name": "- Bei Antwort \"Ja\" wird der Dialog fortgeführt und die nächste Frage abgespielt.",
         "info": "",
         "x": 380,
-        "y": 2020,
+        "y": 2420,
         "wires": [],
         "icon": "node-red/switch.svg"
     },
@@ -6823,7 +6828,7 @@
         "name": "- (Die hier erkannte Antwort wird nicht mit Hilfe von tools-output gespeichert, da ihr Inhalt nur für die Entwicklung des Dialogs wichtig ist.)",
         "info": "",
         "x": 560,
-        "y": 2060,
+        "y": 2460,
         "wires": [],
         "icon": "node-red/switch.svg"
     },
@@ -6834,7 +6839,7 @@
         "name": "4. Antwort speichern",
         "info": "",
         "x": 190,
-        "y": 2120,
+        "y": 2520,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6845,7 +6850,7 @@
         "name": "5. In Datenbank speichern",
         "info": "",
         "x": 210,
-        "y": 2260,
+        "y": 2660,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6856,7 +6861,7 @@
         "name": "6. Antwort ausgeben lassen",
         "info": "",
         "x": 2680,
-        "y": 480,
+        "y": 240,
         "wires": []
     },
     {
@@ -6866,7 +6871,7 @@
         "name": "6. Antwort ausgeben lassen",
         "info": "",
         "x": 220,
-        "y": 2360,
+        "y": 2760,
         "wires": [],
         "icon": "node-red/debug.svg"
     },
@@ -6877,7 +6882,7 @@
         "name": "- Jede Eingabe, die gespeichert werden soll, wird durch die Operation \"append\" dem aktuellen Eintrag hinzugefuegt.",
         "info": "",
         "x": 490,
-        "y": 2160,
+        "y": 2560,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6888,7 +6893,7 @@
         "name": "- Am Ende des Dialogs koennen die Eingaben mit der Node \"tools-write-output\" gespeichert werden.",
         "info": "",
         "x": 450,
-        "y": 2300,
+        "y": 2700,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6899,7 +6904,7 @@
         "name": "-  Zu jeder Eingabe kann ein Topic angegeben werden (z.B. falls man später alle Eingaben zu dieser Frage zusammenfassen will).",
         "info": "",
         "x": 530,
-        "y": 2200,
+        "y": 2600,
         "wires": [],
         "icon": "font-awesome/fa-save"
     },
@@ -6910,7 +6915,7 @@
         "name": "- Diese Node erlaubt es, innerhalb des Dialog-Flows Nachrichten abzugreifen um den Flow zu testen, bzw. sich die Ausgabe anzusehen.",
         "info": "",
         "x": 560,
-        "y": 2400,
+        "y": 2800,
         "wires": [],
         "icon": "node-red/debug.svg"
     },
@@ -7643,66 +7648,6 @@
         "wires": []
     },
     {
-        "id": "dd546d33.eb76e8",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "begrüßung: herzlich willkommen bei uns im museum, ich hab ien paar fragen",
-        "info": "",
-        "x": 310,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "d0565fa1.40028",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "gehst du gerne ins museum?",
-        "info": "",
-        "x": 720,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "490300fe.6595c8",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "ja -> freut uns, was gefällt dir besonder gut?",
-        "info": "",
-        "x": 1120,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "b27dceec.eca1f8",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "oh schade, warum denn nicht?",
-        "info": "",
-        "x": 1070,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "2007efca.4d486",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "wenn du dir ein neues ausstellungstück /... aussuchen könntest ...?",
-        "info": "",
-        "x": 1680,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "4e90d80e.749748",
-        "type": "comment",
-        "z": "c548c02.213374",
-        "name": "verabschiedung",
-        "info": "",
-        "x": 2130,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "c88a441f.6fd848",
         "type": "change",
         "z": "aaf06e2c.e5b2f",
@@ -8056,6 +8001,613 @@
         "info": "",
         "x": 1150,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c040e822.a7aff8",
+        "type": "inject",
+        "z": "c548c02.213374",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 170,
+        "y": 720,
+        "wires": [
+            [
+                "356a8381.cabbac"
+            ]
+        ]
+    },
+    {
+        "id": "356a8381.cabbac",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "01Hallo.aif",
+        "allow_multiple": false,
+        "x": 350,
+        "y": 720,
+        "wires": [
+            [
+                "76dd9f23.57cbf8",
+                "37f2af5c.69742"
+            ]
+        ]
+    },
+    {
+        "id": "67e7f8e7.49c6f",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "1. Begrüßung",
+        "info": "",
+        "x": 350,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "732d939f.702e1c",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "02Startfrage.aif",
+        "allow_multiple": false,
+        "x": 700,
+        "y": 720,
+        "wires": [
+            [
+                "e7259ffa.a41ec"
+            ]
+        ]
+    },
+    {
+        "id": "76dd9f23.57cbf8",
+        "type": "delay",
+        "z": "c548c02.213374",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 520,
+        "y": 720,
+        "wires": [
+            [
+                "732d939f.702e1c"
+            ]
+        ]
+    },
+    {
+        "id": "95bdbae5.f509f",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "2. Frage: Als erstes...",
+        "info": "",
+        "x": 720,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "37f2af5c.69742",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 530,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "18d058b0.4d61a7",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "1a. Starte einen neuen Datenbank Eintrag",
+        "info": "",
+        "x": 620,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "205c0e52.a86542",
+        "type": "rpi-gpio in",
+        "z": "c548c02.213374",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 150,
+        "y": 660,
+        "wires": [
+            [
+                "356a8381.cabbac"
+            ]
+        ]
+    },
+    {
+        "id": "1ea68b09.62d405",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "0. Start",
+        "info": "Beginne den Dialog",
+        "x": 150,
+        "y": 600,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "73ecfdfd.bb3bac",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "2. Frage: Als erstes...",
+        "info": "",
+        "x": 200,
+        "y": 1720,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "e7259ffa.a41ec",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 960,
+        "y": 720,
+        "wires": [
+            [
+                "f8e827db.913af"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f8e827db.913af",
+        "type": "fuzzy-match",
+        "z": "c548c02.213374",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "30",
+        "x": 1230,
+        "y": 720,
+        "wires": [
+            [
+                "d3be7f4.aa8f3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d3be7f4.aa8f3",
+        "type": "switch",
+        "z": "c548c02.213374",
+        "name": "switch yes / no",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1500,
+        "y": 720,
+        "wires": [
+            [
+                "3c9eed50.60f33a"
+            ],
+            [
+                "270e541f.e2d7f4"
+            ]
+        ]
+    },
+    {
+        "id": "25098918.df6b56",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "3a. Aufnahme Antwort ",
+        "info": "",
+        "x": 960,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "fd976b8e.26db98",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "3b. Antwort erkennen (Ja/Nein)",
+        "info": "",
+        "x": 1270,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5b475114.51999",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "3c. Switch (Ja/Nein)",
+        "info": "",
+        "x": 1510,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "fd04923b.8906e8",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "- es empfielt sich mit einer einfachen Ja/Nein Frage in den Dialog zu starten",
+        "info": "",
+        "x": 370,
+        "y": 1760,
+        "wires": [],
+        "icon": "font-awesome/fa-file-audio-o"
+    },
+    {
+        "id": "3c9eed50.60f33a",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "04ungernMuseum.aif",
+        "allow_multiple": false,
+        "x": 1820,
+        "y": 660,
+        "wires": [
+            [
+                "68a8b381.7dcf24"
+            ]
+        ]
+    },
+    {
+        "id": "270e541f.e2d7f4",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "03gerneMuseum.aif",
+        "allow_multiple": false,
+        "x": 1820,
+        "y": 820,
+        "wires": [
+            [
+                "d87e0b43.8bdd8"
+            ]
+        ]
+    },
+    {
+        "id": "31988f64.8c5588",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Folgefrage auf \"Ja\"",
+        "info": "",
+        "x": 1810,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b3a30ce1.d7042",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Folgefrage auf \"Nein\"",
+        "info": "",
+        "x": 1820,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "68a8b381.7dcf24",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2080,
+        "y": 660,
+        "wires": [
+            [
+                "9f06a302.62936",
+                "4645578f.56a468"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "814ba762.9e65e",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2080,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "d87e0b43.8bdd8",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2080,
+        "y": 820,
+        "wires": [
+            [
+                "9f06a302.62936",
+                "9e6710e6.d3b68"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a6041525.955728",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2080,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9f06a302.62936",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "05Kreativfrage.aif",
+        "allow_multiple": false,
+        "x": 2490,
+        "y": 720,
+        "wires": [
+            [
+                "47a3671e.f54708"
+            ]
+        ]
+    },
+    {
+        "id": "47a3671e.f54708",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2720,
+        "y": 720,
+        "wires": [
+            [
+                "ad91498d.43ab68",
+                "9e82a8c1.848958"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "29595cb9.f12a34",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Kreativfrage",
+        "info": "",
+        "x": 2470,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "3aa5e566.2a68aa",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 2960,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ad91498d.43ab68",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Engagement",
+                "type": "str"
+            }
+        ],
+        "x": 2950,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "a489b269.a3278",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/Users/lutz/Desktop/futurium-workshop/answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 3190,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e82a8c1.848958",
+        "type": "play-soundfile",
+        "z": "c548c02.213374",
+        "name": "",
+        "directory": "10395df2.5a7632",
+        "file": "06Verabschiedung.aif",
+        "allow_multiple": false,
+        "x": 2980,
+        "y": 720,
+        "wires": [
+            [
+                "65b4681d.1c7298"
+            ]
+        ]
+    },
+    {
+        "id": "65b4681d.1c7298",
+        "type": "debug",
+        "z": "c548c02.213374",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3230,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "fc7ee177.271828",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 2970,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "ee4a164.741b068",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "5. In Datenbank speichern",
+        "info": "",
+        "x": 3210,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "3c08787e.3a0eb",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2720,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "81b10e73.5ee22",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "6. Antwort ausgeben lassen",
+        "info": "",
+        "x": 3280,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4645578f.56a468",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Museumsfan",
+                "type": "str"
+            }
+        ],
+        "x": 2310,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "8b0eb07c.85855",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 2330,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9e6710e6.d3b68",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "c548c02.213374",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Museumsfan",
+                "type": "str"
+            }
+        ],
+        "x": 2310,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "654fdc9e.3e52fc",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 2330,
+        "y": 840,
         "wires": []
     }
 ]
