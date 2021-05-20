@@ -52,6 +52,13 @@
         "id": "c548c02.213374",
         "type": "tab",
         "label": "Futurium Workshop Example",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "429496b1.ee7ad8",
+        "type": "tab",
+        "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
@@ -74,7 +81,7 @@
         ],
         "out": [
             {
-                "x": 980,
+                "x": 1140,
                 "y": 280,
                 "wires": [
                     {
@@ -88,7 +95,7 @@
                 ]
             },
             {
-                "x": 980,
+                "x": 1140,
                 "y": 340,
                 "wires": [
                     {
@@ -390,10 +397,10 @@
         "out": [
             {
                 "x": 1200,
-                "y": 80,
+                "y": 120,
                 "wires": [
                     {
-                        "id": "4b01ce17.c62e5",
+                        "id": "a88a3e4c.6cfd4",
                         "port": 0
                     }
                 ]
@@ -406,7 +413,7 @@
         ],
         "status": {
             "x": 1200,
-            "y": 260,
+            "y": 300,
             "wires": [
                 {
                     "id": "7587a0a4.521ec",
@@ -2685,7 +2692,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1610,
+        "x": 1750,
         "y": 580,
         "wires": []
     },
@@ -2698,7 +2705,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1610,
+        "x": 1750,
         "y": 700,
         "wires": []
     },
@@ -2733,9 +2740,9 @@
                 "9f6a6701.28d048"
             ],
             [
+                "c4fb46be.b8f9f8",
                 "83fa70f9.b2ead",
-                "bc017afd.880258",
-                "c4fb46be.b8f9f8"
+                "bc017afd.880258"
             ]
         ]
     },
@@ -2748,7 +2755,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1610,
+        "x": 1750,
         "y": 640,
         "wires": []
     },
@@ -2836,7 +2843,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1420,
+        "x": 1560,
         "y": 580,
         "wires": [
             [
@@ -3029,7 +3036,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1230,
+        "x": 1370,
         "y": 580,
         "wires": [
             [
@@ -3226,7 +3233,7 @@
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
         "allow_multiple": true,
-        "x": 1580,
+        "x": 1720,
         "y": 440,
         "wires": [
             []
@@ -3249,7 +3256,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1390,
+        "x": 1530,
         "y": 440,
         "wires": [
             [
@@ -3263,7 +3270,7 @@
         "z": "d9115fe7.1fc6d",
         "name": "streaming audio to server, max duration is 60s",
         "info": "",
-        "x": 1710,
+        "x": 1850,
         "y": 540,
         "wires": []
     },
@@ -3464,7 +3471,7 @@
         "z": "d9115fe7.1fc6d",
         "name": "play recording sound",
         "info": "",
-        "x": 1240,
+        "x": 1380,
         "y": 400,
         "wires": []
     },
@@ -3485,7 +3492,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1190,
+        "x": 1330,
         "y": 440,
         "wires": [
             [
@@ -4994,7 +5001,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1210,
+        "x": 1330,
         "y": 260,
         "wires": [
             [
@@ -5021,7 +5028,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1210,
+        "x": 1330,
         "y": 300,
         "wires": [
             [
@@ -5512,7 +5519,7 @@
         "debounce": "25",
         "read": false,
         "x": 190,
-        "y": 80,
+        "y": 120,
         "wires": [
             [
                 "4b01ce17.c62e5"
@@ -5891,7 +5898,7 @@
             "5feea866.a5d7b8"
         ],
         "x": 200,
-        "y": 260,
+        "y": 300,
         "wires": [
             []
         ]
@@ -7433,12 +7440,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
-        "y": 160,
+        "x": 630,
+        "y": 120,
         "wires": [
-            [
-                "87087af1.a103b8"
-            ]
+            []
         ]
     },
     {
@@ -7456,8 +7461,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 810,
-        "y": 160,
+        "x": 550,
+        "y": 200,
         "wires": [
             [
                 "e75028da.eb37c8"
@@ -7483,8 +7488,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 160,
+        "x": 750,
+        "y": 200,
         "wires": [
             []
         ]
@@ -7501,18 +7506,20 @@
                 "t": "false"
             },
             {
-                "t": "true"
+                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
         "outputs": 2,
         "x": 370,
-        "y": 80,
+        "y": 120,
         "wires": [
-            [],
             [
                 "a88a3e4c.6cfd4"
+            ],
+            [
+                "87087af1.a103b8"
             ]
         ]
     },
@@ -8810,8 +8817,647 @@
         "z": "d9115fe7.1fc6d",
         "name": "",
         "env": [],
-        "x": 1460,
+        "x": 1580,
         "y": 280,
         "wires": []
+    },
+    {
+        "id": "87353413.08aac8",
+        "type": "inject",
+        "z": "429496b1.ee7ad8",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "4f43e991.052e48"
+            ]
+        ]
+    },
+    {
+        "id": "4f43e991.052e48",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_01_hallo.wav",
+        "allow_multiple": false,
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "da361a73.e94dd8",
+                "d1ad9bb5.bdb488"
+            ]
+        ]
+    },
+    {
+        "id": "431a6717.96a308",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "1. Begrüßung",
+        "info": "",
+        "x": 410,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a0cdcd59.87bdf",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_02_startfrage.wav",
+        "allow_multiple": false,
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "7cec696d.ae3a28"
+            ]
+        ]
+    },
+    {
+        "id": "da361a73.e94dd8",
+        "type": "delay",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 660,
+        "y": 460,
+        "wires": [
+            [
+                "a0cdcd59.87bdf"
+            ]
+        ]
+    },
+    {
+        "id": "d15c3557.7e6228",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "2. Frage: Als erstes...",
+        "info": "",
+        "x": 820,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d1ad9bb5.bdb488",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 670,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "30441862.3b2978",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "1a. Starte einen neuen Datenbank Eintrag",
+        "info": "",
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "55b823f5.25e8ec",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "0. Start",
+        "info": "Beginne den Dialog",
+        "x": 210,
+        "y": 340,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "7cec696d.ae3a28",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 1160,
+        "y": 460,
+        "wires": [
+            [
+                "c1589bd0.583358"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c1589bd0.583358",
+        "type": "fuzzy-match",
+        "z": "429496b1.ee7ad8",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "30",
+        "x": 1430,
+        "y": 460,
+        "wires": [
+            [
+                "951f7c51.c2808"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "951f7c51.c2808",
+        "type": "switch",
+        "z": "429496b1.ee7ad8",
+        "name": "switch yes / no",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1700,
+        "y": 460,
+        "wires": [
+            [
+                "e9f703a6.fefaa"
+            ],
+            [
+                "54d71241.f5474c"
+            ]
+        ]
+    },
+    {
+        "id": "525fd60c.ddd738",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "3a. Aufnahme Antwort ",
+        "info": "",
+        "x": 1160,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a70642c0.e6101",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "3b. Antwort erkennen (Ja/Nein)",
+        "info": "",
+        "x": 1470,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "9d8524d2.1c1008",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "3c. Switch (Ja/Nein)",
+        "info": "",
+        "x": 1710,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e9f703a6.fefaa",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_04_ungern.wav",
+        "allow_multiple": false,
+        "x": 2030,
+        "y": 400,
+        "wires": [
+            [
+                "8961fe31.10709"
+            ]
+        ]
+    },
+    {
+        "id": "54d71241.f5474c",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_03_gerne.wav",
+        "allow_multiple": false,
+        "x": 2030,
+        "y": 560,
+        "wires": [
+            [
+                "ad95edd1.ab3ab"
+            ]
+        ]
+    },
+    {
+        "id": "8c4b8263.4b4e8",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Folgefrage auf \"Ja\"",
+        "info": "",
+        "x": 2010,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "1d66dd8c.d6dca2",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Folgefrage auf \"Nein\"",
+        "info": "",
+        "x": 2020,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8961fe31.10709",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2280,
+        "y": 400,
+        "wires": [
+            [
+                "4c72c004.bbaa6",
+                "33ab3df1.583e22"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6c7a2ab1.0538b4",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2280,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ad95edd1.ab3ab",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2280,
+        "y": 560,
+        "wires": [
+            [
+                "4c72c004.bbaa6",
+                "f07896f3.590c88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e3e30444.3564e8",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2280,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4c72c004.bbaa6",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_05_kreativ.wav",
+        "allow_multiple": false,
+        "x": 2710,
+        "y": 460,
+        "wires": [
+            [
+                "af1f8001.6d07b"
+            ]
+        ]
+    },
+    {
+        "id": "af1f8001.6d07b",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2980,
+        "y": 460,
+        "wires": [
+            [
+                "4cde0887.7cb358",
+                "1d8280ee.0ada3f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a23cba83.00d978",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Kreativfrage",
+        "info": "",
+        "x": 2670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ad867d41.9cfc7",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 3220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4cde0887.7cb358",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Engagement",
+                "type": "str"
+            }
+        ],
+        "x": 3210,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "27c8938d.f9654c",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/home/pi/data/example-answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 3530,
+        "y": 460,
+        "wires": [
+            [
+                "93bfdbca.04fd98",
+                "1088b656.74e76a"
+            ]
+        ]
+    },
+    {
+        "id": "1d8280ee.0ada3f",
+        "type": "play-soundfile",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_06_tschuess.wav",
+        "allow_multiple": true,
+        "x": 3260,
+        "y": 460,
+        "wires": [
+            [
+                "27c8938d.f9654c"
+            ]
+        ]
+    },
+    {
+        "id": "1088b656.74e76a",
+        "type": "debug",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3790,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "7fbd7ee5.eee03",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 3230,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "c172ab5c.cd3628",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "5. In Datenbank speichern",
+        "info": "",
+        "x": 3550,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e9c0beae.34a7c",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2980,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "222e1216.15f8ee",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "6. Antwort ausgeben lassen",
+        "info": "",
+        "x": 3840,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "33ab3df1.583e22",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Museumsfan",
+                "type": "str"
+            }
+        ],
+        "x": 2510,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ba772d58.299dc",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 2530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f07896f3.590c88",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Museumsfan",
+                "type": "str"
+            }
+        ],
+        "x": 2510,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f145a376.a3363",
+        "type": "comment",
+        "z": "429496b1.ee7ad8",
+        "name": "4. Antwort speichern",
+        "info": "",
+        "x": 2530,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9c2215f9.de4ca8",
+        "type": "subflow:5e5de4d5.8fa87c",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "env": [],
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "4f43e991.052e48"
+            ]
+        ]
+    },
+    {
+        "id": "93bfdbca.04fd98",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "x": 3810,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7f483354.26da3c",
+        "type": "inject",
+        "z": "5e5de4d5.8fa87c",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 40,
+        "wires": [
+            [
+                "204271be.a11c3e"
+            ]
+        ]
+    },
+    {
+        "id": "204271be.a11c3e",
+        "type": "change",
+        "z": "5e5de4d5.8fa87c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "dialogRunning",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 40,
+        "wires": [
+            []
+        ]
     }
 ]
