@@ -58,9 +58,9 @@
     {
         "id": "d9115fe7.1fc6d",
         "type": "subflow",
-        "name": "tools-speech-to-text",
+        "name": "qs-speech-to-text",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 140,
@@ -185,9 +185,9 @@
     {
         "id": "400cca0.99e3638",
         "type": "subflow",
-        "name": "tools-file-uploader",
+        "name": "qs-file-uploader",
         "info": "This node needs to be in an active flow to enable the upload web interface: [Link](/uploads).\nOnly one instance of this node should be active at a time.\n",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [],
         "env": [
@@ -211,9 +211,9 @@
     {
         "id": "aaf06e2c.e5b2f",
         "type": "subflow",
-        "name": "tools-save-output",
+        "name": "qs-save-output",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 60,
@@ -287,9 +287,9 @@
     {
         "id": "6096a378.7f109c",
         "type": "subflow",
-        "name": "tools-serve-output-file",
+        "name": "qs-serve-output-file",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [],
         "env": [
@@ -313,9 +313,9 @@
     {
         "id": "7c973ed1.90f49",
         "type": "subflow",
-        "name": "tools-output",
+        "name": "qs-output",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 120,
@@ -383,9 +383,9 @@
     {
         "id": "5e5de4d5.8fa87c",
         "type": "subflow",
-        "name": "tools-button",
+        "name": "qs-button",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [
             {
@@ -418,9 +418,9 @@
     {
         "id": "e32847a.070d9b8",
         "type": "subflow",
-        "name": "tools-dialog-ended",
+        "name": "qs-dialog-ended",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 60,
@@ -440,9 +440,9 @@
     {
         "id": "6f60f9a7.d36138",
         "type": "subflow",
-        "name": "tools-button-led",
+        "name": "qs-button-led",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 100,
