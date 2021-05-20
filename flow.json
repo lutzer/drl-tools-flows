@@ -65,9 +65,9 @@
     {
         "id": "d9115fe7.1fc6d",
         "type": "subflow",
-        "name": "tools-speech-to-text",
+        "name": "qs-speech-to-text",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 140,
@@ -81,7 +81,7 @@
         ],
         "out": [
             {
-                "x": 1140,
+                "x": 980,
                 "y": 280,
                 "wires": [
                     {
@@ -95,7 +95,7 @@
                 ]
             },
             {
-                "x": 1140,
+                "x": 980,
                 "y": 340,
                 "wires": [
                     {
@@ -192,9 +192,9 @@
     {
         "id": "400cca0.99e3638",
         "type": "subflow",
-        "name": "tools-file-uploader",
+        "name": "qs-file-uploader",
         "info": "This node needs to be in an active flow to enable the upload web interface: [Link](/uploads).\nOnly one instance of this node should be active at a time.\n",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [],
         "env": [
@@ -218,9 +218,9 @@
     {
         "id": "aaf06e2c.e5b2f",
         "type": "subflow",
-        "name": "tools-save-output",
+        "name": "qs-save-output",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 60,
@@ -294,9 +294,9 @@
     {
         "id": "6096a378.7f109c",
         "type": "subflow",
-        "name": "tools-serve-output-file",
+        "name": "qs-serve-output-file",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [],
         "env": [
@@ -320,9 +320,9 @@
     {
         "id": "7c973ed1.90f49",
         "type": "subflow",
-        "name": "tools-output",
+        "name": "qs-output",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 120,
@@ -390,17 +390,17 @@
     {
         "id": "5e5de4d5.8fa87c",
         "type": "subflow",
-        "name": "tools-button",
+        "name": "qs-button",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [],
         "out": [
             {
                 "x": 1200,
-                "y": 120,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "a88a3e4c.6cfd4",
+                        "id": "4b01ce17.c62e5",
                         "port": 0
                     }
                 ]
@@ -413,7 +413,7 @@
         ],
         "status": {
             "x": 1200,
-            "y": 300,
+            "y": 260,
             "wires": [
                 {
                     "id": "7587a0a4.521ec",
@@ -425,9 +425,9 @@
     {
         "id": "e32847a.070d9b8",
         "type": "subflow",
-        "name": "tools-dialog-ended",
+        "name": "qs-dialog-ended",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 60,
@@ -447,9 +447,9 @@
     {
         "id": "6f60f9a7.d36138",
         "type": "subflow",
-        "name": "tools-button-led",
+        "name": "qs-button-led",
         "info": "",
-        "category": "tools",
+        "category": "quasselstrippe",
         "in": [
             {
                 "x": 100,
@@ -485,7 +485,6 @@
                 }
             }
         ],
-        "meta": {},
         "color": "#FFAAAA",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
@@ -522,7 +521,9 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99
+        "y": 99,
+        "w": 1132,
+        "h": 222
     },
     {
         "id": "a8081aca.df57b8",
@@ -545,7 +546,9 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379
+        "y": 379,
+        "w": 872,
+        "h": 162
     },
     {
         "id": "fec5c43f.4caea8",
@@ -571,7 +574,9 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "7f6892dc.4d798c",
@@ -594,7 +599,9 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599
+        "y": 599,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -618,7 +625,9 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879
+        "y": 879,
+        "w": 972,
+        "h": 262
     },
     {
         "id": "c531aa1.9af8558",
@@ -3166,7 +3175,6 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
         "x": 530,
         "y": 400,
         "wires": [
@@ -7700,23 +7708,6 @@
         "wires": []
     },
     {
-        "id": "205c0e52.a86542",
-        "type": "rpi-gpio in",
-        "z": "c548c02.213374",
-        "name": "",
-        "pin": "16",
-        "intype": "tri",
-        "debounce": "25",
-        "read": false,
-        "x": 150,
-        "y": 660,
-        "wires": [
-            [
-                "356a8381.cabbac"
-            ]
-        ]
-    },
-    {
         "id": "1ea68b09.62d405",
         "type": "comment",
         "z": "c548c02.213374",
@@ -8054,10 +8045,12 @@
                 "type": "str"
             }
         ],
-        "x": 3190,
+        "x": 3250,
         "y": 840,
         "wires": [
-            []
+            [
+                "466ffeb4.a8a508"
+            ]
         ]
     },
     {
@@ -8072,7 +8065,8 @@
         "y": 720,
         "wires": [
             [
-                "65b4681d.1c7298"
+                "65b4681d.1c7298",
+                "a489b269.a3278"
             ]
         ]
     },
@@ -8108,7 +8102,7 @@
         "z": "c548c02.213374",
         "name": "5. In Datenbank speichern",
         "info": "",
-        "x": 3210,
+        "x": 3270,
         "y": 800,
         "wires": []
     },
@@ -9458,6 +9452,38 @@
         "y": 40,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "466ffeb4.a8a508",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "c548c02.213374",
+        "name": "",
+        "x": 3510,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "bfd45509.866a98",
+        "type": "comment",
+        "z": "c548c02.213374",
+        "name": "6.gibt Button wieder frei",
+        "info": "",
+        "x": 3520,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "93d09ccc.e5b5a",
+        "type": "subflow:5e5de4d5.8fa87c",
+        "z": "c548c02.213374",
+        "name": "",
+        "x": 150,
+        "y": 660,
+        "wires": [
+            [
+                "356a8381.cabbac"
+            ]
         ]
     }
 ]
