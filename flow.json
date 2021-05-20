@@ -81,21 +81,21 @@
         ],
         "out": [
             {
-                "x": 980,
+                "x": 1320,
                 "y": 280,
                 "wires": [
                     {
-                        "id": "7e7bd489.1b262c",
-                        "port": 0
+                        "id": "4343e92e.1ad378",
+                        "port": 1
                     },
                     {
-                        "id": "304c9104.8c0aae",
+                        "id": "28142bbd.a6e2a4",
                         "port": 0
                     }
                 ]
             },
             {
-                "x": 980,
+                "x": 1320,
                 "y": 340,
                 "wires": [
                     {
@@ -2701,7 +2701,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1750,
+        "x": 2110,
         "y": 580,
         "wires": []
     },
@@ -2714,7 +2714,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1750,
+        "x": 2110,
         "y": 700,
         "wires": []
     },
@@ -2764,7 +2764,7 @@
         "message": "",
         "messageType": "str",
         "name": "",
-        "x": 1750,
+        "x": 2110,
         "y": 640,
         "wires": []
     },
@@ -2852,7 +2852,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1560,
+        "x": 1920,
         "y": 580,
         "wires": [
             [
@@ -2918,10 +2918,12 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 800,
+        "x": 780,
         "y": 280,
         "wires": [
-            []
+            [
+                "4343e92e.1ad378"
+            ]
         ]
     },
     {
@@ -3045,7 +3047,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1370,
+        "x": 1730,
         "y": 580,
         "wires": [
             [
@@ -3241,7 +3243,7 @@
         "directory": "c531aa1.9af8558",
         "file": "beep.wav",
         "allow_multiple": true,
-        "x": 1720,
+        "x": 2080,
         "y": 440,
         "wires": [
             []
@@ -3264,7 +3266,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1530,
+        "x": 1890,
         "y": 440,
         "wires": [
             [
@@ -3278,7 +3280,7 @@
         "z": "d9115fe7.1fc6d",
         "name": "streaming audio to server, max duration is 60s",
         "info": "",
-        "x": 1850,
+        "x": 2210,
         "y": 540,
         "wires": []
     },
@@ -3479,7 +3481,7 @@
         "z": "d9115fe7.1fc6d",
         "name": "play recording sound",
         "info": "",
-        "x": 1380,
+        "x": 1740,
         "y": 400,
         "wires": []
     },
@@ -3500,7 +3502,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1330,
+        "x": 1690,
         "y": 440,
         "wires": [
             [
@@ -3544,10 +3546,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 740,
         "y": 400,
         "wires": [
-            []
+            [
+                "4343e92e.1ad378"
+            ]
         ]
     },
     {
@@ -5009,7 +5013,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
+        "x": 1690,
         "y": 260,
         "wires": [
             [
@@ -5036,7 +5040,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
+        "x": 1690,
         "y": 300,
         "wires": [
             [
@@ -8811,7 +8815,7 @@
         "z": "d9115fe7.1fc6d",
         "name": "",
         "env": [],
-        "x": 1580,
+        "x": 1940,
         "y": 280,
         "wires": []
     },
@@ -9005,11 +9009,14 @@
                 "t": "eq",
                 "v": "yes",
                 "vt": "str"
+            },
+            {
+                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
+        "outputs": 3,
         "x": 1700,
         "y": 460,
         "wires": [
@@ -9018,6 +9025,9 @@
             ],
             [
                 "54d71241.f5474c"
+            ],
+            [
+                "1c29b656.de6aea"
             ]
         ]
     },
@@ -9485,5 +9495,64 @@
                 "356a8381.cabbac"
             ]
         ]
+    },
+    {
+        "id": "4343e92e.1ad378",
+        "type": "switch",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "property": "playBeep",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1010,
+        "y": 280,
+        "wires": [
+            [
+                "28142bbd.a6e2a4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "28142bbd.a6e2a4",
+        "type": "delay",
+        "z": "d9115fe7.1fc6d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1190,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c29b656.de6aea",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "x": 2010,
+        "y": 660,
+        "wires": []
     }
 ]
