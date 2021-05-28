@@ -1974,7 +1974,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node enables the file uploader. ",
-        "info": "reachable at [http://:server:/uploads](/uploads). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local:1880/uploads](/uploads). You should only use a single instance of this node.",
         "x": 200,
         "y": 100,
         "wires": []
@@ -2331,7 +2331,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node serves the collected answers. Adjust filepath to the correct output file.",
-        "info": "reachable at [http://:server:/answers](/answers). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local:1880/answers](/answers). You should only use a single instance of this node.",
         "x": 340,
         "y": 220,
         "wires": []
@@ -2663,7 +2663,7 @@
         "payload": "on",
         "payloadType": "str",
         "x": 130,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
                 "7e8c3fc4.dc664",
@@ -2678,7 +2678,7 @@
         "name": "Blink led to indicate startup",
         "info": "",
         "x": 180,
-        "y": 340,
+        "y": 480,
         "wires": []
     },
     {
@@ -6053,7 +6053,7 @@
             }
         ],
         "x": 660,
-        "y": 380,
+        "y": 520,
         "wires": []
     },
     {
@@ -6072,7 +6072,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
                 "ecac1c89.07307"
@@ -6099,7 +6099,7 @@
         "to": "",
         "reg": false,
         "x": 460,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
                 "7e8c3fc4.dc664"
@@ -7601,6 +7601,58 @@
         "info": "",
         "x": 270,
         "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8cbf2e5f.d77e7",
+        "type": "http in",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "url": "output/*",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "7eeb7152.304cc"
+            ]
+        ]
+    },
+    {
+        "id": "7eeb7152.304cc",
+        "type": "static",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "folder": "/home/pi/.node-red/projects/drl-tools-flows/frontend",
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "f2fe0401.614668"
+            ]
+        ]
+    },
+    {
+        "id": "f2fe0401.614668",
+        "type": "http response",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "238607eb.7d6a78",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "Serves Frontend to display answers",
+        "info": "reachable under [http://quasselstrippe.local:1880/output](/output)",
+        "x": 200,
+        "y": 320,
         "wires": []
     }
 ]
