@@ -1,15 +1,15 @@
 [
     {
-        "id": "5fecfc4e.735094",
+        "id": "965f4c84.d4613",
         "type": "tab",
-        "label": "Test",
+        "label": "Main",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "965f4c84.d4613",
+        "id": "5fecfc4e.735094",
         "type": "tab",
-        "label": "Main",
+        "label": "Test",
         "disabled": false,
         "info": ""
     },
@@ -488,11 +488,6 @@
         "id": "c531aa1.9af8558",
         "type": "soundfile-directory",
         "directory": "sounds"
-    },
-    {
-        "id": "f0c6baff.ba8948",
-        "type": "soundfile-directory",
-        "directory": "/Users/lutz/Desktop/futurium-dialog/rebecca"
     },
     {
         "id": "113bba6b.b1a796",
@@ -1965,7 +1960,7 @@
                 "type": "str"
             }
         ],
-        "x": 150,
+        "x": 140,
         "y": 140,
         "wires": []
     },
@@ -1974,7 +1969,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node enables the file uploader. ",
-        "info": "reachable at [http://quasselstrippe.local:1880/uploads](/uploads). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local:1880/uploads/](/uploads/). You should only use a single instance of this node.",
         "x": 200,
         "y": 100,
         "wires": []
@@ -2322,7 +2317,7 @@
                 "type": "str"
             }
         ],
-        "x": 160,
+        "x": 150,
         "y": 260,
         "wires": []
     },
@@ -2331,7 +2326,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node serves the collected answers. Adjust filepath to the correct output file.",
-        "info": "reachable at [http://quasselstrippe.local:1880/answers](/answers). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local:1880/answers/](/answers/). You should only use a single instance of this node.",
         "x": 340,
         "y": 220,
         "wires": []
@@ -2436,7 +2431,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>File Uploader</title>\n    <style>\n        body {\n          background-color: linen;\n          font-family: monospace;\n        }\n        \n        input, button {\n            font-family: monospace;\n        }\n        \n        h1 {\n            padding: 10px;\n        }\n        \n        .content {\n            width: 100%;\n            max-width: 700px;\n            margin: 0 auto;\n            padding: 10px 0;\n        }\n    </style>\n  </head>\n  <body>\n    <div class=\"content\">\n    <h1>Answers</h1>\n    {{#payload}}\n        <ul>\n        {{#.}}\n            <li>{{topic}}: {{value}}</li>\n        {{/.}}\n        </ul>\n    {{/payload}}\n    </div>\n  </body>\n</html>",
+        "template": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Answers</title>\n    <style>\n        body {\n          background-color: linen;\n          font-family: monospace;\n        }\n        \n        input, button {\n            font-family: monospace;\n        }\n        \n        h1 {\n            padding: 10px;\n        }\n        \n        .content {\n            width: 100%;\n            max-width: 700px;\n            margin: 0 auto;\n            padding: 10px 0;\n        }\n    </style>\n  </head>\n  <body>\n    <div class=\"content\">\n    <h1>Answers</h1>\n    {{#payload}}\n        <ul>\n        {{#.}}\n            <li>{{topic}}: {{value}}</li>\n        {{/.}}\n        </ul>\n    {{/payload}}\n    </div>\n  </body>\n</html>",
         "output": "str",
         "x": 940,
         "y": 160,
@@ -2662,7 +2657,7 @@
         "topic": "",
         "payload": "on",
         "payloadType": "str",
-        "x": 130,
+        "x": 110,
         "y": 520,
         "wires": [
             [
@@ -6052,7 +6047,7 @@
                 "type": "num"
             }
         ],
-        "x": 660,
+        "x": 640,
         "y": 520,
         "wires": []
     },
@@ -6071,7 +6066,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 280,
+        "x": 260,
         "y": 580,
         "wires": [
             [
@@ -6098,7 +6093,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 440,
         "y": 580,
         "wires": [
             [
@@ -7613,7 +7608,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 130,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "7eeb7152.304cc"
@@ -7627,7 +7622,7 @@
         "name": "",
         "folder": "/home/pi/.node-red/projects/drl-tools-flows/frontend",
         "x": 310,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "f2fe0401.614668"
@@ -7642,7 +7637,7 @@
         "statusCode": "",
         "headers": {},
         "x": 490,
-        "y": 360,
+        "y": 380,
         "wires": []
     },
     {
@@ -7650,9 +7645,9 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "Serves Frontend to display answers",
-        "info": "reachable under [http://quasselstrippe.local:1880/output](/output)",
+        "info": "reachable under [http://quasselstrippe.local:1880/output/](/output/)",
         "x": 200,
-        "y": 320,
+        "y": 340,
         "wires": []
     }
 ]
