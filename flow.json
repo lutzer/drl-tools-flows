@@ -521,9 +521,7 @@
             "c196ff51.b0952"
         ],
         "x": 314,
-        "y": 99,
-        "w": 1132,
-        "h": 222
+        "y": 99
     },
     {
         "id": "a8081aca.df57b8",
@@ -546,9 +544,7 @@
             "4341ba2b.f38f84"
         ],
         "x": 314,
-        "y": 379,
-        "w": 872,
-        "h": 162
+        "y": 379
     },
     {
         "id": "fec5c43f.4caea8",
@@ -574,9 +570,7 @@
             "916ee524.eed348"
         ],
         "x": 314,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "7f6892dc.4d798c",
@@ -599,9 +593,7 @@
             "bed8a17f.0a7b7"
         ],
         "x": 1074,
-        "y": 599,
-        "w": 712,
-        "h": 222
+        "y": 599
     },
     {
         "id": "bc4a0f7b.4ef6f",
@@ -625,9 +617,7 @@
             "3240d69a.8af01a"
         ],
         "x": 314,
-        "y": 879,
-        "w": 972,
-        "h": 262
+        "y": 879
     },
     {
         "id": "c531aa1.9af8558",
@@ -8979,10 +8969,10 @@
         "z": "429496b1.ee7ad8",
         "name": "recognize yes/no",
         "inputOptions": "text",
-        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:einverstanden\nyes:Ok\nyes:Okay\nyes:In ordnung\nyes:ja * wieso nicht\nno:nein * bitte nicht\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:will ich nicht\nno:nee\nno:lieber nicht",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:ich gehe gerne ins museum\nyes:Joa\nyes:Manchmal\nyes:Voll gerne\nyes:Eigentlich schon\nno:nein ist scheisse\nno:nein\nno:aufkeinenfall\nno:weiss nicht\nno:ich will nicht ins museum\nno:museum ist blöd\nno:lieber nicht\nno:vielleicht",
         "scorer": "token_sort_ratio",
         "limit": "0",
-        "cutoff": "30",
+        "cutoff": "10",
         "x": 1430,
         "y": 460,
         "wires": [
@@ -9027,7 +9017,8 @@
                 "54d71241.f5474c"
             ],
             [
-                "1c29b656.de6aea"
+                "1c29b656.de6aea",
+                "47483642.d11c68"
             ]
         ]
     },
@@ -9379,7 +9370,7 @@
         "env": [
             {
                 "name": "topic",
-                "value": "Museumsfan",
+                "value": "Museumsfeind",
                 "type": "str"
             }
         ],
@@ -9554,5 +9545,20 @@
         "x": 2010,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "47483642.d11c68",
+        "type": "say",
+        "z": "429496b1.ee7ad8",
+        "name": "",
+        "text": "What did you say?",
+        "voice": "",
+        "voiceString": "",
+        "speed": 1,
+        "x": 2010,
+        "y": 700,
+        "wires": [
+            []
+        ]
     }
 ]
