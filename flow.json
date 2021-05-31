@@ -16,7 +16,14 @@
     {
         "id": "1c156992.8e395e",
         "type": "tab",
-        "label": "Example: Museum",
+        "label": "Example1: Museum",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6f420814.db2fa8",
+        "type": "tab",
+        "label": "Example2: Museum",
         "disabled": false,
         "info": ""
     },
@@ -5788,6 +5795,551 @@
         "info": "",
         "x": 610,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6aba5bbf.3de404",
+        "type": "inject",
+        "z": "6f420814.db2fa8",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "97d58c93.94354"
+            ]
+        ]
+    },
+    {
+        "id": "97d58c93.94354",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_01_hallo.wav",
+        "allow_multiple": false,
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "66f5f63b.013118",
+                "4d614f7a.b436f"
+            ]
+        ]
+    },
+    {
+        "id": "31d0bd9a.4c5782",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "1. Begrüßung",
+        "info": "",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4a1165d8.ddfe4c",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example2_2_datenschutz.wav",
+        "allow_multiple": false,
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "c147dfa9.11952"
+            ]
+        ]
+    },
+    {
+        "id": "66f5f63b.013118",
+        "type": "delay",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "4a1165d8.ddfe4c"
+            ]
+        ]
+    },
+    {
+        "id": "96940d75.4a7de",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Frage: Datenschutz",
+        "info": "",
+        "x": 830,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4d614f7a.b436f",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 650,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "547efb1f.c32af4",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Starte einen neuen Datenbank Eintrag",
+        "info": "",
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "415040b1.5ea05",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Start",
+        "info": "Beginne den Dialog",
+        "x": 170,
+        "y": 180,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "c147dfa9.11952",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 1140,
+        "y": 280,
+        "wires": [
+            [
+                "f2843ae5.354748"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f2843ae5.354748",
+        "type": "fuzzy-match",
+        "z": "6f420814.db2fa8",
+        "name": "recognize yes/no",
+        "inputOptions": "text",
+        "choices": "yes:Ja\nyes:aufjedenfall\nyes:klar\nyes:gerne\nyes:mache ich gerne\nyes:voll gerne\nyes:wieso nicht\nyes:ok\nno:nein\nno:aufkeinenfall\nno:möchte ich nicht\nno:mag ich nicht\nno:nee\nno:nicht so gerne\nno:lieber nicht",
+        "scorer": "token_sort_ratio",
+        "limit": "0",
+        "cutoff": "20",
+        "x": 1390,
+        "y": 280,
+        "wires": [
+            [
+                "63cfd4a0.b4808c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "63cfd4a0.b4808c",
+        "type": "switch",
+        "z": "6f420814.db2fa8",
+        "name": "switch yes / no",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "no",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "yes",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1680,
+        "y": 280,
+        "wires": [
+            [],
+            [
+                "c2b9dac4.2fd0a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "12cc905e.1d1e2",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Antwort erkennen (Ja/Nein)",
+        "info": "",
+        "x": 1410,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e6ef6d57.87f9",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Switch (Ja/Nein)",
+        "info": "",
+        "x": 1680,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c2b9dac4.2fd0a8",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example2_3_zitat.wav",
+        "allow_multiple": false,
+        "x": 1960,
+        "y": 380,
+        "wires": [
+            [
+                "6b194512.82589c"
+            ]
+        ]
+    },
+    {
+        "id": "ce726692.fa46a8",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Ja: Zitat",
+        "info": "",
+        "x": 1920,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2f098f31.0a355",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 2730,
+        "y": 380,
+        "wires": [
+            [
+                "7d21cf92.b8d5",
+                "db16afc5.504bf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e4a6e3c9.907bb",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Aufnahme der Antwort",
+        "info": "",
+        "x": 2730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "75ada090.db03a",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/home/pi/data/example-answers.txt",
+                "type": "str"
+            }
+        ],
+        "x": 3700,
+        "y": 380,
+        "wires": [
+            [
+                "bcc972b1.ce658",
+                "7b7ee716.ed54f8"
+            ]
+        ]
+    },
+    {
+        "id": "7b7ee716.ed54f8",
+        "type": "debug",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3980,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "285e9fef.0f28e",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "In Datenbank speichern",
+        "info": "",
+        "x": 3720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8b03e79.a019418",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Antwort ausgeben lassen",
+        "info": "",
+        "x": 4020,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7d21cf92.b8d5",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Museumsfan",
+                "type": "str"
+            }
+        ],
+        "x": 2960,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "27a42878.d67128",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Antwort speichern",
+        "info": "",
+        "x": 2990,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6daa6429.d4a5cc",
+        "type": "subflow:5e5de4d5.8fa87c",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [],
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "97d58c93.94354"
+            ]
+        ]
+    },
+    {
+        "id": "bcc972b1.ce658",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "x": 4000,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6b194512.82589c",
+        "type": "delay",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 2180,
+        "y": 380,
+        "wires": [
+            [
+                "f667e111.bf70c"
+            ]
+        ]
+    },
+    {
+        "id": "f667e111.bf70c",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example2_4_offene_frage.wav",
+        "allow_multiple": false,
+        "x": 2430,
+        "y": 380,
+        "wires": [
+            [
+                "2f098f31.0a355"
+            ]
+        ]
+    },
+    {
+        "id": "ab546d61.557ad",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Folgefrage Zitat",
+        "info": "",
+        "x": 2380,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "db16afc5.504bf",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example2_6_skala.wav",
+        "allow_multiple": false,
+        "x": 3010,
+        "y": 380,
+        "wires": [
+            [
+                "e4336034.34b0f"
+            ]
+        ]
+    },
+    {
+        "id": "e4336034.34b0f",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 3250,
+        "y": 380,
+        "wires": [
+            [
+                "8b30691b.b53668"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8b30691b.b53668",
+        "type": "fuzzy-match",
+        "z": "6f420814.db2fa8",
+        "name": "recognize skala",
+        "inputOptions": "text",
+        "choices": "1:eins\n1:1\n2:zwei\n2:2\n3:drei\n3:3\n4:vier\n4:4\n5:fünf\n5:5\n6:sechs\n6:6",
+        "scorer": "partial_ratio",
+        "limit": "0",
+        "cutoff": "0",
+        "x": 3460,
+        "y": 380,
+        "wires": [
+            [
+                "926eef59.a08e7",
+                "75ada090.db03a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "994dcb81.eec1f8",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Erkennung der Zahl",
+        "info": "",
+        "x": 3470,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "926eef59.a08e7",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "skala",
+                "type": "str"
+            }
+        ],
+        "x": 3680,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e3bd20ca.c752a",
+        "type": "comment",
+        "z": "1c156992.8e395e",
+        "name": "Dieses Beispiel erklärt einen einfachen Dialog Flow, mit einer Ja/Nein unterscheidung",
+        "info": "",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "73ca056c.f4991c",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Dieses Beispiel erklärt einen Dialog Flow, mit einer Skala Frage",
+        "info": "",
+        "x": 350,
+        "y": 60,
         "wires": []
     }
 ]
