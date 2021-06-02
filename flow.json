@@ -24,7 +24,7 @@
         "id": "6f420814.db2fa8",
         "type": "tab",
         "label": "Example2: Museum",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -1952,7 +1952,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node enables the file uploader. ",
-        "info": "reachable at [http://:server:/uploads](/uploads). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local/uploads](/uploads). You should only use a single instance of this node.",
         "x": 200,
         "y": 100,
         "wires": []
@@ -2296,12 +2296,12 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/home/pi/data/answers.txt",
+                "value": "/home/pi/data/example1.txt",
                 "type": "str"
             }
         ],
-        "x": 160,
-        "y": 260,
+        "x": 170,
+        "y": 300,
         "wires": []
     },
     {
@@ -2309,7 +2309,7 @@
         "type": "comment",
         "z": "965f4c84.d4613",
         "name": "This node serves the collected answers. Adjust filepath to the correct output file.",
-        "info": "reachable at [http://:server:/answers](/answers). You should only use a single instance of this node.",
+        "info": "reachable at [http://quasselstrippe.local/answers](/answers). You should only use a single instance of this node.",
         "x": 340,
         "y": 220,
         "wires": []
@@ -2641,7 +2641,7 @@
         "payload": "on",
         "payloadType": "str",
         "x": 130,
-        "y": 380,
+        "y": 560,
         "wires": [
             [
                 "7e8c3fc4.dc664",
@@ -2656,7 +2656,7 @@
         "name": "Blink led to indicate startup",
         "info": "",
         "x": 180,
-        "y": 340,
+        "y": 520,
         "wires": []
     },
     {
@@ -4591,7 +4591,7 @@
             }
         ],
         "x": 660,
-        "y": 380,
+        "y": 560,
         "wires": []
     },
     {
@@ -4610,7 +4610,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 280,
-        "y": 440,
+        "y": 620,
         "wires": [
             [
                 "ecac1c89.07307"
@@ -4637,7 +4637,7 @@
         "to": "",
         "reg": false,
         "x": 460,
-        "y": 440,
+        "y": 620,
         "wires": [
             [
                 "7e8c3fc4.dc664"
@@ -5172,7 +5172,7 @@
         "env": [
             {
                 "name": "topic",
-                "value": "Engagement",
+                "value": "Exponat",
                 "type": "str"
             }
         ],
@@ -5188,7 +5188,7 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/home/pi/data/example-answers.txt",
+                "value": "/home/pi/data/example1.txt",
                 "type": "str"
             }
         ],
@@ -5850,7 +5850,7 @@
         "z": "6f420814.db2fa8",
         "name": "",
         "directory": "bbacc559.40a508",
-        "file": "example2_2_datenschutz.wav",
+        "file": "example_11_datenschutz.wav",
         "allow_multiple": false,
         "x": 870,
         "y": 280,
@@ -5998,11 +5998,15 @@
         "x": 1680,
         "y": 280,
         "wires": [
-            [],
+            [
+                "44fa2b08.f2b004"
+            ],
             [
                 "c2b9dac4.2fd0a8"
             ],
-            []
+            [
+                "44fa2b08.f2b004"
+            ]
         ]
     },
     {
@@ -6031,7 +6035,7 @@
         "z": "6f420814.db2fa8",
         "name": "",
         "directory": "bbacc559.40a508",
-        "file": "example2_3_zitat.wav",
+        "file": "example_12_zitat.wav",
         "allow_multiple": false,
         "x": 1960,
         "y": 380,
@@ -6091,11 +6095,11 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/home/pi/data/example-answers.txt",
+                "value": "/home/pi/data/example2.txt",
                 "type": "str"
             }
         ],
-        "x": 3700,
+        "x": 3960,
         "y": 380,
         "wires": [
             [
@@ -6117,7 +6121,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3980,
+        "x": 4230,
         "y": 380,
         "wires": []
     },
@@ -6127,7 +6131,7 @@
         "z": "6f420814.db2fa8",
         "name": "In Datenbank speichern",
         "info": "",
-        "x": 3720,
+        "x": 3980,
         "y": 340,
         "wires": []
     },
@@ -6137,7 +6141,7 @@
         "z": "6f420814.db2fa8",
         "name": "Antwort ausgeben lassen",
         "info": "",
-        "x": 4020,
+        "x": 4270,
         "y": 340,
         "wires": []
     },
@@ -6149,7 +6153,7 @@
         "env": [
             {
                 "name": "topic",
-                "value": "Museumsfan",
+                "value": "Museum",
                 "type": "str"
             }
         ],
@@ -6186,7 +6190,7 @@
         "type": "subflow:e32847a.070d9b8",
         "z": "6f420814.db2fa8",
         "name": "",
-        "x": 4000,
+        "x": 4250,
         "y": 460,
         "wires": []
     },
@@ -6219,9 +6223,9 @@
         "z": "6f420814.db2fa8",
         "name": "",
         "directory": "bbacc559.40a508",
-        "file": "example2_4_offene_frage.wav",
+        "file": "example_13_frage.wav",
         "allow_multiple": false,
-        "x": 2430,
+        "x": 2410,
         "y": 380,
         "wires": [
             [
@@ -6245,7 +6249,7 @@
         "z": "6f420814.db2fa8",
         "name": "",
         "directory": "bbacc559.40a508",
-        "file": "example2_6_skala.wav",
+        "file": "example_14_skala.wav",
         "allow_multiple": false,
         "x": 3010,
         "y": 380,
@@ -6282,7 +6286,7 @@
         "z": "6f420814.db2fa8",
         "name": "recognize skala",
         "inputOptions": "text",
-        "choices": "1:eins\n1:1\n2:zwei\n2:2\n3:drei\n3:3\n4:vier\n4:4\n5:fünf\n5:5\n6:sechs\n6:6",
+        "choices": "1:eins\n1:1\n1:sehr gut\n2:zwei\n2:2\n2:gut\n3:drei\n3:mittel\n3:3\n4:vier\n4:4\n4:geht so\n5:fünf\n5:5\n5:nicht so gut\n6:sechs\n6:6\n6:gar nicht",
         "scorer": "partial_ratio",
         "limit": "0",
         "cutoff": "0",
@@ -6291,7 +6295,7 @@
         "wires": [
             [
                 "926eef59.a08e7",
-                "75ada090.db03a"
+                "e550505e.6086d"
             ],
             []
         ]
@@ -6314,7 +6318,7 @@
         "env": [
             {
                 "name": "topic",
-                "value": "skala",
+                "value": "Skala",
                 "type": "str"
             }
         ],
@@ -6336,10 +6340,133 @@
         "id": "73ca056c.f4991c",
         "type": "comment",
         "z": "6f420814.db2fa8",
-        "name": "Dieses Beispiel erklärt einen Dialog Flow, mit einer Skala Frage",
+        "name": "Dieses Beispiel erklärt einen Dialog Flow mit einer Skala Frage",
         "info": "",
-        "x": 350,
+        "x": 340,
         "y": 60,
+        "wires": []
+    },
+    {
+        "id": "44fa2b08.f2b004",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_15_datenschutz_nein.wav",
+        "allow_multiple": false,
+        "x": 2000,
+        "y": 180,
+        "wires": [
+            [
+                "e853b9b.f96ef48"
+            ]
+        ]
+    },
+    {
+        "id": "142eb52.518f24b",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Nein: Ende",
+        "info": "",
+        "x": 1920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e853b9b.f96ef48",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "x": 2290,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e550505e.6086d",
+        "type": "play-soundfile",
+        "z": "6f420814.db2fa8",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "example_06_tschuess.wav",
+        "allow_multiple": false,
+        "x": 3720,
+        "y": 380,
+        "wires": [
+            [
+                "75ada090.db03a"
+            ]
+        ]
+    },
+    {
+        "id": "2b758247.3b227e",
+        "type": "comment",
+        "z": "6f420814.db2fa8",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 3680,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "70b228be.a9be68",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "change the file to the one that collects your answers in the dialogs qs-save-output node",
+        "info": "",
+        "x": 360,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "29e208bb.5e93e8",
+        "type": "static",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "folder": "/home/pi/.node-red/projects/drl-tools-flows/frontend",
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "1260de94.12e921"
+            ]
+        ]
+    },
+    {
+        "id": "ae290cb3.64463",
+        "type": "http in",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "url": "/output*",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "29e208bb.5e93e8"
+            ]
+        ]
+    },
+    {
+        "id": "1260de94.12e921",
+        "type": "http response",
+        "z": "965f4c84.d4613",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f6e58d9d.60c05",
+        "type": "comment",
+        "z": "965f4c84.d4613",
+        "name": "Serves Frontend vor visualizing the collected answers",
+        "info": "reachable at [http://quasselstrippe.local/output](/output). You should only use a single instance of this node.",
+        "x": 260,
+        "y": 360,
         "wires": []
     }
 ]
