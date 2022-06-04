@@ -45,14 +45,14 @@
         "id": "926d2fd5.111788",
         "type": "tab",
         "label": "Gruener Dialog",
-        "disabled": true,
+        "disabled": false,
         "info": ""
     },
     {
         "id": "744235db.f95f9c",
         "type": "tab",
         "label": "Flow 1",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -486,6 +486,71 @@
             "wires": [
                 {
                     "id": "e9feaec2.ff23",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "b235a5cc.7aae78",
+        "type": "subflow",
+        "name": "Post To Server",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "8db2f4f.d8dba08"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [
+            {
+                "name": "quasselstrippe",
+                "type": "str",
+                "value": "default"
+            },
+            {
+                "name": "url",
+                "type": "str",
+                "value": "http://localhost"
+            },
+            {
+                "name": "credentialsName",
+                "type": "str",
+                "value": "admin"
+            },
+            {
+                "name": "credentialsPassword",
+                "type": "str",
+                "value": "password"
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "inputLabels": [
+            "Data"
+        ],
+        "icon": "node-red/db.svg",
+        "status": {
+            "x": 1220,
+            "y": 300,
+            "wires": [
+                {
+                    "id": "ba611d79.7d1c9",
+                    "port": 0
+                },
+                {
+                    "id": "9d28bdbd.827eb",
+                    "port": 0
+                },
+                {
+                    "id": "b6ff4d17.c398a",
                     "port": 0
                 }
             ]
@@ -7605,6 +7670,284 @@
         "statusType": "auto",
         "x": 910,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fa9276dc.7cbc38",
+        "type": "inject",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ \"test\" ]",
+        "payloadType": "json",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "aab4e5a9.2806f8"
+            ]
+        ]
+    },
+    {
+        "id": "41033a57.5581f4",
+        "type": "http request",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.61:3000/api/submissions/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "ce16f535.f29d68"
+            ]
+        ]
+    },
+    {
+        "id": "ce16f535.f29d68",
+        "type": "switch",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "ba611d79.7d1c9"
+            ],
+            [
+                "2dcd223c.7e404e",
+                "b6ff4d17.c398a"
+            ]
+        ]
+    },
+    {
+        "id": "ba611d79.7d1c9",
+        "type": "change",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":\"posted\",\"fill\":\"green\",\"shape\":\"dot\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "c85b8b3e.5c97f8"
+            ]
+        ]
+    },
+    {
+        "id": "2dcd223c.7e404e",
+        "type": "function",
+        "z": "b235a5cc.7aae78",
+        "name": "throw Error",
+        "func": "throw new Error(\"Could not post to server: \" + JSON.stringify(msg.payload))",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aab4e5a9.2806f8",
+        "type": "subflow:b235a5cc.7aae78",
+        "z": "5fecfc4e.735094",
+        "name": "",
+        "env": [
+            {
+                "name": "quasselstrippe",
+                "value": "default sdfsdf",
+                "type": "str"
+            },
+            {
+                "name": "url",
+                "value": "http://192.168.0.61:3000/api/submissions/",
+                "type": "str"
+            }
+        ],
+        "x": 380,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8db2f4f.d8dba08",
+        "type": "function",
+        "z": "b235a5cc.7aae78",
+        "name": "format request",
+        "func": "return {\n    url : env.get(\"url\"),\n    payload: {\n        data: msg.payload,\n        id: \"undefined\",\n        quasselstrippe: env.get(\"quasselstrippe\")\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "67fbd57e.a1671c"
+            ]
+        ]
+    },
+    {
+        "id": "c85b8b3e.5c97f8",
+        "type": "delay",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 740,
+        "y": 420,
+        "wires": [
+            [
+                "9d28bdbd.827eb"
+            ]
+        ]
+    },
+    {
+        "id": "9d28bdbd.827eb",
+        "type": "change",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6ff4d17.c398a",
+        "type": "change",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":\"error\",\"fill\":\"red\",\"shape\":\"dot\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "c85b8b3e.5c97f8"
+            ]
+        ]
+    },
+    {
+        "id": "67fbd57e.a1671c",
+        "type": "function",
+        "z": "b235a5cc.7aae78",
+        "name": "add auth header",
+        "func": "function btoa(s) {\n    return Buffer.from(s).toString('base64')\n}\n\nmsg.headers = {\n    Authorization : \"Basic \" + btoa(env.get(\"credentialsName\") + \":\" + env.get(\"credentialsPassword\"))\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "41033a57.5581f4",
+                "38c6ecfd.756e74"
+            ]
+        ]
+    },
+    {
+        "id": "38c6ecfd.756e74",
+        "type": "debug",
+        "z": "b235a5cc.7aae78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 120,
         "wires": []
     }
 ]
