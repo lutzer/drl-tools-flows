@@ -17,7 +17,7 @@
         "id": "1c156992.8e395e",
         "type": "tab",
         "label": "Example1: Museum",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -39,6 +39,13 @@
         "type": "tab",
         "label": "Dialog Components",
         "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "ad561749.077248",
+        "type": "tab",
+        "label": "Blauer Dialog",
+        "disabled": false,
         "info": ""
     },
     {
@@ -6467,6 +6474,424 @@
         "info": "reachable at [http://quasselstrippe.local/output](/output). You should only use a single instance of this node.",
         "x": 260,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ea61e25d.ca8b58",
+        "type": "inject",
+        "z": "ad561749.077248",
+        "name": "start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "a4fab183.975a58"
+            ]
+        ]
+    },
+    {
+        "id": "a4fab183.975a58",
+        "type": "play-soundfile",
+        "z": "ad561749.077248",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "01.wav",
+        "allow_multiple": false,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "a7da21a3.5879d8",
+                "39d17033.416ee"
+            ]
+        ]
+    },
+    {
+        "id": "9879a308.e4fa78",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Begrüßung & 1. Frage",
+        "info": "",
+        "x": 360,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a7da21a3.5879d8",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "operation",
+                "value": "new",
+                "type": "str"
+            }
+        ],
+        "x": 560,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8da23aef.8f244",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Starte einen neuen Datenbank Eintrag",
+        "info": "",
+        "x": 640,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1e3b7152.8bbd37",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "0. Start",
+        "info": "Beginne den Dialog",
+        "x": 130,
+        "y": 140,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "4d86e63f.f7088",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Aufnahme 1. Antwort ",
+        "info": "",
+        "x": 600,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1c3ea240.2e688e",
+        "type": "subflow:5e5de4d5.8fa87c",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [],
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "a4fab183.975a58"
+            ]
+        ]
+    },
+    {
+        "id": "39d17033.416ee",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "c588a94e.dafdc8",
+                "ba17d652.93309"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c588a94e.dafdc8",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Name",
+                "type": "str"
+            }
+        ],
+        "x": 820,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9c4f642e.099b28",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "1. Antwort speichern",
+        "info": "",
+        "x": 850,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ba17d652.93309",
+        "type": "play-soundfile",
+        "z": "ad561749.077248",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "02.wav",
+        "allow_multiple": false,
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "b654c5e9.66395"
+            ]
+        ]
+    },
+    {
+        "id": "40f4cc9b.1014ec",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "2. Frage",
+        "info": "",
+        "x": 900,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ad1c86f2.62ccb8",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Aufnahme 2. Antwort ",
+        "info": "",
+        "x": 1100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b654c5e9.66395",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 1090,
+        "y": 260,
+        "wires": [
+            [
+                "ea5d1390.694ec8",
+                "6c8d2aa0.5ddf14"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ea5d1390.694ec8",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Wie funktionieren Solarzellen?",
+                "type": "str"
+            }
+        ],
+        "x": 1320,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4734a6f5.34a1f",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "2. Antwort speichern",
+        "info": "",
+        "x": 1350,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e8c1780.5730108",
+        "type": "subflow:aaf06e2c.e5b2f",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "filepath",
+                "value": "/home/pi/data/example1.txt",
+                "type": "str"
+            }
+        ],
+        "x": 2040,
+        "y": 260,
+        "wires": [
+            [
+                "69190b7.0b0a0f4",
+                "e77d95bf.343a08"
+            ]
+        ]
+    },
+    {
+        "id": "e77d95bf.343a08",
+        "type": "debug",
+        "z": "ad561749.077248",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2290,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "bcf2c683.95f508",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "In Datenbank speichern",
+        "info": "",
+        "x": 2060,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b0ebeaa7.894ea8",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Antwort ausgeben lassen",
+        "info": "",
+        "x": 2330,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "69190b7.0b0a0f4",
+        "type": "subflow:e32847a.070d9b8",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [],
+        "x": 2310,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6c8d2aa0.5ddf14",
+        "type": "play-soundfile",
+        "z": "ad561749.077248",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "03.wav",
+        "allow_multiple": false,
+        "x": 1360,
+        "y": 260,
+        "wires": [
+            [
+                "f02f677.cf9fe18"
+            ]
+        ]
+    },
+    {
+        "id": "3e8e4d6b.2e2d12",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "3. Frage",
+        "info": "",
+        "x": 1360,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f51a40.ddf455c",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Aufnahme 3. Antwort ",
+        "info": "",
+        "x": 1560,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f02f677.cf9fe18",
+        "type": "subflow:d9115fe7.1fc6d",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "timeout",
+                "value": "3",
+                "type": "num"
+            }
+        ],
+        "x": 1550,
+        "y": 260,
+        "wires": [
+            [
+                "94c58644.eeceb",
+                "e4805c19.6f386"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "94c58644.eeceb",
+        "type": "subflow:7c973ed1.90f49",
+        "z": "ad561749.077248",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Wie werden wir den Müll los?",
+                "type": "str"
+            }
+        ],
+        "x": 1780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1e66ad7a.1f8133",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "3. Antwort speichern",
+        "info": "",
+        "x": 1810,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e4805c19.6f386",
+        "type": "play-soundfile",
+        "z": "ad561749.077248",
+        "name": "",
+        "directory": "bbacc559.40a508",
+        "file": "04.wav",
+        "allow_multiple": false,
+        "x": 1820,
+        "y": 260,
+        "wires": [
+            [
+                "e8c1780.5730108"
+            ]
+        ]
+    },
+    {
+        "id": "940093df.71c218",
+        "type": "comment",
+        "z": "ad561749.077248",
+        "name": "Verabschiedung",
+        "info": "",
+        "x": 1840,
+        "y": 220,
         "wires": []
     }
 ]
