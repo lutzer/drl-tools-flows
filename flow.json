@@ -6744,27 +6744,9 @@
         "y": 180,
         "wires": [
             [
-                "41033a57.5581f4",
-                "38c6ecfd.756e74"
+                "41033a57.5581f4"
             ]
         ]
-    },
-    {
-        "id": "38c6ecfd.756e74",
-        "type": "debug",
-        "z": "b235a5cc.7aae78",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "cc5fd986.ed5398",
