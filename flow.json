@@ -1093,6 +1093,11 @@
                 "t": "delete",
                 "p": "topic",
                 "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "file",
+                "pt": "msg"
             }
         ],
         "action": "",
