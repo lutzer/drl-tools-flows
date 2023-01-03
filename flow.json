@@ -689,7 +689,7 @@
         "endian": "little",
         "bitwidth": "16",
         "save": true,
-        "saveFolder": "/home/pi/data/",
+        "saveFolder": "/home/pi/data/audio",
         "x": 800,
         "y": 680,
         "wires": [
@@ -733,11 +733,12 @@
         "type": "function",
         "z": "d9115fe7.1fc6d",
         "name": "join array & merge inputMsg",
-        "func": "return {...flow.get('inputMsg'), \n    topic: msg.topic, \n    payload: Array.isArray(msg.payload) ? msg.payload.join('.') : '' \n}",
+        "func": "return {...flow.get('inputMsg'), \n    topic: msg.topic, \n    audiofile: flow.get('file'),\n    payload: Array.isArray(msg.payload) ? msg.payload.join('.') : '' \n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 780,
         "y": 280,
         "wires": [
@@ -939,13 +940,6 @@
                 "pt": "msg",
                 "to": "payload.transcript",
                 "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "file",
-                "pt": "msg",
-                "to": "file",
-                "tot": "flow"
             }
         ],
         "action": "",
@@ -2714,7 +2708,7 @@
         "type": "function",
         "z": "7c973ed1.90f49",
         "name": "append to output",
-        "func": "const entry = {\n    time: Date.now(),\n    value: msg.payload,\n    file: msg.file,\n    topic: env.get('topic')\n}\nconst output = global.get('tools-output') || []\noutput.push(entry)\nreturn msg;",
+        "func": "const entry = {\n    time: Date.now(),\n    value: msg.payload,\n    audiofile: msg.audiofile,\n    topic: env.get('topic')\n}\nconst output = global.get('tools-output') || []\noutput.push(entry)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
