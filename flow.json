@@ -292,8 +292,14 @@
                         ]
                     }
                 }
+            },
+            {
+                "name": "audioDirectory",
+                "type": "str",
+                "value": ""
             }
         ],
+        "meta": {},
         "color": "#C0DEED",
         "icon": "node-red/parser-json.svg"
     },
@@ -2423,8 +2429,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 190,
-        "y": 100,
+        "x": 210,
+        "y": 240,
         "wires": [
             [
                 "6bdbed67.e2d6b4"
@@ -2441,8 +2447,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 590,
-        "y": 100,
+        "x": 610,
+        "y": 240,
         "wires": [
             [
                 "b9d9fa83.e99bd8"
@@ -2458,8 +2464,8 @@
         "headers": {
             "Content-Type": "application/json"
         },
-        "x": 1230,
-        "y": 100,
+        "x": 1250,
+        "y": 240,
         "wires": []
     },
     {
@@ -2472,8 +2478,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 740,
-        "y": 100,
+        "x": 760,
+        "y": 240,
         "wires": [
             [
                 "73350c38.d18564"
@@ -2499,8 +2505,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 100,
+        "x": 430,
+        "y": 240,
         "wires": [
             [
                 "8b3d3049.ea7b1"
@@ -2516,8 +2522,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 170,
-        "y": 160,
+        "x": 190,
+        "y": 300,
         "wires": [
             [
                 "99e99071.c33af"
@@ -2543,8 +2549,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 160,
+        "x": 430,
+        "y": 300,
         "wires": [
             [
                 "5ac501a1.66266"
@@ -2561,8 +2567,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 590,
-        "y": 160,
+        "x": 610,
+        "y": 300,
         "wires": [
             [
                 "20cba3c8.addb7c"
@@ -2574,13 +2580,14 @@
         "type": "function",
         "z": "6096a378.7f109c",
         "name": "",
-        "func": "msg.payload = msg.payload.trim().split('\\n').map((line) => {\n    try {\n        line = JSON.parse(line)\n    } catch (err) {\n        line = []\n    }\n    return line.map((entry) => {\n        entry.value = (typeof entry.value === 'string') ? entry.value : JSON.stringify(entry.value)\n        return entry\n    })\n})\nreturn msg;",
+        "func": "function getFilename(path) {\n    return path.split(/(\\\\|\\/)/g).pop()   \n}\n\nmsg.payload = msg.payload.trim().split('\\n').map((line) => {\n    try {\n        line = JSON.parse(line)\n    } catch (err) {\n        line = []\n    }\n    return line.map((entry) => {\n        entry.audiofile = (typeof entry.audiofile === 'string') ? getFilename(entry.audiofile) : null\n        entry.value = (typeof entry.value === 'string') ? entry.value : JSON.stringify(entry.value)\n        return entry\n    })\n})\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 740,
-        "y": 160,
+        "libs": [],
+        "x": 760,
+        "y": 300,
         "wires": [
             [
                 "1e2455ea.65ebea"
@@ -2594,8 +2601,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1230,
-        "y": 160,
+        "x": 1250,
+        "y": 300,
         "wires": []
     },
     {
@@ -2607,10 +2614,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>File Uploader</title>\n    <style>\n        body {\n          background-color: linen;\n          font-family: monospace;\n        }\n        \n        input, button {\n            font-family: monospace;\n        }\n        \n        h1 {\n            padding: 10px;\n        }\n        \n        .content {\n            width: 100%;\n            max-width: 700px;\n            margin: 0 auto;\n            padding: 10px 0;\n        }\n    </style>\n  </head>\n  <body>\n    <div class=\"content\">\n    <h1>Answers</h1>\n    {{#payload}}\n        <ul>\n        {{#.}}\n            <li>{{topic}}: {{value}}</li>\n        {{/.}}\n        </ul>\n    {{/payload}}\n    </div>\n  </body>\n</html>",
+        "template": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>File Uploader</title>\n    <style>\n        body {\n          background-color: linen;\n          font-family: monospace;\n        }\n        \n        input, button {\n            font-family: monospace;\n        }\n        \n        h1 {\n            padding: 10px;\n        }\n        \n        .content {\n            width: 100%;\n            max-width: 700px;\n            margin: 0 auto;\n            padding: 10px 0;\n        }\n    </style>\n  </head>\n  <body>\n    <div class=\"content\">\n    <h1>Answers</h1>\n    {{#payload}}\n        <ul>\n        {{#.}}\n            <li>\n            {{topic}}: {{value}} \n            <br/><a href=\"/answers/audio/{{audiofile}}\">{{audiofile}}</a>\n            \n            </li>\n        {{/.}}\n        </ul>\n    {{/payload}}\n    </div>\n  </body>\n</html>",
         "output": "str",
-        "x": 940,
-        "y": 160,
+        "x": 960,
+        "y": 300,
         "wires": [
             [
                 "6ecff95.54ed408"
@@ -2624,8 +2631,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 580,
-        "y": 220,
+        "x": 600,
+        "y": 360,
         "wires": [
             [
                 "ab473ec9.18c65"
@@ -2639,8 +2646,8 @@
         "name": "",
         "statusCode": "400",
         "headers": {},
-        "x": 1240,
-        "y": 220,
+        "x": 1260,
+        "y": 360,
         "wires": []
     },
     {
@@ -2662,8 +2669,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 220,
+        "x": 860,
+        "y": 360,
         "wires": [
             [
                 "e166e1bc.64419"
@@ -3370,6 +3377,11 @@
             {
                 "name": "filepath",
                 "value": "/home/pi/data/answers.txt",
+                "type": "str"
+            },
+            {
+                "name": "audioDirectory",
+                "value": "/home/pi/data/audio",
                 "type": "str"
             }
         ],
@@ -6726,7 +6738,7 @@
         "env": [
             {
                 "name": "filepath",
-                "value": "/home/pi/data/example-answers.txt",
+                "value": "/home/pi/data/answers.txt",
                 "type": "str"
             }
         ],
@@ -6895,5 +6907,250 @@
         "x": 2030,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "316fa004.328a4",
+        "type": "http in",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "url": "/answers/audio/:file",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "cc177d4d.04957"
+            ]
+        ]
+    },
+    {
+        "id": "1c057ca7.65f6c3",
+        "type": "http response",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "767a62b6.aad6dc",
+        "type": "file in",
+        "z": "6096a378.7f109c",
+        "name": "read file",
+        "filename": "",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "944f6c5c.b00dd"
+            ]
+        ]
+    },
+    {
+        "id": "cc177d4d.04957",
+        "type": "function",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "func": "msg.filename = `${flow.get('audioDirectory')}/${msg.req.params.file}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 460,
+        "wires": [
+            [
+                "767a62b6.aad6dc"
+            ]
+        ]
+    },
+    {
+        "id": "944f6c5c.b00dd",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "Set Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "headers.content-type",
+                "pt": "msg",
+                "to": "audio/wav",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "1c057ca7.65f6c3"
+            ]
+        ]
+    },
+    {
+        "id": "4cd16e29.c5d4f",
+        "type": "comment",
+        "z": "6096a378.7f109c",
+        "name": "Serve audio files",
+        "info": "",
+        "x": 200,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "cdde342a.b2d5c8",
+        "type": "catch",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "scope": [
+            "767a62b6.aad6dc"
+        ],
+        "uncaught": false,
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "9677a308.737fa"
+            ]
+        ]
+    },
+    {
+        "id": "eca4f8db.6b1fd8",
+        "type": "http response",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1000,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9677a308.737fa",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 500,
+        "wires": [
+            [
+                "cb868be7.6de398"
+            ]
+        ]
+    },
+    {
+        "id": "cb868be7.6de398",
+        "type": "function",
+        "z": "6096a378.7f109c",
+        "name": "html template",
+        "func": "const htmlTemplate = flow.get('htmlTemplate')\nmsg.payload = htmlTemplate(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 500,
+        "wires": [
+            [
+                "eca4f8db.6b1fd8"
+            ]
+        ]
+    },
+    {
+        "id": "fb4c9007.e10ea",
+        "type": "inject",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "67c56311.19309c",
+                "63b74376.12d9dc"
+            ]
+        ]
+    },
+    {
+        "id": "67c56311.19309c",
+        "type": "change",
+        "z": "6096a378.7f109c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "audioDirectory",
+                "pt": "flow",
+                "to": "audioDirectory",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63b74376.12d9dc",
+        "type": "function",
+        "z": "6096a378.7f109c",
+        "name": "define HTML Template",
+        "func": "const htmlTemplate = function(payload) {\n    return(\n    `\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>File Uploader</title>\n        <style>\n            body {\n              background-color: linen;\n              font-family: monospace;\n            }\n            \n            input, button {\n                font-family: monospace;\n            }\n            \n            .content {\n                max-width: 500px;\n                margin: 0 auto;\n                padding: 5px;\n            }\n            \n            h2 {\n              border-bottom: 1px solid black;\n            }\n            \n            ul {\n                list-style: none;\n                margin: 0;\n                padding: 0;\n            }\n            \n            li {\n                padding: 5px 0;\n                white-space: nowrap;\n            }\n            \n            li > button {\n                float: right;\n            }\n            \n            form {\n                border: 1px solid black;\n                padding: 10px;\n                text-align: center;\n            }\n            \n            .highlight {\n                background: #ffffff99;\n            }\n            \n        </style>\n      </head>\n      <body>\n        <div class=\"content\">\n        ${payload}\n        </div>\n      </body>\n    </html>\n    `)  \n}\nflow.set('htmlTemplate', htmlTemplate)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 60,
+        "wires": [
+            []
+        ]
     }
 ]
